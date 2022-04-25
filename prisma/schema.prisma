@@ -11,16 +11,32 @@ datasource db {
 }
 
 model Register {
+  id             Int      @id @default(autoincrement()) //cria campo id do tipo string, @id - chave primária -  @default() usará o auto incremente utilizando o uuid 
+  firstName      String   @db.VarChar(50)
+  fullName       String   @db.VarChar(100)
+  email          String   @unique @db.VarChar(50) //deve ser unico
+  password       String   @db.VarChar(100)
+  active         Boolean
+  canceled       Boolean
+  created_at     DateTime @default(now()) //será do tipo data hora e o prisma fara automaticamente
+  lastUpDateBy   String
+  lastUpDateDate DateTime @default(now())
+
+  //informa qual o nome que será dado a tabela no BD
+  @@map("Registers")
+}
+
+model Operator {
   id         Int      @id @default(autoincrement()) //cria campo id do tipo string, @id - chave primária -  @default() usará o auto incremente utilizando o uuid 
   firstName  String   @db.VarChar(50)
   fullName   String   @db.VarChar(100)
   email      String   @unique @db.VarChar(50) //deve ser unico
   password   String   @db.VarChar(100)
   active     Boolean
-  canceled   Boolean
   isAdmin    Boolean
   created_at DateTime @default(now()) //será do tipo data hora e o prisma fara automaticamente
+  lastLogin  DateTime @default(now())
 
   //informa qual o nome que será dado a tabela no BD
-  @@map("Registers")
+  @@map("Operators")
 }

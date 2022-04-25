@@ -9,11 +9,15 @@ import { RequestActiveRegister } from './routes/requestActiveRegister'
 const fastifyServer = Fastify({
     logger: true
 })
+
+fastifyServer.register(RequestLogin) //login user
 fastifyServer.register(RequestRegister) //create user account
 fastifyServer.register(RequestCancelRegister) // request account desactivation
-fastifyServer.register(RequestLogin) //login user
+fastifyServer.register(RequestActiveRegister) //Activar
+
+//fastifyServer.register(canceled) //Route to show registers canceled or active
+
 fastifyServer.register(PopulateBD) //popularBD Teste
-fastifyServer.register(RequestActiveRegister) //popularBD Teste
 
 const serverInit = async () => {
     try {
