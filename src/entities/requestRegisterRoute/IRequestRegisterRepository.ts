@@ -3,7 +3,7 @@ export interface IParams {
     fullName: string,
     email: string,
     password: string,
-    isAdmin: boolean,
+    lastUpDateBy: string,
 }
 
 export interface IRequestRegisterRepository {

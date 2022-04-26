@@ -12,9 +12,9 @@ export class RequestRegisterRepository implements IRequestRegisterRepository {
         return isAdmin
     }
 
-    async RequestRegisterRepository({ firstName, fullName, email, password, isAdmin }: IParams) {
+    async RequestRegisterRepository({ firstName, fullName, email, password, lastUpDateBy }: IParams) {
         let result = await prisma.$executeRaw`INSERT INTO Registers SET fullName = ${fullName}, 
-        firstName = ${firstName},  email = ${email}, password = ${password}, active = ${true}, canceled = ${false}, isAdmin= ${isAdmin} `
+        firstName = ${firstName},  email = ${email}, password = ${password}, active = ${true}, canceled = ${false}, lastUpDateBy = ${lastUpDateBy}`
         return result
     }
 }

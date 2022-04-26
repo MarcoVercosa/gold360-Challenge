@@ -6,7 +6,7 @@ export class RequestLoginRepository implements IRequestLoginRepository {
 
     async RequestLogin(email: string, password: string) {
         const prisma = new PrismaClient()
-        let resposta: any = await prisma.$queryRaw`SELECT * from Registers WHERE email = ${email} AND password = ${password} `
+        let resposta: any = await prisma.$queryRaw`SELECT * from Operators WHERE email = ${email} AND password = ${password} `
         return resposta
     }
 }
