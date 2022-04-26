@@ -33,16 +33,18 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
             //centralize the data and sendo to queue
             let dataJSON = { validateToken, firstName, fullName, email, password, isAdmin }
             checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
+            //checkFirstQueueCreateUpdateRegisterBD.close() // close conection
 
 
             //consumer the queue
-            checkFirstQueueCreateUpdateRegisterBD.consume(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string,
-                async (data: any) => {
-                    const dataConsume = await JSON.parse(data.content.toString())
-                    console.log("Data from queue received")
-                    console.log(dataConsume)
-                    checkFirstQueueCreateUpdateRegisterBD.ack //avisa ao habbitMQ que os dados foram recebidos e tratados e pode ser liberado do fila
-                })
+            // checkFirstQueueCreateUpdateRegisterBD.consume(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string,
+            //     async (data: any) => {
+            //         const dataConsume = await JSON.parse(data.content.toString())
+            //         console.log("Data from queue received")
+            //         console.log(dataConsume)
+            //         checkFirstQueueCreateUpdateRegisterBD.ack //avisa ao habbitMQ que os dados foram recebidos e tratados e pode ser liberado do fila
+            //     }
+            // )
 
             let isAdminRepository: any = await this.requestRegisterRepository.UserIsAdminConfirm(validateToken.result.id, validateToken.result.fullName)
 

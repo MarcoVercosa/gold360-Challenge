@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { IRequestRegisterRepository, IParams } from '../../entities/requestRegisterRoute/IRequestRegisterRepository';
-import { UserIsAdminConfirmRepository } from '../../entities/userisAdminConfirm/userIsAdminConfirm';
+import { UserIsAdminConfirmRepository } from '../userisAdminConfirm/userIsAdminConfirm';
 
 const prisma = new PrismaClient()
 

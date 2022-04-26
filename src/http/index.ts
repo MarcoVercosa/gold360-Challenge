@@ -7,7 +7,7 @@ import { RequestActiveRegister } from './routes/requestActiveRegister'
 
 
 const fastifyServer = Fastify({
-    logger: true
+    logger: false
 })
 
 fastifyServer.register(RequestLogin) //login user
