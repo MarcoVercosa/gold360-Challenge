@@ -11,7 +11,15 @@ export class RequestRegisterController implements IRequestRegisterController {
         private requestRegisterUseCase: RequestRegisterUseCase
     ) { }
 
+
+
     async Handle(request: any): Promise<{ result: IResult, codeResult: number }> {
+
+        const checkFirstQueueCreateUpdateRegisterBD = await this.requestRegisterUseCase.CheckFirstQueueCreateUpdateRegisterBD()
+        if (!checkFirstQueueCreateUpdateRegisterBD) {
+            return { result: "Erro to connect to RabbitMQ. Queue failed: create_update_register_bd." as any, codeResult: 500 }
+        }
+
         const { firstName, fullName, email, password, isAdmin }: any = request.body
         let result: IResult
         try {

@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { IResult } from '../../entities/requestRegisterRoute/IRequestRegisterController';
-import { requestRegisterController } from "../../useCases/requestRegisterRoute/index"
+import { requestRegisterController } from "../../useCases/requestCreateUpdateRegisterRoute/index"
 
 interface IReturn {
     result: IResult;

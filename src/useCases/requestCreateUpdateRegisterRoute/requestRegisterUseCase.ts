@@ -1,6 +1,7 @@
 import { IRequestRegisterRepository } from '../../entities/requestRegisterRoute/IRequestRegisterRepository';
 import { IRequestRegisterUseCase, IParams } from '../../entities/requestRegisterRoute/IRequestRegisterUseCase';
 import { ValidadeToken } from '../../http/midwares/validateToken';
+import { CreateQueueRegisterUpdate } from '../../queues/queueRegisterUpdate';
 
 export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
@@ -8,9 +9,13 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
         private requestRegisterRepository: IRequestRegisterRepository
     ) { }
 
+
+    async CheckFirstQueueCreateUpdateRegisterBD() {
+        const isCreateQueue = await CreateQueueRegisterUpdate()
+        return isCreateQueue
+    }
+
     async Execute({ request, firstName, fullName, email, password, isAdmin }: IParams) {
-        console.log("USeCase")
-        console.log({ firstName, fullName, email, password, isAdmin })
 
         const token = request.headers['x-access-token'] as string;
         //validate token
