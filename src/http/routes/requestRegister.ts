@@ -9,7 +9,7 @@ interface IReturn {
 
 async function RequestRegister(fastify: FastifyInstance, options: FastifyPluginOptions) {
     fastify.post('/register', async (request, response) => {
-        let { result, codeResult }: IReturn = await requestRegisterController.Handle(request)
+        let { result, codeResult }: IReturn = await requestRegisterController.Handle(request, response)
         response.code(codeResult).header('Content-Type', 'application/json; charset=utf-8').send(result)
     })
 }

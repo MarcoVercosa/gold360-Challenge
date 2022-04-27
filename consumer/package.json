@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devts": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts"
+    "devts": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
+    "start:debug:ts": "node --inspect --require ts-node/register src/index.ts"
   },
   "author": "",
   "license": "ISC",

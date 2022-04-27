@@ -13,12 +13,12 @@ export class RequestRegisterController implements IRequestRegisterController {
 
 
 
-    async Handle(request: any): Promise<{ result: IResult, codeResult: number }> {
+    async Handle(request: any, response: any): Promise<{ result: IResult, codeResult: number }> {
 
         const { firstName, fullName, email, password, isAdmin }: any = request.body
         let result: IResult
         try {
-            result = await this.requestRegisterUseCase.Execute({ request, firstName, fullName, email, password, isAdmin }) as IResult
+            result = await this.requestRegisterUseCase.Execute({ request, response, firstName, fullName, email, password, isAdmin }) as any
             if (result.sucess) {
                 return { result, codeResult: 200 }
             }

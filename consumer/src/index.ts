@@ -11,4 +11,3 @@ let consumeQueueCreatRegisterUpdateController = new ConsumeQueueCreatRegisterUpd
 
 //When instance the useCase class the consumer is activated
 
-//consumeQueueCreatRegisterUpdateController

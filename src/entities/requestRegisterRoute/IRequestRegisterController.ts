@@ -5,7 +5,7 @@ export interface IResult {
 }
 
 export interface IRequestRegisterController {
-    Handle: (request: any) => Promise<{
+    Handle: (request: any, response: any) => Promise<{
         result: IResult | any;
         codeResult: number
     }>

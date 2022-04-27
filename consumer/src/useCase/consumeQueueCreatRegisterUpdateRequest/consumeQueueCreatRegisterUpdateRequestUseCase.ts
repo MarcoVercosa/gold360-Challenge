@@ -50,10 +50,11 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
         let resultData: Promise<{ sucess: boolean, result: string }>
         resultData = await OpenConectionQueue.consume(this.nameQueue,
             async (data: any) => {
-                let dataConsume: any = await JSON.parse(data.content.toString())//change de buffer to string and JSON.parse to object                
+                let dataConsume: any = await JSON.parse(data.content)///change from  buffer to object                
+                console.log(dataConsume)
                 this.dataQueue = dataConsume
                 OpenConectionQueue?.ack(data)
-                return await this.Execute()
+                //return await this.Execute()
             }, { noAck: false }
         ) as any
 

@@ -3,6 +3,7 @@ import { Channel } from "amqplib"
 export interface IParams {
     isAdmin: boolean
     request: any;
+    response: any;
     firstName: string,
     fullName: string,
     email: string,
