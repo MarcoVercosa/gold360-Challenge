@@ -13,7 +13,6 @@ export class RequestActiveRegisterRepository implements IRequestActiveRegisterRe
 
     async RequestActiveRepository(id: number, fullName: string) {
         let result: number = await prisma.$executeRaw`UPDATE Registers SET canceled = ${false}, active= ${true} WHERE id = ${id} AND fullName = ${fullName}`
-        console.log(result)
         return result
     }
 

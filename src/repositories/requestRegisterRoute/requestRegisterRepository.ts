@@ -7,7 +7,6 @@ const prisma = new PrismaClient()
 export class RequestRegisterRepository implements IRequestRegisterRepository {
 
     async UserIsAdminConfirm(id: number, fullName: string): Promise<boolean> {
-        console.log(id, fullName)
         let isAdmin: any = await UserIsAdminConfirmRepository(id, fullName)
         return isAdmin
     }

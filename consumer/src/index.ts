@@ -9,7 +9,6 @@ let createRegisterUpdateRequestRepository = new CreateRegisterUpdateRequestRepos
 let consumeQueueCreatRegisterUpdateRequestUseCase = new ConsumeQueueCreatRegisterUpdateRequestUseCase(process.env.AMQP_QUEUE_SERVER as string, process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, createRegisterUpdateRequestRepository)
 let consumeQueueCreatRegisterUpdateController = new ConsumeQueueCreatRegisterUpdateController(consumeQueueCreatRegisterUpdateRequestUseCase)
 
+//When instance the useCase class the consumer is activated
 
-consumeQueueCreatRegisterUpdateController.Handle()
-
-console.log(consumeQueueCreatRegisterUpdateController)
+//consumeQueueCreatRegisterUpdateController

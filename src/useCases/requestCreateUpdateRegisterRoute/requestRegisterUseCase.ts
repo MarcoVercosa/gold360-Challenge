@@ -30,30 +30,12 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
         if (validateToken.auth) {
 
-            //centralize the data and sendo to queue
+            //centralize the data and send to queue
             let dataJSON = { validateToken, firstName, fullName, email, password, isAdmin }
-            checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
-            //checkFirstQueueCreateUpdateRegisterBD.close() // close conection
+            checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { persistent: true })
+            //persistent:true = Use disk to store data when memory is very high
 
-
-            //consumer the queue
-            // checkFirstQueueCreateUpdateRegisterBD.consume(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string,
-            //     async (data: any) => {
-            //         const dataConsume = await JSON.parse(data.content.toString())
-            //         console.log("Data from queue received")
-            //         console.log(dataConsume)
-            //         checkFirstQueueCreateUpdateRegisterBD.ack //avisa ao habbitMQ que os dados foram recebidos e tratados e pode ser liberado do fila
-            //     }
-            // )
-
-            let isAdminRepository: any = await this.requestRegisterRepository.UserIsAdminConfirm(validateToken.result.id, validateToken.result.fullName)
-
-            if (isAdminRepository[0].isAdmin) {
-                let result: number = await this.requestRegisterRepository.RequestRegisterRepository({ firstName, fullName, email, password, lastUpDateBy: validateToken.result.fullName })
-                return { sucess: true, token, result }
-            } else {
-                return { sucess: false, token, result: "Administrator permission is required" }
-            }
+            return { sucess: true, token, result: "Send to queue" }
 
         } else {
             return { sucess: false, token, result: "Token invalid" }

@@ -13,6 +13,6 @@ export interface IParams {
 export interface ICreatRegisterUpdateRequestUseCase {
 
     ConnectAMQPQueueServer: () => Promise<Channel | null>
-    ConsumeQueue(): Promise<IParams | null>
+    ConsumeQueue(): Promise<{ sucess: boolean, result: string } | null>
     Execute(): Promise<{ sucess: boolean, result: string }>
 }

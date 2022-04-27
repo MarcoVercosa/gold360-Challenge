@@ -19,18 +19,8 @@ export class ConsumeQueueCreatRegisterUpdateController implements IConsumeQueueC
     async Handle(): Promise<any> {
         config()
         try {
-            //check if the channel is connect and add in object de data consumed from the queue
             await this.consumeQueueCreatRegisterUpdateRequestUseCase.ConsumeQueue()
-            //now store in BD the data
-            // let result: IResult = await this.consumeQueueCreatRegisterUpdateRequestUseCase.Execute()
-            // if (result.sucess) {
-            //     console.log({ result, codeResult: 200 })
-            //     return { result, codeResult: 200 }
-            // }
-            // else {
-            //     console.log({ result, codeResult: 401 })
-            //     return { result, codeResult: 401 }
-            // }
+
         }
         catch (err: any) {
             console.log({ result: err, codeResult: 500 })

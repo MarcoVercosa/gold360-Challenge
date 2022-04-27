@@ -14,8 +14,7 @@ export interface IParamsUserIsAdmin {
 
 export interface ICreatRegisterUpdateRequestRepository {
     UserIsAdminConfirm: (data: IParamsUserIsAdmin) => Promise<boolean>
-    CheckIfRegisterAlreadyExists: (email: string, fullName: string) => Promise<[]>
-    RequestRegisterRepository: (Params: IParams) => Promise<number>
+    RequestRegisterCreateUpdateRepository: (Params: IParams) => Promise<number>
 }
 
 
