@@ -45,10 +45,7 @@ export async function ConsumeQueueConfirmCreateUpdateRegisterBD() {
             let result = await JSON.parse(data.content)///change from  buffer to object       
             OpenConectionQueue?.ack(data)
             console.log("recebido dados da fila de confirmação ", result)
-            setTimeout(() => {
-                resolve(result)
-            }, 1000)
-
+            resolve(result)
         }, { noAck: false })
     })
 
