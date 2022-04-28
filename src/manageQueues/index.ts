@@ -34,20 +34,26 @@ export async function CreateQueueConfirmRegisterUpdate(): Promise<Channel | null
     }
 }
 
-export async function ConsumeQueueConfirmCreateUpdateRegisterBD() {
+export async function ConsumeQueueConfirmCreateUpdateRegisterBD(key: string) {
     console.log("Chamaram consume Confirm")
+
     return new Promise(async (resolve) => {
+
         let OpenConectionQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
         if (!OpenConectionQueue) {
             return null
         }
         OpenConectionQueue.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
             let result = await JSON.parse(data.content)///change from  buffer to object       
-            OpenConectionQueue?.ack(data)
+
             console.log("recebido dados da fila de confirmação ", result)
-            resolve(result)
+            if (result.fullName == key) {
+                console.log("caiu IF consume")
+                OpenConectionQueue?.ack(data)
+                OpenConectionQueue?.close()
+                resolve(result)
+            }
+
         }, { noAck: false })
     })
-
-
 }

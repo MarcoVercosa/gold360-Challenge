@@ -46,19 +46,11 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
             //send request update/create register to queue
             checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { persistent: true })
 
-            let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD()
+            let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD(validateToken.result.fullName)
             console.log("dataconsumed")
+            console.log(dataConfirmConsumed)
 
-            if (dataConfirmConsumed.fullName == validateToken.result.fullName) {
-                console.log("IFdataConsume")
-                response.send({ sucess: true, token, result: dataConfirmConsumed })
-                return { sucess: true, token, result: dataConfirmConsumed }
-
-            } else {
-                console.log("não caiu no IF")
-                return { sucess: true, token, result: dataConfirmConsumed }
-            }
-
+            return { sucess: true, token, result: dataConfirmConsumed }
 
         } else {
             return { sucess: false, token, result: "Token invalid" }
