@@ -1,7 +1,6 @@
 import { Channel } from "amqplib"
 
 export interface IParams {
-    isAdmin: boolean
     request: any;
     response: any;
     firstName: string,
@@ -16,6 +15,6 @@ export interface IRequestRegisterUseCase {
     Execute: ((Params: IParams) => Promise<{
         sucess: boolean;
         token: string;
-        result: number | string
-    }>)
+        result: number | string | Promise<string>
+    }> | Promise<any>)
 }

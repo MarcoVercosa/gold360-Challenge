@@ -19,7 +19,7 @@ export class ConsumeQueueCreatRegisterUpdateController implements IConsumeQueueC
     async Handle(): Promise<any> {
         config()
         try {
-            await this.consumeQueueCreatRegisterUpdateRequestUseCase.ConsumeQueue()
+            await this.consumeQueueCreatRegisterUpdateRequestUseCase.Execute()
 
         }
         catch (err: any) {
