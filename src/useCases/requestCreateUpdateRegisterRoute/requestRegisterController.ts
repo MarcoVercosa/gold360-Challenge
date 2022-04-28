@@ -20,8 +20,8 @@ export class RequestRegisterController implements IRequestRegisterController {
         try {
             result = await this.requestRegisterUseCase.Execute({ request, response, firstName, fullName, email, password }) as any
             console.log("controller")
-            console.log(result)
             if (result?.sucess) {
+                console.log("Enviado reply para cliente")
                 return { result, codeResult: 200 }
             }
             else {

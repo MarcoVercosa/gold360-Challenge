@@ -2,17 +2,23 @@ import { config } from "dotenv"
 import { IRequestRegisterRepository } from '../../entities/requestRegisterRoute/IRequestRegisterRepository';
 import { IRequestRegisterUseCase, IParams } from '../../entities/requestRegisterRoute/IRequestRegisterUseCase';
 import { ValidadeToken } from '../../http/midwares/validateToken';
-import { CreateQueueRegisterUpdate, CreateQueueConfirmRegisterUpdate, ConsumeQueueConfirmCreateUpdateRegisterBD } from '../../manageQueues';
+import { CreateQueue, CreateQueueConfirmRegisterUpdate, ConsumeQueueConfirmCreateUpdateRegisterBD } from '../../manageQueues';
 
+config()
 export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
+    dataQueueConfirmConsumed: any
+
     constructor(
+
         private requestRegisterRepository: IRequestRegisterRepository
-    ) { }
+    ) {
+
+    }
 
 
     async CheckFirstQueueCreateUpdateRegisterBD() {
-        const isCreateQueue = await CreateQueueRegisterUpdate()
+        const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string)
         return isCreateQueue
     }
     async CheckFirstQueueConfirmCreateUpdateRegisterBD() {
@@ -21,7 +27,7 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
     }
 
     async Execute({ request, response, firstName, fullName, email, password }: IParams) {
-        config()
+
         //checks if queues is created and accessible
         const checkFirstQueueCreateUpdateRegisterBD = await this.CheckFirstQueueCreateUpdateRegisterBD()
         const checkFirstQueueConfirmCreateUpdateRegisterBD = await this.CheckFirstQueueConfirmCreateUpdateRegisterBD()
@@ -39,26 +45,24 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
             //send request update/create register to queue
             checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { persistent: true })
-            //persistent:true = Use disk to store data when memory is very high
-            let dataConfirmConsumed: any
 
-            // await checkFirstQueueConfirmCreateUpdateRegisterBD.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
-            //     console.log("escutando queueConfirm")
-            //     let dataConsume: any = await JSON.parse(data.content)///change from  buffer to object  
-            //     if (dataConsume.fullName == validateToken.result.fullName) {
-            //         console.log("dataConsume")
-            //         console.log(dataConsume.message)
-            //         dataConfirmConsumed = await dataConsume.message
+            setTimeout(async () => {
+                let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD()
+                if (dataConfirmConsumed.fullName == validateToken.result.fullName) {
+                    console.log("IFdataConsume")
+                    response.send({ sucess: true, token, result: dataConfirmConsumed })
+                    return { sucess: true, token, result: dataConfirmConsumed }
 
-            //     }
+                } else {
+                    console.log("não caiu no IF")
+                    return { sucess: true, token, result: dataConfirmConsumed }
+                }
+            }, 1000)
 
-            // })
-            let dataconsumed = await ConsumeQueueConfirmCreateUpdateRegisterBD(checkFirstQueueConfirmCreateUpdateRegisterBD)
             console.log("dataconsumed")
-            console.log(await dataconsumed)
 
 
-            return { sucess: true, token, result: await dataconsumed }
+
 
         } else {
             return { sucess: false, token, result: "Token invalid" }
