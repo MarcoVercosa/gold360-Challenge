@@ -1,7 +1,6 @@
-import { ConsumeQueueCreatRegisterUpdateController } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestController";
+import { ConsumeQueueCreatRegisterUpdateController } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestController"
 import { ConsumeQueueCreatRegisterUpdateRequestUseCase } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestUseCase";
 import { CreateRegisterUpdateRequestRepository } from "./repository/CreatRegisterUpdateRequestRepository";
-import { ConnectAMQPQueueServe } from "./manageQueues";
 import { config } from "dotenv"
 
 config()

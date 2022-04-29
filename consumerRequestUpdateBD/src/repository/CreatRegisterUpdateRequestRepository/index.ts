@@ -12,6 +12,11 @@ export class CreateRegisterUpdateRequestRepository implements ICreatRegisterUpda
         return isAdmin
     }
 
+    //https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html
+    //1 the affected-rows value per row is 1 if the row is inserted as a new row, 
+    //2 if an existing row is updated, 
+    //and 0 if an existing row is set to its current values.
+
     async RequestRegisterCreateUpdateRepository({ firstName, fullName, email, password, lastUpDateBy }: IParams) {
         let result = await prisma.$executeRaw`INSERT INTO Registers SET fullName = ${fullName}, 
             firstName = ${firstName},  email = ${email}, password = ${password}, active = ${true}, canceled = ${false}, lastUpDateBy = ${lastUpDateBy}
