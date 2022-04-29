@@ -34,6 +34,7 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
         if (!channelOpen) {
             return null
         }
+
         this.connectionQueue = channelOpen
         let resultData: Promise<{ sucess: boolean, result: string }>
         resultData = await channelOpen.consume(this.nameQueueCreateUpdateBD,
