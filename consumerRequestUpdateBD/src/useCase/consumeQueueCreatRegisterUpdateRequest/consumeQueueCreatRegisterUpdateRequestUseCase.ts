@@ -1,4 +1,3 @@
-
 import { ICreatRegisterUpdateRequestUseCase, IParams } from "../../entities/CreatRegisterUpdateRequest/ICreatRegisterUpdateRequestUseCase"
 import { CreateRegisterUpdateRequestRepository } from "../../repository/CreatRegisterUpdateRequestRepository"
 import { ConnectAMQPQueueServe } from "../../manageQueues";
@@ -25,7 +24,7 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
         this.nameQueueConfirmCreateUpdateBD = nameQueueConfirmCreateUpdateBD
         this.dataQueueConsumed = this.ConsumeQueueCreateUpdateBD() as any
         //to intance de class, call function check connection with channel, activate the listener consumer and store in object the data consumed 
-        //is greate to execute the consume lister once
+        //is greate to execute the consume lister connection once
     }
 
     async ConsumeQueueCreateUpdateBD(): Promise<{ sucess: boolean, result: string } | null> {
@@ -68,17 +67,17 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
 
             if (resultBD == 0) {
                 console.log({ sucess: true, result: "The Register is NOT MODIFIELD" })
-                this.SendConfirmQueueCreateUpdateBD({ fullName: this.dataQueueConsumed.fullName, message: "The Register is NOT MODIFIELD" })
+                this.SendConfirmQueueCreateUpdateBD({ comparatorKey: this.dataQueueConsumed.comparatorKey, message: "The Register is NOT MODIFIELD" })
                 return { sucess: true, result: "The Register is NOT MODIFIELD" } as any
             }
             if (resultBD == 1) {
                 console.log({ sucess: true, result: "Register CREATED successfully" })
-                this.SendConfirmQueueCreateUpdateBD({ fullName: this.dataQueueConsumed.fullName, message: "Register CREATED successfully" })
+                this.SendConfirmQueueCreateUpdateBD({ comparatorKey: this.dataQueueConsumed.comparatorKey, message: "Register CREATED successfully" })
                 return { sucess: true, result: "Register CREATED successfully" }
             }
             if (resultBD == 2) {
                 console.log({ sucess: true, result: "Register UPDATED successfully" })
-                this.SendConfirmQueueCreateUpdateBD({ fullName: this.dataQueueConsumed.fullName, message: "Register UPDATED successfully" })
+                this.SendConfirmQueueCreateUpdateBD({ comparatorKey: this.dataQueueConsumed.comparatorKey, message: "Register UPDATED successfully" })
                 return { sucess: true, result: "Register UPDATED successfully" }
             }
         } catch (err: any) {

@@ -12,33 +12,4 @@ async function ConnectAMQPQueueServe(AMQPQueueServer: string): Promise<{ channel
     }
 }
 
-
-// async function ConsumeQueueCreateUpdateBD(AMQPQueueServer: string, nameQueue: string): Promise<IParams | null> {
-
-//     let OpenConectionQueue = await ConnectAMQPQueueServeCreateUpdateBD(AMQPQueueServer, nameQueue)
-//     if (!OpenConectionQueue) {
-//         return null
-//     }
-//     let resultData: Promise<IParams>
-//     resultData = await OpenConectionQueue.consume(nameQueue,
-//         async (data: any) => {
-//             let dataConsume: any = await JSON.parse(data.content)//change de buffer to string and JSON.parse to object                
-//             console.log(dataConsume)
-//             OpenConectionQueue?.ack(data)
-//             return dataConsume
-//         }, { noAck: false }
-//     ) as any
-
-//     return resultData
-// }
-
-// async function SendConfirmQueueCreateUpdateBD(AMQPQueueServer: string, nameQueue: string, data: string): Promise<any> {
-//     let OpenConectionQueue = await ConnectAMQPQueueServeCreateUpdateBD(AMQPQueueServer, nameQueue)
-//     if (!OpenConectionQueue) {
-//         return null
-//     }
-//     OpenConectionQueue.sendToQueue(nameQueue, Buffer.from(JSON.stringify(data)), { persistent: true })
-
-// }
-
 export { ConnectAMQPQueueServe }

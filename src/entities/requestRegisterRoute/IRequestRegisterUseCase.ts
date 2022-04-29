@@ -2,8 +2,6 @@ import { Channel } from "amqplib"
 
 export interface IParams {
     request: any;
-    response: any;
-    firstName: string,
     fullName: string,
     email: string,
     password: string,

@@ -14,6 +14,7 @@ export interface IParams {
     fullName: string,
     email: string,
     password: string,
+    comparatorKey: string
 
 }
 
