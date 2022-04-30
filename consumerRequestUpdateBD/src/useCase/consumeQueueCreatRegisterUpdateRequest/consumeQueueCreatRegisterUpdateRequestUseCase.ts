@@ -49,7 +49,7 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
 
     async SendConfirmQueueCreateUpdateBD(data: any): Promise<any> {
         console.log("Enviado CONFIRMAÇÃO para: " + this.nameQueueConfirmCreateUpdateBD)
-        this.connectionQueue.sendToQueue(this.nameQueueConfirmCreateUpdateBD, Buffer.from(JSON.stringify(data)), { persistent: true })
+        this.connectionQueue.sendToQueue(this.nameQueueConfirmCreateUpdateBD, Buffer.from(JSON.stringify(data)))
     }
 
     async Execute() {

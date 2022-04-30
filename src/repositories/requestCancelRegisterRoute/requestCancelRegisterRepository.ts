@@ -1,17 +1,17 @@
 import { PrismaClient } from '@prisma/client';
-import { IRequestCancelRegisterRepository } from '../../entities/requestCancelRoute/IRequestCancelRepository';
+import { IRequestCancelActiveRegisterRepository } from '../../entities/requestCancelRoute/IRequestCancelActiveRegisterRepository';
 import { UserIsAdminConfirmRepository } from '../userisAdminConfirm/userIsAdminConfirm';
 
 const prisma = new PrismaClient()
 
-export class RequestCancelRegisterRepository implements IRequestCancelRegisterRepository {
+export class RequestCancelActiveRegisterRepository implements IRequestCancelActiveRegisterRepository {
 
     async UserIsAdminConfirm(id: number, fullName: string): Promise<boolean> {
         let isAdmin: any = await UserIsAdminConfirmRepository(id, fullName)
         return isAdmin
     }
 
-    async RequestCancelRepository(id: number, fullName: string) {
+    async RequestCancelActiveRegisterRepository(id: number, fullName: string) {
         let result: number = await prisma.$executeRaw`UPDATE Registers SET canceled = ${true}, active= ${false} WHERE id = ${id} AND fullName = ${fullName}`
         return result
     }

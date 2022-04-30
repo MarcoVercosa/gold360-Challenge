@@ -1,9 +1,9 @@
-import { RequestCancelRegisterRepository } from "../../repositories/requestCancelRegisterRoute/requestCancelRegisterRepository";
-import { RequestCancelRegisterUseCase } from "../../useCases/requestCancelRegisterRoute/requestCancelRegisterUseCase"
-import { RequestCancelRegisterController } from "../../useCases/requestCancelRegisterRoute/requestCancelRegisterController";
+import { RequestCancelActiveRegisterRepository } from "../../repositories/requestCancelRegisterRoute/requestCancelRegisterRepository";
+import { RequestCancelActiveRegisterUseCase } from "../../useCases/requestCancelRegisterRoute/requestCancelRegisterUseCase"
+import { RequestCancelActiveRegisterController } from "../../useCases/requestCancelRegisterRoute/requestCancelRegisterController";
 
-const requestCancelRegisterRepository = new RequestCancelRegisterRepository()
-const requestLCancelRegisterUseCase = new RequestCancelRegisterUseCase(requestCancelRegisterRepository)
-const requestCancelRegisterController = new RequestCancelRegisterController(requestLCancelRegisterUseCase)
+const requestCancelRegisterRepository = new RequestCancelActiveRegisterRepository()
+const requestLCancelRegisterUseCase = new RequestCancelActiveRegisterUseCase(requestCancelRegisterRepository)
+const requestCancelRegisterController = new RequestCancelActiveRegisterController(requestLCancelRegisterUseCase)
 
 export { requestCancelRegisterController }

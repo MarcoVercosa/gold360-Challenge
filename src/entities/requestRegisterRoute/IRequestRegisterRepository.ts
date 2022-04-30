@@ -1,4 +1,4 @@
-export interface IParams {
+interface IParams {
     firstName: string,
     fullName: string,
     email: string,

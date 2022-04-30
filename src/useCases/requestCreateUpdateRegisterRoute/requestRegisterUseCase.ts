@@ -12,12 +12,7 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
     dataQueueConfirmConsumed: any
 
-    constructor(
-
-        private requestRegisterRepository: IRequestRegisterRepository
-    ) {
-
-    }
+    constructor() { }
 
     async CheckFirstQueueCreateUpdateRegisterBD() {
         const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string)
