@@ -60,7 +60,7 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
             }
 
             //send request update/create register to queue
-            checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { persistent: true })
+            checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
             //after the data is sent to the queue. We will request consumption of the confirmation queue. 
             //Where it will be validated through the comparison key if it is the response of the current request
             let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD(dataJSON.comparatorKey)

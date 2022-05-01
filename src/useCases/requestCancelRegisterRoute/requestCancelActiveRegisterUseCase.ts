@@ -7,7 +7,7 @@ export class RequestCancelActiveRegisterUseCase implements IRequestCancelActiveR
         private requestCancelActiveRegisterRepository: IRequestCancelActiveRegisterRepository
     ) { }
 
-    async Execute(token: string, id: number, fullName: string) {
+    async Execute(token: string, id: number, email: string) {
         //check validate token
         let validateToken: any = ValidadeToken(token)
 
@@ -16,7 +16,7 @@ export class RequestCancelActiveRegisterUseCase implements IRequestCancelActiveR
             let isAdminRepository: any = await this.requestCancelActiveRegisterRepository.UserIsAdminConfirm(validateToken.result.id, validateToken.result.fullName)
 
             if (isAdminRepository[0].isAdmin) {
-                let result = await this.requestCancelActiveRegisterRepository.RequestCancelActiveRegisterRepository(id, fullName)
+                let result = await this.requestCancelActiveRegisterRepository.RequestCancelActiveRegisterRepository(id, email)
                 return { sucess: true, token, result }
             } else {
                 return { sucess: false, token, result: "Administrator permission is required" }

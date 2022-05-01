@@ -22,7 +22,7 @@ export interface ICreatRegisterUpdateRequestUseCase {
 
     // ConnectAMQPQueueServer: () => Promise<Channel | null>
     // ConsumeQueue(): Promise<{ sucess: boolean, result: string } | null>
-    Execute(): Promise<{ sucess: boolean, result: string }>
+    Execute(dataQueueConsumed: IParams): Promise<{ sucess: boolean, comparatorKey: string, message: string }>
 }
 
 export interface ITokenDecoded {

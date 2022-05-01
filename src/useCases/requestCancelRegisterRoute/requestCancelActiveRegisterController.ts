@@ -1,5 +1,5 @@
 import { IRequestCancelRegisterController } from "../../entities/requestCancelRoute/IRequestCancelRegisterController";
-import { RequestCancelActiveRegisterUseCase } from "./requestCancelRegisterUseCase";
+import { RequestCancelActiveRegisterUseCase } from "./requestCancelActiveRegisterUseCase";
 
 interface IParams {
     id: number;

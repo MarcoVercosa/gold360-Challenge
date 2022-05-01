@@ -23,10 +23,10 @@ function RequestRegisterValidatonInpunt({ fullName, email, password }: IParams):
 
     //VALIDATE FULLNAME AND FILL IN THE FIRST NAME VARIABLE
     if (fullName.length > 50 || fullName.length < 4 || null || undefined) {
-        return { sucess: false, result: "Full Name: Exceeded size limit or undefined" }
+        return { sucess: false, result: "Full Name: Exceeded size limit/min or undefined" }
     }
     if (fullName.split(" ").length < 2) {
-        return { sucess: false, result: "Full Name: Is required" }
+        return { sucess: false, result: "Full Name: Full Name is required" }
     }
     firstNameValidation = fullName.split(" ")[0]
     fullNameValidation = fullName
