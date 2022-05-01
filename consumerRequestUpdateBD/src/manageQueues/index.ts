@@ -7,8 +7,11 @@ async function ConnectAMQPQueueServe(AMQPQueueServer: string): Promise<{ channel
         console.log("Connected to habbitMQ." + AMQPQueueServer)
         return { channelOpen, connection }
     } catch (err) {
-        console.log("Error to connect to RabbitMQ." + err)
-        return null
+        setTimeout(() => {
+            ConnectAMQPQueueServe(AMQPQueueServer)
+        }, 2000)
+        console.log("Error to connect to RabbitMQ:" + err + "New try in 2 secs")
+
     }
 }
 

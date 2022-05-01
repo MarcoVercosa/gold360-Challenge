@@ -1,4 +1,4 @@
-import { ConsumeQueueCreateRegisterUpdateController } from "./useCase/consumeQueueCreatRegisterUpdateRequest/_willBeRemoveconsumeQueueCreatRegisterUpdateRequestController"
+import { ConsumeQueueCreateRegisterUpdateController } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestController"
 import { ConsumeQueueCreatRegisterUpdateRequestUseCase } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestUseCase";
 import { CreateRegisterUpdateRequestRepository } from "./repository/CreatRegisterUpdateRequestRepository";
 

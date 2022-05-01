@@ -13,7 +13,10 @@ export async function CreateQueue(queueName: string): Promise<Channel | null> {
         console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
         return channel
     } catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err)
+        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 2 secs")
+        setTimeout(() => {
+            CreateQueue(queueName)
+        }, 2000)
         return null
     }
 }
