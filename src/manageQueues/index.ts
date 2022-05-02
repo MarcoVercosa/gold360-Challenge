@@ -2,7 +2,7 @@
 import { config } from "dotenv"
 import { Channel, connect } from "amqplib"
 
-export async function CreateQueue(queueName: string): Promise<Channel | null> {
+export async function CreateQueue(queueName: string): Promise<Channel | void> {
     config()
     try {
         const connection = await connect(process.env.AMQP_QUEUE_SERVER as string)
@@ -13,11 +13,11 @@ export async function CreateQueue(queueName: string): Promise<Channel | null> {
         console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
         return channel
     } catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 2 secs")
+        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 5 secs")
         setTimeout(() => {
             CreateQueue(queueName)
-        }, 2000)
-        return null
+        }, 5000)
+        //return null
     }
 }
 
@@ -45,7 +45,8 @@ export async function ConsumeQueueConfirmCreateUpdateRegisterBD(comparatorKey: s
         }
         OpenConectionQueue.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
             let result = await JSON.parse(data.content)///change from  buffer to object       
-
+            // console.log("checkando para " + comparatorKey)
+            // console.log(result)
             if (result.comparatorKey == comparatorKey) {
                 console.log("caiu IF consume")
                 OpenConectionQueue?.ack(data)

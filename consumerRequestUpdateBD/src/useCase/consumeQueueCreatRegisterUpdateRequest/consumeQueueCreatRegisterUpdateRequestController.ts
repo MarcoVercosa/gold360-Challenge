@@ -26,7 +26,6 @@ export class ConsumeQueueCreateRegisterUpdateController implements IConsumeQueue
         //is greate to execute the consume lister connection once
     }
 
-
     async Handle(): Promise<any> {
         try {
             console.log("Requested connection creation for consume")
@@ -35,19 +34,22 @@ export class ConsumeQueueCreateRegisterUpdateController implements IConsumeQueue
                 return null
             }
             this.connectionQueue = channelOpen
+            //the only conection
 
             channelOpen.consume(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string,
                 async (data: any) => {
                     let dataConsume: IParams = await JSON.parse(data.content)///change from  buffer to object                
                     channelOpen?.ack(data)
                     let result = await this.consumeQueueCreatRegisterUpdateRequestUseCase.Execute(dataConsume) as Promise<{ sucess: boolean, comparatorKey: string, message: string }>
+                    //request store data in BD
                     await this.consumeQueueCreatRegisterUpdateRequestUseCase.SendConfirmQueueCreateUpdateBD(this.connectionQueue, result)
+                    //sendo to confirmation to queue
                 }, { noAck: false }
             ) as any
         }
         catch (err: any) {
             await this.consumeQueueCreatRegisterUpdateRequestUseCase
-                .SendConfirmQueueCreateUpdateBD(this.connectionQueue, { sucess: true, comparatorKey: "", message: err })
+                .SendConfirmQueueCreateUpdateBD(this.connectionQueue, { sucess: false, comparatorKey: "", message: err })
             console.log({ result: err, codeResult: 500 })
         }
     }

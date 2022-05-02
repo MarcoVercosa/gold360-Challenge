@@ -9,7 +9,7 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
         private createRegisterUpdateRequestRepository: CreateRegisterUpdateRequestRepository, //repository bd
     ) { }
 
-    async SendConfirmQueueCreateUpdateBD(conection: Channel, data: any): Promise<any> {
+    async SendConfirmQueueCreateUpdateBD(conection: Channel, data: any): Promise<void> {
         console.log("Enviado CONFIRMAÇÃO para: " + process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD)
         conection.sendToQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(data)))
     }
@@ -17,8 +17,9 @@ export class ConsumeQueueCreatRegisterUpdateRequestUseCase implements ICreatRegi
     async Execute(dataQueueConsumed: IParams): Promise<any> {
         console.log(dataQueueConsumed)
         try {
-            let isAdmin = await this.createRegisterUpdateRequestRepository.UserIsAdminConfirm({ idToken: dataQueueConsumed.validateToken.result.id, fullNameToken: dataQueueConsumed.validateToken.result.fullName })
-            if (!isAdmin) { return { sucess: true, comparatorKey: "", message: "Permission denied" } }//cancel if is not admin
+            let isAdmin: boolean = await this.createRegisterUpdateRequestRepository.UserIsAdminConfirm({ idToken: dataQueueConsumed.validateToken.result.id, fullNameToken: dataQueueConsumed.validateToken.result.fullName })
+            if (!isAdmin) { return { sucess: true, comparatorKey: "", message: "Permission denied" } }
+            //cancel if is not admin
 
             let resultBD: number = await this.createRegisterUpdateRequestRepository.RequestRegisterCreateUpdateRepository({
                 firstName: dataQueueConsumed.firstName,

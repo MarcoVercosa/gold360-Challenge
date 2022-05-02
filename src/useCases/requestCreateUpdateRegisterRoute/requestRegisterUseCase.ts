@@ -1,3 +1,4 @@
+import { Channel } from "amqplib";
 import { config } from "dotenv"
 import { v4 as uuidV4 } from 'uuid';
 import { IRequestRegisterRepository } from '../../entities/requestRegisterRoute/IRequestRegisterRepository';
@@ -14,12 +15,12 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
     constructor() { }
 
-    async CheckFirstQueueCreateUpdateRegisterBD() {
+    async CheckFirstQueueCreateUpdateRegisterBD(): Promise<Channel | any> {
         const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string)
         return isCreateQueue
     }
     async CheckFirstQueueConfirmCreateUpdateRegisterBD() {
-        const isCreateQueue = await CreateQueueConfirmRegisterUpdate()
+        const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
         return isCreateQueue
     }
 
@@ -27,9 +28,9 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
         console.log(uuidV4())
 
         //checks if queues is created and accessible
-        const checkFirstQueueCreateUpdateRegisterBD = await this.CheckFirstQueueCreateUpdateRegisterBD()
-        const checkFirstQueueConfirmCreateUpdateRegisterBD = await this.CheckFirstQueueConfirmCreateUpdateRegisterBD()
-        if (!checkFirstQueueCreateUpdateRegisterBD || !checkFirstQueueConfirmCreateUpdateRegisterBD) {
+        const connectionQueueCreateUpdateRegisterBD = await this.CheckFirstQueueCreateUpdateRegisterBD()
+        // const connectionQueueConfirmCreateUpdateRegisterBD = await this.CheckFirstQueueConfirmCreateUpdateRegisterBD()
+        if (!connectionQueueCreateUpdateRegisterBD) {
             return { sucess: false, token: "", result: "Error to connect to RabbitMQ. Queue failed: create_update_register_bd / confirm_create_update_register_bd." }
         }
 
@@ -60,12 +61,11 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
             }
 
             //send request update/create register to queue
-            checkFirstQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
+            connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
             //after the data is sent to the queue. We will request consumption of the confirmation queue. 
             //Where it will be validated through the comparison key if it is the response of the current request
             let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD(dataJSON.comparatorKey)
             console.log("dataconsumed")
-            console.log(dataConfirmConsumed)
 
             return { sucess: true, token, result: dataConfirmConsumed }
 
