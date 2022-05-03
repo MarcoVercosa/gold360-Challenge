@@ -23,6 +23,7 @@
     "@prisma/client": "^3.12.0",
     "@types/amqplib": "^0.8.2",
     "amqplib": "^0.8.0",
+    "axios": "^0.27.2",
     "dotenv": "^16.0.0",
     "fastify": "^4.0.0-rc.1",
     "jsonwebtoken": "^8.5.1",

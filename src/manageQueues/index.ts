@@ -28,7 +28,7 @@ export async function CreateQueueConfirmRegisterUpdate(): Promise<Channel | null
         const channel = await connection.createChannel()
         await channel.assertQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string) //somente criada se a fila não existir
 
-        setTimeout(function () { connection.close(); }, 10000);//close conection after 10 seconds
+        //setTimeout(function () { connection.close(); }, 10000);//close conection after 10 seconds
         console.log("Connected to habbitMQ. Queue created: confirm_create_update_register_bd")
         return channel
     } catch (err) {
@@ -39,18 +39,18 @@ export async function CreateQueueConfirmRegisterUpdate(): Promise<Channel | null
 
 export async function ConsumeQueueConfirmCreateUpdateRegisterBD(comparatorKey: string) {
     return new Promise(async (resolve) => {
-        let OpenConectionQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
-        if (!OpenConectionQueue) {
+        let openConectionQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
+        if (!openConectionQueue) {
             return null
         }
-        OpenConectionQueue.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
+        //openConectionQueue.prefetch(1, false)
+        openConectionQueue.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
+            console.log("Data receveid")
             let result = await JSON.parse(data.content)///change from  buffer to object       
-            // console.log("checkando para " + comparatorKey)
-            // console.log(result)
             if (result.comparatorKey == comparatorKey) {
-                console.log("caiu IF consume")
-                OpenConectionQueue?.ack(data)
-                OpenConectionQueue?.close()
+                console.log("caiu no if")
+                openConectionQueue?.ack(data)
+                openConectionQueue?.close()
                 resolve(result)
             }
         }, { noAck: false })

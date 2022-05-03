@@ -31,10 +31,12 @@ export class ConsumeQueueCreateRegisterUpdateController implements IConsumeQueue
             console.log("Requested connection creation for consume")
             let { channelOpen } = await ConnectAMQPQueueServe(process.env.AMQP_QUEUE_SERVER as string)
             if (!channelOpen) {
+                console.log("return null")
                 return null
             }
             this.connectionQueue = channelOpen
             //the only conection
+            console.log("Consume Connected")
 
             channelOpen.consume(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string,
                 async (data: any) => {

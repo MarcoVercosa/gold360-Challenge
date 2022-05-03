@@ -25,7 +25,6 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
     }
 
     async Execute({ request, fullName, email, password }: IParams) {
-        console.log(uuidV4())
 
         //checks if queues is created and accessible
         const connectionQueueCreateUpdateRegisterBD = await this.CheckFirstQueueCreateUpdateRegisterBD()
@@ -39,7 +38,6 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
         let validateToken: any = ValidadeToken(token)
 
         if (validateToken.auth) {
-
             //validate de inputs
             let validateInputs = RequestRegisterValidatonInpunt({ fullName, email, password })
             if (!validateInputs.sucess) {
@@ -62,16 +60,32 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
 
             //send request update/create register to queue
             connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
+
             //after the data is sent to the queue. We will request consumption of the confirmation queue. 
             //Where it will be validated through the comparison key if it is the response of the current request
-            let dataConfirmConsumed: any = await ConsumeQueueConfirmCreateUpdateRegisterBD(dataJSON.comparatorKey)
-            console.log("dataconsumed")
+            //if after 2.5 second don't receive any response, the timeOut will response the request
+            async function Busca() {
+                return new Promise((resolve, reject) => {
+                    async function Buscando() {
+                        let dataConsumed: any = new Promise((resolve, reject) => {
+                            resolve(ConsumeQueueConfirmCreateUpdateRegisterBD(dataJSON.comparatorKey))
+                        })
+                        let checkIfReturn = new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                resolve("Internal error. Try again")
+                            }, 2500)
+                        })
+                        let data = await Promise.race([dataConsumed, checkIfReturn])
+                        resolve(data)
+                    }
+                    Buscando()
+                })
+            }
 
-            return { sucess: true, token, result: dataConfirmConsumed }
+            return { sucess: true, token, result: await Busca() }
 
         } else {
             return { sucess: false, token, result: "Token invalid" }
         }
     }
-
 }
