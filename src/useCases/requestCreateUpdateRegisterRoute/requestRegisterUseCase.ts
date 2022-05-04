@@ -19,33 +19,28 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
         const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string)
         return isCreateQueue
     }
-    async CheckFirstQueueConfirmCreateUpdateRegisterBD() {
-        const isCreateQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
-        return isCreateQueue
-    }
 
     async Execute({ request, fullName, email, password }: IParams) {
 
         //checks if queues is created and accessible
         const connectionQueueCreateUpdateRegisterBD = await this.CheckFirstQueueCreateUpdateRegisterBD()
-        // const connectionQueueConfirmCreateUpdateRegisterBD = await this.CheckFirstQueueConfirmCreateUpdateRegisterBD()
         if (!connectionQueueCreateUpdateRegisterBD) {
             return { sucess: false, token: "", result: "Error to connect to RabbitMQ. Queue failed: create_update_register_bd / confirm_create_update_register_bd." }
         }
 
         const token = request.headers['x-access-token'] as string;
-        //validate token
+        //VALIDATE TOKEN
         let validateToken: any = ValidadeToken(token)
 
         if (validateToken.auth) {
-            //validate de inputs
+            //VALIDATE DE INPUTS
             let validateInputs = RequestRegisterValidatonInpunt({ fullName, email, password })
             if (!validateInputs.sucess) {
                 return { sucess: false, token, result: validateInputs.result }
             }
 
             let { firstNameValidate, fullNameValidate, emailValidate, passwordValidate } = validateInputs.result as any
-            //centralize the data and send to queue
+            //CENTRALIZE THE DATA AND SEND TO QUEUE
             let dataJSON = {
                 validateToken,
                 firstName: firstNameValidate,
@@ -53,36 +48,35 @@ export class RequestRegisterUseCase implements IRequestRegisterUseCase {
                 email: emailValidate,
                 password: passwordValidate,
                 comparatorKey: uuidV4()
-                //this key is a comparison string. Upon receiving the queue confirmation, 
-                //you will compare this key with the one received. If the request key is the same
-                // as the one received from the confirmation queue, then it is indeed the request's response
+                //THIS KEY IS A COMPARISON STRING. UPON RECEIVING THE QUEUE CONFIRMATION, 
+                //YOU WILL COMPARE THIS KEY WITH THE ONE RECEIVED. IF THE REQUEST KEY IS THE SAME
+                // AS THE ONE RECEIVED FROM THE CONFIRMATION QUEUE, THEN IT IS INDEED THE REQUEST'S RESPONSE
             }
 
-            //send request update/create register to queue
-            connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)))
+            //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS
+            let rpc = await connectionQueueCreateUpdateRegisterBD.assertQueue('', { exclusive: true })
+            console.log("Create queue RPC temporary -- queue of return confirmation--  wit the name ", rpc)
+            connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
+            //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE
 
-            //after the data is sent to the queue. We will request consumption of the confirmation queue. 
-            //Where it will be validated through the comparison key if it is the response of the current request
-            //if after 2.5 second don't receive any response, the timeOut will response the request
-            async function Busca() {
+            //AFTER THE DATA IS SENT TO THE QUEUE. WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
+            //WHERE IT WILL BE VALIDATED THROUGH THE COMPARISON KEY IF IT IS THE RESPONSE OF THE CURRENT REQUEST
+
+            async function Retorno() {
                 return new Promise((resolve, reject) => {
-                    async function Buscando() {
-                        let dataConsumed: any = new Promise((resolve, reject) => {
-                            resolve(ConsumeQueueConfirmCreateUpdateRegisterBD(dataJSON.comparatorKey))
-                        })
-                        let checkIfReturn = new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                resolve("Internal error. Try again")
-                            }, 2500)
-                        })
-                        let data = await Promise.race([dataConsumed, checkIfReturn])
-                        resolve(data)
-                    }
-                    Buscando()
+                    connectionQueueCreateUpdateRegisterBD.consume(rpc.queue, (data: any) => {
+                        console.log("confirmação recebida da fila ", rpc.queue)
+                        if (data.properties.correlationId == dataJSON.comparatorKey) {
+                            console.log("recebido confirmação ", JSON.parse(data.content))
+                            resolve(JSON.parse(data.content))
+                        }
+                    })
+                }).catch((err) => {
+                    return err
                 })
             }
 
-            return { sucess: true, token, result: await Busca() }
+            return { sucess: true, token, result: await Retorno() }
 
         } else {
             return { sucess: false, token, result: "Token invalid" }

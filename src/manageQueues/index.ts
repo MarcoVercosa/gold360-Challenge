@@ -6,10 +6,22 @@ export async function CreateQueue(queueName: string): Promise<Channel | void> {
     config()
     try {
         const connection = await connect(process.env.AMQP_QUEUE_SERVER as string)
+        connection.once("close", () => {
+            console.log("conexão encerrada")
+        })
         const channel = await connection.createChannel()
         await channel.assertQueue(queueName) //somente criada se a fila não existir
 
-        setTimeout(function () { connection.close(); }, 10000);//close conection after 10 seconds
+        setTimeout(function () {
+            try {
+                connection.close()
+                //close conection after 10 seconds
+            }
+            catch (err) {
+                console.log("Unable to close a connection. Maybe due to some failure the connection is already closed")
+            }
+        }, 10000);
+
         console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
         return channel
     } catch (err) {
@@ -17,7 +29,6 @@ export async function CreateQueue(queueName: string): Promise<Channel | void> {
         setTimeout(() => {
             CreateQueue(queueName)
         }, 5000)
-        //return null
     }
 }
 
