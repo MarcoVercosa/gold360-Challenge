@@ -1,5 +1,5 @@
 //require('dotenv').config()
-//marco
+
 import { config } from "dotenv"
 import { Channel, connect } from "amqplib"
 
