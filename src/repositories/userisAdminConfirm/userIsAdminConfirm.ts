@@ -4,7 +4,7 @@ import { IUserIsAdminConfirm } from '../../entities/userIsAdminConfirm/IUserIsAd
 
 const prisma = new PrismaClient()
 
-export async function UserIsAdminConfirmRepository(id: number, fullName: string): Promise<IUserIsAdminConfirm> {
-    let isAdmin: any = await prisma.$queryRaw`SELECT isAdmin from Operators WHERE id = ${id} AND fullName = ${fullName}`
+export async function UserIsAdminConfirmRepository({ idToken, fullNameToken }: { idToken: string, fullNameToken: string }): Promise<IUserIsAdminConfirm> {
+    let isAdmin: any = await prisma.$queryRaw`SELECT isAdmin from Operators WHERE id = ${idToken} AND fullName = ${fullNameToken}`
     return isAdmin
 }

@@ -1,0 +1,10 @@
+import { ConsumerCreateUpdateRegisterController } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumeQueueCreatRegisterUpdateRequestController"
+import { ConsumerCreateUpdateRegisterUseCase } from "./useCase/consumeQueueCreatRegisterUpdateRequest/consumerCreateUpdateRegisterUseCase";
+import { ConsumerCreateUpdateRegisterRepository } from "./repository/CreatRegisterUpdateRequestRepository";
+
+
+let createRegisterUpdateRequestRepository = new ConsumerCreateUpdateRegisterRepository()
+let consumeQueueCreatRegisterUpdateRequestUseCase = new ConsumerCreateUpdateRegisterUseCase(createRegisterUpdateRequestRepository)
+let consumeQueueCreatRegisterUpdateController = new ConsumerCreateUpdateRegisterController(consumeQueueCreatRegisterUpdateRequestUseCase)
+
+consumeQueueCreatRegisterUpdateController.Handle()

@@ -1,5 +1,5 @@
 import Fastify from 'fastify'
-import { RequestRegister } from "./routes/requestRegister"
+import { RequestCreateUpdateRegister } from "./routes/requestCreateUpdateRegister"
 import { RequestCancelActiveRegister } from './routes/requestCancelActiveRegister'
 import { RequestLogin } from "./routes/requestLogin"
 import { PopulateBD } from './routes/_willRemovepopulateBD'
@@ -11,7 +11,7 @@ const fastifyServer = Fastify({
 })
 
 fastifyServer.register(RequestLogin) //login user
-fastifyServer.register(RequestRegister) //create user account
+fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
 fastifyServer.register(RequestCancelActiveRegister) // request if account is enabled or disabled
 //fastifyServer.register(RequestActiveRegister) //Activar
 

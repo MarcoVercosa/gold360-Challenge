@@ -14,7 +14,6 @@ async function Performance(){
       method: 'POST',
       url: 'http://localhost:3000/register',
       headers: {
-        origin: 'http://vidadafonte.com.br/android',
         'Content-Type': 'application/json',
         'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbE5hbWUiOiJNYXJjbyBBbnRvbmlvIFZlcsOnb3NhIGRhIFNpbHZhIiwiaWF0IjoxNjUxNjc2MDgwLCJleHAiOjE2NTE3NjI0ODB9.0MyNrRr3Mj0CfbYPMopJetqNi93GSIsEYRLtmMIhAMA'
       },

@@ -17,7 +17,7 @@ model Register {
   email          String   @unique @db.VarChar(50) //deve ser unico
   password       String   @db.VarChar(100)
   active         Boolean
-  canceled       Boolean
+  //canceled       Boolean
   created_at     DateTime @default(now()) //será do tipo data hora e o prisma fara automaticamente
   lastUpDateBy   String
   lastUpDateDate DateTime @default(now())

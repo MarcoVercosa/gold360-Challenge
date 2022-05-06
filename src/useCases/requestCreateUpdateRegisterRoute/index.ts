@@ -1,8 +1,8 @@
-import { RequestRegisterUseCase } from "./requestRegisterUseCase"
-import { RequestRegisterController } from "./requestRegisterController";
+import { RequestCreateUpdateRegisterUseCase } from "./requestCreateUpdateRegisterUseCase"
+import { RequestCreateUpdateRegisterController } from "./requestCreateUpdateRegisterController";
 
-const requestLRegisterUseCase = new RequestRegisterUseCase()
-const requestRegisterController = new RequestRegisterController(requestLRegisterUseCase)
+const requestLCreateUpdateRegisterUseCase = new RequestCreateUpdateRegisterUseCase()
+const requestCreateUpdateRegisterController = new RequestCreateUpdateRegisterController(requestLCreateUpdateRegisterUseCase)
 
 
-export { requestRegisterController }
+export { requestCreateUpdateRegisterController }

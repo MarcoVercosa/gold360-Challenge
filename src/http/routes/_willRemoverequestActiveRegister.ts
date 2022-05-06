@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
-import { requestActiveRegisterController } from '../../useCases/requestActiveRegisterRoute';
+import { requestActiveRegisterController } from '../../useCases/_willRemoverequestActiveRegisterRoute';
 
 interface IReturn {
     result: number | string;

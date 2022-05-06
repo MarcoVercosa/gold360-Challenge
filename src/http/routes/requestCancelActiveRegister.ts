@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
-import { requestCancelRegisterController } from '../../useCases/requestCancelRegisterRoute';
+import { requestCancelActiveRegisterController } from '../../useCases/requestCancelActiveRegisterRoute';
 
 interface IReturn {
     result: number | string;
@@ -9,7 +9,7 @@ interface IReturn {
 async function RequestCancelActiveRegister(fastify: FastifyInstance, options: FastifyPluginOptions) {
     fastify.post('/cancelactive', async (request, response) => {
 
-        let { result, codeResult }: IReturn = await requestCancelRegisterController.Handle(request)
+        let { result, codeResult }: IReturn = await requestCancelActiveRegisterController.Handle(request)
         response.code(codeResult).header('Content-Type', 'application/json; charset=utf-8').send(result)
     })
 }
