@@ -1,0 +1,25 @@
+{
+  "name": "consumerrequestcancelactive",
+  "version": "1.0.0",
+  "description": "Consumer route Cancel Active register",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devts": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
+    "start:debug:ts": "node --inspect --require ts-node/register src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.27",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.28.0",
+    "prisma": "^3.12.0"
+  }
+}

@@ -1,7 +1,6 @@
 interface IParams {
     fullName: string;
     email: string;
-    active: boolean
 }
 
 interface IReturn {
@@ -9,16 +8,14 @@ interface IReturn {
     result: {
         fullNameValidate: string,
         emailValidate: string,
-        activeValidate: boolean
     } | string;
 }
 
 
 
-function RequestCancelActiveValidationInpunt({ fullName, email, active }: IParams): IReturn {
+function RequestCancelValidationInpunt({ fullName, email }: IParams): IReturn {
     let fullNameValidation: string
     let emailValidation: string
-    let activeValidation: boolean
 
     if (fullName.length > 50 || fullName.length < 4 || fullName == null || fullName == undefined) {
         return { sucess: false, result: "Full Name: Exceeded size limit/min or undefined" }
@@ -29,20 +26,14 @@ function RequestCancelActiveValidationInpunt({ fullName, email, active }: IParam
     }
     emailValidation = email
 
-    console.log(typeof (active))
-    if (typeof (active) != "boolean") {
-        return { sucess: false, result: "Active: Boolean type not identified" }
-    }
-    activeValidation = active
 
     return {
         sucess: true,
         result: {
             fullNameValidate: fullNameValidation,
             emailValidate: emailValidation,
-            activeValidate: activeValidation
         }
     }
 }
 
-export { RequestCancelActiveValidationInpunt }
+export { RequestCancelValidationInpunt }

@@ -1,6 +1,6 @@
-export interface IRequestCancelActiveRegisterRepository {
+export interface IRequestCancelRegisterRepository {
     UserIsAdminConfirm: ({ idToken, fullNameToken }: { idToken: string, fullNameToken: string }) => Promise<boolean>
-    RequestCancelActiveRegisterRepository: ({ fullName, email, active }: IParams) => Promise<number>
+    RequestCancelRegisterRepository: ({ fullName, email, active }: IParams) => Promise<number>
 }
 
 export interface IParams {

@@ -1,7 +1,7 @@
 import { Channel } from "amqplib"
 import { IConsumerCreateUpdateRegisterUseCase, IParams } from "../../entities/CreatRegisterUpdateRequest/IConsumerCreateUpdateRegisterUseCase"
 import { ConsumerCreateUpdateRegisterRepository } from "../../repository/CreatRegisterUpdateRequestRepository"
-import { ConnectAMQPQueueServe } from "../../utils/manageQueues";
+import { ConnectAMQPQueueServe } from "../../services/manageQueues";
 
 export class ConsumerCreateUpdateRegisterUseCase implements IConsumerCreateUpdateRegisterUseCase {
     connectionQueue: any;
@@ -17,31 +17,26 @@ export class ConsumerCreateUpdateRegisterUseCase implements IConsumerCreateUpdat
 
 
     async ConnectAndConsume() {
-        ConnectAMQPQueueServe(process.env.AMQP_QUEUE_SERVER as string)
-            .then((data: any) => {
-                let { channelOpen, connection } = data as { channelOpen: Channel, connection: any }
-                connection.once("close", (error: any) => {
-                    console.log("the connection was closed. We try again in 2 secs", error)
-                    setTimeout(() => {
-                        this.ConnectAndConsume()
-                    }, 2000)
-                })
-                connection.once("error", (error: any) => {
-                    console.log("Error detected on connection.We try again in 2 secs", error)
-                    setTimeout(() => {
-                        this.ConnectAndConsume()
-                    }, 2000)
-                })
-                this.connectionQueue = channelOpen
-                //===> call Consume function()
-                this.Consume()
-            }).catch((err: any) => {
-                this.connectionQueue
-                console.log("Something wrong happened here. We try again in 2 secs", err.connection.cause)
+        try {
+            let { channelOpen, connection }: { channelOpen: Channel, connection: any } = await ConnectAMQPQueueServe(process.env.AMQP_QUEUE_SERVER as string)
+            connection.once("error", (error: any) => {
+                console.log("Error detected on connection.We try again in 2 secs", error)
                 setTimeout(() => {
+                    connection.close()
+                    channelOpen.close()
                     this.ConnectAndConsume()
                 }, 2000)
             })
+            this.connectionQueue = channelOpen
+            this.Consume()
+        } catch (err: any) {
+            console.log("Something wrong happened here. We try again in 2 secs", err.connection.cause)
+            setTimeout(() => {
+                this.ConnectAndConsume()
+            }, 2000)
+        }
+
+
     }
     async Consume() {
         if (this.connectionQueue) {

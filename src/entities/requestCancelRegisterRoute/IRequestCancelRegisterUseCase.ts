@@ -2,7 +2,6 @@ export interface IParams {
     token: string
     fullName: string;
     email: string;
-    active: boolean
 }
 
 export interface IInputsValidates {
@@ -10,7 +9,6 @@ export interface IInputsValidates {
     result: {
         fullNameValidate: string,
         emailValidate: string,
-        activeValidate: boolean
     }
 }
 
@@ -21,7 +19,7 @@ export interface IReturn {
 }
 
 
-export interface IRequestCancelActiveRegisterUseCase {
+export interface IRequestCancelRegisterUseCase {
     Execute: (request: any, id: number, fullName: string) => Promise<{
         sucess: boolean;
         token: string;

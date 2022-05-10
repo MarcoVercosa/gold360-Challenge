@@ -4,7 +4,7 @@ import { v4 as uuidV4 } from 'uuid';
 import { IRequestRegisterRepository } from '../../entities/requestCreateUpdateRegisterRoute/IRequestRegisterRepository';
 import { IRequestCreateUpdateRegisterUseCase, IParams, IInputsValidates, IReturn } from '../../entities/requestCreateUpdateRegisterRoute/IRequestRegisterUseCase';
 import { ValidadeToken } from '../../http/midwares/validateToken';
-import { CreateQueue, CreateQueueConfirmRegisterUpdate, ConsumeQueueConfirmCreateUpdateRegisterBD } from '../../utils/createQueuesChannels';
+import { CreateQueue } from '../../services/queues/createQueuesChannels';
 import { RequestCreateUpdateRegisterValidationInpunt } from "./requestCreateUpdateRegisterValidationInpunt"
 
 

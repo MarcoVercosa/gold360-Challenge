@@ -8,5 +8,4 @@ export interface IRequestCancelRegisterController {
 export interface IParams {
     fullName: string;
     email: string;
-    active: boolean
 }
