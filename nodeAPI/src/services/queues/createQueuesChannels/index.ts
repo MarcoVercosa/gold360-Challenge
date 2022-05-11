@@ -4,7 +4,8 @@ import { Channel, connect } from "amqplib"
 export async function CreateQueue(user: string, password: string, queueName: string): Promise<Channel | void> {
     config()
     try {
-        let nameServer: string = `amqp://${user}:${password}@localhost:5672`
+        console.log(user, password)
+        let nameServer: string = `amqp://${user}:${password}@172.20.0.3:5672`
         const connection = await connect(nameServer)
         connection.once("close", () => {
             console.log("conexão encerrada")
@@ -27,7 +28,7 @@ export async function CreateQueue(user: string, password: string, queueName: str
         console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
         return channel
     } catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 5 secs")
+        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs")
         setTimeout(() => {
             CreateQueue(user, password, queueName)
         }, 5000)

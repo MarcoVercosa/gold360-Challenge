@@ -8,10 +8,9 @@ const requestCreateUpdateRegister_1 = require("./routes/requestCreateUpdateRegis
 const requestCancelRegister_1 = require("./routes/requestCancelRegister");
 const requestLogin_1 = require("./routes/requestLogin");
 const checkIfAllQueuesIsCreated_1 = require("../services/queues/checkIfAllQueuesIsCreated/checkIfAllQueuesIsCreated");
-const createUsersRabbitMQ_1 = require("../utils/createUsersRabbitMQ");
 async function CheckQueues() {
     await (0, checkIfAllQueuesIsCreated_1.CheckIfAllQueuesIsCreated)(); //Check if queue is already created, if not, create the queues
-    await (0, createUsersRabbitMQ_1.CreateUsersRabbitMQ)(); //create users/passwords HabbitMQ
+    //await CreateUsersRabbitMQ()//create users/passwords HabbitMQ
 }
 CheckQueues();
 const fastifyServer = (0, fastify_1.default)({

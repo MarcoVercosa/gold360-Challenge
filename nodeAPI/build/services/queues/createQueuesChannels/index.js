@@ -6,7 +6,8 @@ const amqplib_1 = require("amqplib");
 async function CreateQueue(user, password, queueName) {
     (0, dotenv_1.config)();
     try {
-        let nameServer = `amqp://${user}:${password}@localhost:5672`;
+        console.log(user, password);
+        let nameServer = `amqp://${user}:${password}@172.20.0.3:5672`;
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
             console.log("conexão encerrada");
@@ -28,7 +29,7 @@ async function CreateQueue(user, password, queueName) {
         return channel;
     }
     catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 5 secs");
+        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs");
         setTimeout(() => {
             CreateQueue(user, password, queueName);
         }, 5000);

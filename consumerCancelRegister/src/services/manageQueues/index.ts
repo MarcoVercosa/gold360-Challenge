@@ -3,7 +3,7 @@ import { config } from "dotenv"
 
 
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
-    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@localhost:5672`
+    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@172.20.0.2:5672`
     return new Promise(async (resolve, reject) => {
         try {
             const connection = await connect(nameServer)
@@ -21,7 +21,7 @@ async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connecti
 async function ConnectCancelDeadQueue() {
     config()
     let queueName: string = process.env.QUEUE_NAME_DEAD_CANCEL as string
-    let nameServer: string = `amqp://${process.env.CREDENTIALS_DEAD_QUEUE_USER}:${process.env.CREDENTIALS_DEAD_QUEUE_PASS}@localhost:5672`
+    let nameServer: string = `amqp://${process.env.CREDENTIALS_DEAD_QUEUE_USER}:${process.env.CREDENTIALS_DEAD_QUEUE_PASS}@172.20.0.3:5672`
     try {
         const connection = await connect(nameServer)
         connection.once("close", () => {
@@ -42,7 +42,7 @@ async function ConnectCancelDeadQueue() {
         console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
         return channel
     } catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + "New try in 5 secs")
+        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs")
         setTimeout(() => {
             ConnectCancelDeadQueue()
         }, 5000)

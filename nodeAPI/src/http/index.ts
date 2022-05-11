@@ -8,7 +8,7 @@ import { CreateUsersRabbitMQ } from '../utils/createUsersRabbitMQ'
 
 async function CheckQueues() {
     await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues
-    await CreateUsersRabbitMQ()//create users/passwords HabbitMQ
+    //await CreateUsersRabbitMQ()//create users/passwords HabbitMQ
 }
 CheckQueues()
 

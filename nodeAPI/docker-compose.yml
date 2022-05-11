@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: "register"
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./dataBase:/var/lib/mysql
+      - ../dataBase:/var/lib/mysql
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -39,20 +39,23 @@ services:
       - mysql
 
   nodeAPI:
-    image: "node:8"
-    working_dir: /home/node/app
+    image: "node:16"
+    container_name: 'nodeAPI'
+    working_dir: /home/node/app/nodeAPI
     environment:
       - NODE_env=production
     ports:
-      - 9000:9000
-    restart: unless-stopped
+      - 3000:3000
+    # restart: unless-stopped
     depends_on:
       - rabbitmq
     networks:
       - rabbitmq-mysql-nodejs-network
     volumes:
-      - ./nodeAPI:/home/node/app
-    command: "node index.js"
+      - ../nodeAPI:/home/node/app
+    command: "npm run prod"
+    stdin_open: true
+    tty: true
 
 networks:
   rabbitmq-mysql-nodejs-network:
