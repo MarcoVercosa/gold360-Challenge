@@ -18,9 +18,17 @@ export class ConsumerCreateUpdateRegisterUseCase implements IConsumerCreateUpdat
 
     async ConnectAndConsume() {
         try {
-            let { channelOpen, connection }: { channelOpen: Channel, connection: any } = await ConnectAMQPQueueServe(process.env.AMQP_QUEUE_SERVER as string)
+            let { channelOpen, connection }: { channelOpen: Channel, connection: any } = await ConnectAMQPQueueServe()
             connection.once("error", (error: any) => {
                 console.log("Error detected on connection.We try again in 2 secs", error)
+                setTimeout(() => {
+                    connection.close()
+                    channelOpen.close()
+                    this.ConnectAndConsume()
+                }, 2000)
+            })
+            connection.once("close", (error: any) => {
+                console.log("CLOSE detected on connection.We try again in 2 secs", error)
                 setTimeout(() => {
                     connection.close()
                     channelOpen.close()

@@ -17,11 +17,19 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
 
 
     async ConnectAndConsume() {
-        ConnectAMQPQueueServe(process.env.AMQP_QUEUE_SERVER as string)
+        ConnectAMQPQueueServe()
             .then((data: any) => {
                 let { channelOpen, connection } = data as { channelOpen: Channel, connection: any }
                 connection.once("error", (error: any) => {
-                    console.log("Error detected on connection.We try again in 2 secs", error)
+                    console.log("ERROR detected on connection.We try again in 2 secs", error)
+                    setTimeout(() => {
+                        connection.close()
+                        channelOpen.close()
+                        this.ConnectAndConsume()
+                    }, 2000)
+                })
+                connection.once("close", (error: any) => {
+                    console.log("CLOSE detected on connection.We try again in 2 secs", error)
                     setTimeout(() => {
                         connection.close()
                         channelOpen.close()

@@ -2,14 +2,14 @@ import { Channel, connect } from "amqplib"
 import { config } from "dotenv"
 
 
-async function ConnectAMQPQueueServe(AMQPQueueServer: string): Promise<{ channelOpen: Channel, connection: any } | any> {
-
+async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
+    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@localhost:5672`
     return new Promise(async (resolve, reject) => {
         try {
-            const connection = await connect(AMQPQueueServer)
+            const connection = await connect(nameServer)
             const channelOpen = await connection.createChannel()
             //channelOpen.prefetch(1);
-            console.log("Connected to habbitMQ." + AMQPQueueServer)
+            console.log("Connected to habbitMQ." + nameServer)
             resolve({ channelOpen, connection })
         }
         catch (err: any) {
@@ -21,15 +21,13 @@ async function ConnectAMQPQueueServe(AMQPQueueServer: string): Promise<{ channel
 async function ConnectCancelDeadQueue() {
     config()
     let queueName: string = process.env.QUEUE_NAME_DEAD_CANCEL as string
+    let nameServer: string = `amqp://${process.env.CREDENTIALS_DEAD_QUEUE_USER}:${process.env.CREDENTIALS_DEAD_QUEUE_PASS}@localhost:5672`
     try {
-        const connection = await connect(process.env.AMQP_QUEUE_SERVER as string)
+        const connection = await connect(nameServer)
         connection.once("close", () => {
             console.log("conexão encerrada")
         })
         const channel = await connection.createChannel()
-        await channel.assertQueue(queueName as string, { durable: true, exclusive: false, autoDelete: false })
-        //only created if queue does not exist
-        //durable:true: if container or node restart, the queue keep created
 
         setTimeout(function () {
             try {
