@@ -2,6 +2,9 @@ version: '3'
 
 services:
   rabbitmq:
+    # build:
+    #   dockerfile: ./Dockerfile
+    #   context: .
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'
     environment:

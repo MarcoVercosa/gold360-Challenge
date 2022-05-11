@@ -5,13 +5,18 @@ import { RequestLogin } from "./routes/requestLogin"
 import { PopulateBD } from './routes/_willRemovepopulateBD'
 import { RequestActiveRegister } from './routes/_willRemoverequestActiveRegister'
 import { CheckIfAllQueuesIsCreated } from '../services/queues/checkIfAllQueuesIsCreated/checkIfAllQueuesIsCreated'
+import { CreateUsersRabbitMQ } from '../utils/createUsersRabbitMQ'
 
 
-CheckIfAllQueuesIsCreated().then((data: any) => {
-    if (!data.sucess) {
-        console.log(data.message)
+async function CheckQueues() {
+    //Check if queue is already created, if not, create the queues
+    let checkQueues = await CheckIfAllQueuesIsCreated()
+    if (!checkQueues.sucess) {
+        console.log(checkQueues.message)
     }
-})
+    await CreateUsersRabbitMQ()//create users/passwords HabbitMQ
+}
+CheckQueues()
 
 const fastifyServer = Fastify({
     logger: false

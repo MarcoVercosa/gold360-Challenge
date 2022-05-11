@@ -4,7 +4,9 @@ import { Channel, connect } from "amqplib"
 export async function CreateQueue(queueName: string): Promise<Channel | void> {
     config()
     try {
-        const connection = await connect(process.env.AMQP_QUEUE_SERVER as string)
+
+        let nameServer: string = `amqp://${process.env.CREDENTIALS_REGISTER_USER}:${process.env.CREDENTIALS_REGISTER_PASS}@localhost:5672`
+        const connection = await connect(nameServer)
         connection.once("close", () => {
             console.log("conexão encerrada")
         })

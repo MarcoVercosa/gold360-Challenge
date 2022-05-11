@@ -8,7 +8,6 @@ async function CheckIfAllQueuesIsCreated() {
     let createCancelregisterQueue = await CreateQueue(process.env.QUEUE_NAME_CANCEL_REGISTER as string) as Channel
     let createDeadCancelQueue = await CreateQueue(process.env.QUEUE_NAME_DEAD_CANCEL as string) as Channel
 
-    console.log(createUpdateRegisterQueue, createCancelregisterQueue, createDeadCancelQueue)
     if (createUpdateRegisterQueue && createCancelregisterQueue && createDeadCancelQueue) {
         return { sucess: true, message: "queus created | already exists successfully" }
     } else {
