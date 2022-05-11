@@ -7,7 +7,6 @@ const fastify_1 = __importDefault(require("fastify"));
 const requestCreateUpdateRegister_1 = require("./routes/requestCreateUpdateRegister");
 const requestCancelRegister_1 = require("./routes/requestCancelRegister");
 const requestLogin_1 = require("./routes/requestLogin");
-const _willRemovepopulateBD_1 = require("./routes/_willRemovepopulateBD");
 const checkIfAllQueuesIsCreated_1 = require("../services/queues/checkIfAllQueuesIsCreated/checkIfAllQueuesIsCreated");
 const createUsersRabbitMQ_1 = require("../utils/createUsersRabbitMQ");
 async function CheckQueues() {
@@ -21,9 +20,6 @@ const fastifyServer = (0, fastify_1.default)({
 fastifyServer.register(requestLogin_1.RequestLogin); //login user
 fastifyServer.register(requestCreateUpdateRegister_1.RequestCreateUpdateRegister); //create/update user account
 fastifyServer.register(requestCancelRegister_1.RequestCancelRegister); // request if account is enabled or disabled
-//fastifyServer.register(RequestActiveRegister) //Activar
-//fastifyServer.register(canceled) //Route to show registers canceled or active
-fastifyServer.register(_willRemovepopulateBD_1.PopulateBD); //popularBD Teste
 const serverInit = async () => {
     try {
         await fastifyServer.listen(3000);
