@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { IUserIsAdminConfirm } from '../../entities/userIsAdminConfirm/IUserIsAdminConfirm';
+import { IUserIsAdminConfirm } from '../../entities/userIsAdminConfirm/IUserAdminIsConfirm';
 
 
 const prisma = new PrismaClient()

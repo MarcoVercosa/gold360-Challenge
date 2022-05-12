@@ -20,12 +20,23 @@ fastifyServer.register(RequestLogin) //login user
 fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
 fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled
 
-const serverInit = async () => {
-    try {
-        await fastifyServer.listen(3000)
-    } catch (err) {
-        fastifyServer.log.error(err)
+fastifyServer.get('/', function (request, reply) {
+    reply.send({ hello: 'world' })
+})
+
+// const serverInit = async () => {
+//     try {
+//         await fastifyServer.listen(3000, "172.20.0.14")
+//     } catch (err) {
+//         fastifyServer.log.error(err)
+//         process.exit(1)
+//     }
+// }
+// serverInit()
+
+fastifyServer.listen(3000, '0.0.0.0')
+    .then((address) => console.log(`server listening on ${address}`))
+    .catch(err => {
+        console.log('Error starting server:', err)
         process.exit(1)
-    }
-}
-serverInit()
+    })

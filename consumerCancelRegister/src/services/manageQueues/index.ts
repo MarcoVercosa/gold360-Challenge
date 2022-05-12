@@ -3,7 +3,7 @@ import { config } from "dotenv"
 
 
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
-    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@172.20.0.2:5672`
+    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@172.20.0.3:5672`
     return new Promise(async (resolve, reject) => {
         try {
             const connection = await connect(nameServer)

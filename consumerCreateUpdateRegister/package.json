@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prismaConfig": "prisma db pull && prisma generate",
     "devts": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
-    "start:debug:ts": "node --inspect --require ts-node/register src/index.ts"
+    "buildTs": "npx tsc",
+    "prod": "npm install && npm run prismaConfig && npm run buildTs && node build/index.js"
   },
   "author": "",
   "license": "ISC",
