@@ -5,7 +5,7 @@ export async function CreateQueue(user: string, password: string, queueName: str
     config()
     try {
         console.log(user, password)
-        let nameServer: string = `amqp://${user}:${password}@172.20.0.3:5672`
+        let nameServer: string = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
         const connection = await connect(nameServer)
         connection.once("close", () => {
             console.log("conexão encerrada")

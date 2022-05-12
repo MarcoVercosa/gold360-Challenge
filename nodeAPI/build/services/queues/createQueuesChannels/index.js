@@ -7,7 +7,7 @@ async function CreateQueue(user, password, queueName) {
     (0, dotenv_1.config)();
     try {
         console.log(user, password);
-        let nameServer = `amqp://${user}:${password}@172.20.0.3:5672`;
+        let nameServer = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
             console.log("conexão encerrada");
