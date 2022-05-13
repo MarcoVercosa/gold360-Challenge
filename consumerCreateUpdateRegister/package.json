@@ -6,23 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prismaConfig": "prisma db pull && prisma generate",
-    "devts": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
+    "devts": "NODE_ENV=development ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
     "buildTs": "npx tsc",
-    "prod": "npm install && npm run prismaConfig && npm run buildTs && node build/index.js"
+    "prod": "NODE_ENV=production npm install && npm run prismaConfig && npm run buildTs && node build/index.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^17.0.25",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "dotenv": "^16.0.0",
     "prisma": "^3.12.0",
+    "@prisma/client": "^3.14.0",
+    "@types/amqplib": "^0.8.2",
+    "@types/node": "^17.0.25",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3"
   },
-  "dependencies": {
-    "@types/amqplib": "^0.8.2",
-    "amqplib": "^0.8.0",
-    "dotenv": "^16.0.0",
-    "@prisma/client": "^3.12.0"
-  }
+  "devDependencies": {}
 }
