@@ -1,9 +1,12 @@
 import { CreateQueue } from "../createQueuesChannels";
 import { config } from "dotenv"
 import { Channel } from "amqplib";
+import { Logger } from "../../createLogs/createLogs";
+
 
 async function CheckIfAllQueuesIsCreated() {
     config()
+    Logger.info("Checking if all queue are created. Case not, will be created. This action is showing when the server is started")
     try {
         await CreateQueue(
             process.env.CREDENTIALS_REGISTER_USER as string,
@@ -22,8 +25,7 @@ async function CheckIfAllQueuesIsCreated() {
         ) as Channel
     } catch (err) {
         setTimeout(() => {
-            console.log(err)
-            console.log("Server not started. Because there was a failure in some queue. New Try in 5 secs")
+            Logger.error(`Server not started. Because there was a failure in some queue. New Try in 5 secs`)
             CheckIfAllQueuesIsCreated()
         }, 5000)
     }

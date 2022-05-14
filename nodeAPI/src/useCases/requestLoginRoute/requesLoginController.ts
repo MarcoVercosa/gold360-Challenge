@@ -1,12 +1,16 @@
 import { RequestLoginUseCase } from "./requesLoginUseCase"
-import { IReturn } from "../../entities/requestLoginRoute/IRequestLoginUseCase"
-export class RequestLoginController {
+import { FastifyRequest } from 'fastify';
+import { Logger } from "../../services/createLogs/createLogs"
+import { IRequestLoginController, IReturn } from "../../entities/requestLoginRoute/IRequestLoginController"
+
+
+export class RequestLoginController implements IRequestLoginController {
 
     constructor(
         private requestLoginUseCase: RequestLoginUseCase
     ) { }
 
-    async Handle(request: any, response: any): Promise<{ result: IReturn, codeResult: number }> {
+    async Handle(request: FastifyRequest): Promise<{ result: IReturn, codeResult: number }> {
         const { email, password }: any = request.body
         let result: boolean | IReturn = false
         try {
@@ -19,6 +23,7 @@ export class RequestLoginController {
             }
         }
         catch (err: any) {
+            Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`)
             return { result: err, codeResult: 500 }
         }
     }

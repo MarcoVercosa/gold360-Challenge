@@ -1,4 +1,5 @@
 import { IRequestCancelRegisterController, IParams } from "../../entities/requestCancelRegisterRoute/IRequestCancelRegisterController"
+import { Logger } from "../../services/createLogs/createLogs";
 import { RequestCancelRegisterUseCase } from "./requestCancelRegisterUseCase";
 
 
@@ -20,6 +21,7 @@ export class RequestCancelRegisterController implements IRequestCancelRegisterCo
             }
         }
         catch (err: any) {
+            Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`)
             return { result: err, codeResult: 500 }
         }
     }

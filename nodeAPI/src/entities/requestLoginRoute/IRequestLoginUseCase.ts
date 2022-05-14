@@ -1,21 +1,16 @@
 export interface IReturn {
-    sucess?: Boolean;
+    sucess: Boolean;
     token: string;
-    result?: Array<{
-        data: [
+    result: Array<
+        [
             {
-                id: number,
-                fullName: string,
-                email: string,
-                password: string,
-                active: number,
-                created_at: string,
-                firstName: string,
-                canceled: number,
-                isAdmin: number
+                id: number;
+                fullName: string;
+                email: string;
+                lastLogin: string;
             }
         ]
-    }> | string
+    > | string
 }
 
 export interface IRequestLoginUseCase {

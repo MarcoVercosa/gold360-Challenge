@@ -1,12 +1,15 @@
 import { PrismaClient } from '@prisma/client';
-import { IRequestLoginRepository } from '../../entities/requestLoginRoute/IRequestLoginRepository';
+import { IRequestLoginRepository, IReturn } from '../../entities/requestLoginRoute/IRequestLoginRepository';
 
 
 export class RequestLoginRepository implements IRequestLoginRepository {
 
-    async RequestLogin(email: string, password: string) {
+    async RequestLogin(email: string, password: string): Promise<IReturn[]> {
         const prisma = new PrismaClient()
-        let resposta: any = await prisma.$queryRaw`SELECT * from Operators WHERE email = ${email} AND password = ${password} `
+        let resposta: any = await prisma.$queryRaw`SELECT id, fullName, email, lastLogin from Operators WHERE email = ${email} AND password = ${password} `
+        if (resposta.length > 0) {
+            await prisma.$executeRaw`UPDATE Operators SET  lastLogin = NOW() -INTERVAL 3 HOUR WHERE email = ${email}`
+        }
         return resposta
     }
 }

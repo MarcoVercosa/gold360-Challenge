@@ -1,5 +1,7 @@
 import { IRequestCreateUpdateRegisterController, IResult } from "../../entities/requestCreateUpdateRegisterRoute/IRequestRegisterController"
+import { FastifyRequest } from 'fastify';
 import { RequestCreateUpdateRegisterUseCase } from "./requestCreateUpdateRegisterUseCase"
+import { Logger } from "../../services/createLogs/createLogs";
 
 
 export class RequestCreateUpdateRegisterController implements IRequestCreateUpdateRegisterController {
@@ -8,15 +10,14 @@ export class RequestCreateUpdateRegisterController implements IRequestCreateUpda
         private requestRegisterUseCase: RequestCreateUpdateRegisterUseCase
     ) { }
 
-    async Handle(request: any, response: any): Promise<{ result: IResult, codeResult: number }> {
+    async Handle(request: FastifyRequest): Promise<{ result: IResult, codeResult: number }> {
 
-        const { fullName, email, password }: any = request.body
+        const { fullName, email, password } = request.body as { fullName: string; email: string; password: string }
         let result: IResult
         try {
             const token = request.headers['x-access-token'] as string;
             result = await this.requestRegisterUseCase.Execute({ token, fullName, email, password }) as any
             if (result?.sucess) {
-                console.log("Enviado reply para cliente")
                 return { result, codeResult: 200 }
             }
             else {
@@ -24,6 +25,7 @@ export class RequestCreateUpdateRegisterController implements IRequestCreateUpda
             }
         }
         catch (err: any) {
+            Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`)
             return { result: err, codeResult: 500 }
         }
     }

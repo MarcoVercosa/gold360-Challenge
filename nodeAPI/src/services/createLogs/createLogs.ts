@@ -1,4 +1,5 @@
 import winston from 'winston'
+import OS from "os"
 
 const levels = {
     error: 0,
@@ -6,6 +7,7 @@ const levels = {
     info: 2,
     http: 3,
     debug: 4,
+
 }
 const level = (): string => {
     const env = process.env.NODE_ENV || 'development'
@@ -24,11 +26,10 @@ const format = winston.format.combine(
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
     //winston.format.colorize({ all: true }),
     winston.format.json(),
-    // winston.format.printf(
-    //     (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-    // ),
+    winston.format.printf(
+        (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${OS.hostname()}"}`,
+    ),
 )
-
 const transports = [
     new winston.transports.File({ filename: `${__dirname}/../../../../logs/error.log`, level: 'error', }),
     new winston.transports.File({ filename: `${__dirname}/../../../../logs/warn.log`, level: 'warn', }),

@@ -4,6 +4,7 @@ import { v4 as uuidV4 } from 'uuid';
 //import { IRequestCancelActiveRegisterRepository } from "../../entities/requestCancelActiveRoute/IRequestCancelActiveRegisterRepository";
 import { IRequestCancelRegisterUseCase, IParams, IInputsValidates, IReturn } from "../../entities/requestCancelRegisterRoute/IRequestCancelRegisterUseCase";
 import { ValidadeToken } from "../../http/midwares/validateToken";
+import { Logger } from "../../services/createLogs/createLogs";
 import { CreateQueue } from "../../services/queues/createQueuesChannels";
 import { RequestCancelValidationInpunt } from "./RequestCancelValidationInpunt"
 
@@ -62,22 +63,22 @@ export class RequestCancelRegisterUseCase implements IRequestCancelRegisterUseCa
 
             //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS. WHEN THE DATA CONFIRMATION IS RECEIVED, THE CONNECTION IS CLOSE E THE QUEUE TEMPORARY IS DELETED
             let rpc = await connectionQueueCancelRegisterBD.assertQueue('', { exclusive: true, durable: false })
-            console.log("Create queue RPC temporary -- queue of return confirmation--  with the name ", rpc)
+            //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE (replyTo => It is the queue temporary above created than response will be send) 
             connectionQueueCancelRegisterBD.sendToQueue(process.env.QUEUE_NAME_CANCEL_REGISTER as string, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
-            //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE
+
 
             //AFTER THE DATA IS SENT TO THE QUEUE. IN THE RETURN OF THE FUNCTION WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
             //WHERE IT WILL BE VALIDATED THROUGH THE COMPARISON KEY IF IT IS THE RESPONSE OF THE CURRENT REQUEST
             async function Return() {
                 return new Promise((resolve, reject) => {
                     connectionQueueCancelRegisterBD.consume(rpc.queue, (data: any) => {
-                        console.log("confirmação recebida da fila ", rpc.queue)
                         if (data.properties.correlationId == dataJSON.comparatorKey) {
-                            console.log("recebido confirmação ", JSON.parse(data.content))
+                            Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- from queue name temporary: ${rpc.queue} `)
                             resolve(JSON.parse(data.content))
                         }
                     })
                 }).catch((err) => {
+                    Logger.error(`RABBITMQ => error on consume queue temporary: ${rpc.queue} -- queue request:${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- error: ${err}`)
                     return err
                 })
             }
