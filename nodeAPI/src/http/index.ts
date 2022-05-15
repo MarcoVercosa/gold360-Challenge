@@ -17,6 +17,9 @@ const fastifyServer = Fastify({
     logger: false
 })
 
+
+
+
 fastifyServer.register(RequestLogin) //login user
 fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
 fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled
