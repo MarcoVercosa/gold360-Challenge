@@ -12,7 +12,7 @@ export class RequestCreateUpdateRegisterUseCase implements IRequestCreateUpdateR
 
     constructor() { }
 
-    async CheckFirstQueueCreateUpdateRegisterBD(): Promise<Channel | any> {
+    async CheckFirstQueueCreateUpdateRegisterBD(): Promise<Channel | any> { //create queue (if not exists) and return channel
         config()
         const isCreateQueue = await CreateQueue(
             process.env.CREDENTIALS_REGISTER_USER as string,
@@ -37,12 +37,7 @@ export class RequestCreateUpdateRegisterUseCase implements IRequestCreateUpdateR
             let { firstNameValidate, fullNameValidate, emailValidate, passwordValidate } = validateInputs.result
 
             let dataJSON = {
-                validateToken,
-                firstName: firstNameValidate,
-                fullName: fullNameValidate,
-                email: emailValidate,
-                password: passwordValidate,
-                comparatorKey: uuidV4()
+                validateToken, firstName: firstNameValidate, fullName: fullNameValidate, email: emailValidate, password: passwordValidate, comparatorKey: uuidV4()
                 //THIS KEY IS A COMPARISON STRING. UPON RECEIVING THE QUEUE CONFIRMATION, 
                 //YOU WILL COMPARE THIS KEY WITH THE ONE RECEIVED. IF THE REQUEST KEY IS THE SAME
                 // AS THE ONE RECEIVED FROM THE CONFIRMATION QUEUE, THEN IT IS INDEED THE REQUEST'S RESPONSE

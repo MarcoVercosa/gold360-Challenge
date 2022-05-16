@@ -26,7 +26,7 @@ fastifyServer.register(RequestCancelRegister) // request if account is enabled o
 
 
 fastifyServer.listen(3000, '0.0.0.0')
-    .then((address) => Logger.http(`HTTP => Server listening on ${address}`))
+    .then((address) => Logger.http(`HTTP => Server started and listening on ${address}`))
     .catch(err => {
         console.log(`Origin log: ${OS.hostname()} => Error starting server:`, err)
         process.exit(1)

@@ -8,7 +8,7 @@ export async function CreateQueue(user: string, password: string, queueName: str
         let nameServer: string = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
         const connection = await connect(nameServer)
         connection.once("close", () => {
-            Logger.info(`Rabbitmq => Connection closed -- ${queueName}`)
+            Logger.info(`Rabbitmq => Connection closed after 20 secs -- ${queueName}`)
         })
         const channel = await connection.createChannel()
         await channel.assertQueue(queueName, { durable: true, exclusive: false, autoDelete: false })
@@ -19,16 +19,15 @@ export async function CreateQueue(user: string, password: string, queueName: str
             try {
                 connection.close()
             }
-            catch (err) {
-                Logger.error(`Rabbitmq => Unable to close a connection. Maybe due to some failure the connection is already closed -- ${queueName}`)
+            catch (error) {
+                Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`)
             }
         }, 20000);
 
-        Logger.info(`Rabbitmq => Connection closed -- ${queueName}`)
-
+        Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`)
         return channel
-    } catch (err) {
-        Logger.error(`Rabbitmq => Erro to connect to RabbitMQ. Queue failed: ${queueName} ${err} New try in 5 secs`)
+    } catch (error) {
+        Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`)
         setTimeout(() => {
             CreateQueue(user, password, queueName)
         }, 5000)

@@ -1,6 +1,7 @@
 import { Channel } from "amqplib"
 import { IConsumerCancelRegisterUseCase, IParams } from "../entities/IConsumerCancelRegisterUseCase"
 import { ConsumerCancelRegisterRepository } from "../repository/consumerCancelRegisterRepository"
+import { Logger } from "../services/createLogs/createLogs";
 import { ConnectAMQPQueueServe, ConnectCancelDeadQueue } from "../services/manageQueues/index"
 
 export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUseCase {
@@ -21,26 +22,26 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
             .then((data: any) => {
                 let { channelOpen, connection } = data as { channelOpen: Channel, connection: any }
                 connection.once("error", (error: any) => {
-                    console.log("ERROR detected on connection.We try again in 2 secs", error)
+                    Logger.error(`Rabbitmq => ERROR DETECTED TO CREATE CONNECTION and consumed queue -- ${error} -- New try in 5 secs`)
                     setTimeout(() => {
                         connection.close()
                         channelOpen.close()
                         this.ConnectAndConsume()
-                    }, 2000)
+                    }, 5000)
                 })
                 connection.once("close", (error: any) => {
-                    console.log("CLOSE detected on connection.We try again in 2 secs", error)
+                    Logger.error(`Rabbitmq => CLOSE DETECTED IN CONNECTION ALREADY CREATED -- ${error} -- New try in 5 secs`)
                     setTimeout(() => {
                         connection.close()
                         channelOpen.close()
                         this.ConnectAndConsume()
-                    }, 2000)
+                    }, 5000)
                 })
                 this.connectionQueue = channelOpen
                 this.Consume() // ====>  Call Consumer
-            }).catch((err: any) => {
+            }).catch((error: any) => {
                 this.connectionQueue
-                console.log("Something wrong happened here. We try again in 2 secssssss", err.connection.cause)
+                Logger.error(`SOMETHING WRONG HAPPENED HERE TO CONNECT RABBITMQ -- ${error} New try in 5 secs`)
                 setTimeout(() => {
                     this.ConnectAndConsume()
                 }, 2000)
@@ -50,15 +51,14 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
         if (this.connectionQueue) {
             this.connectionQueue.consume(process.env.QUEUE_NAME_CANCEL_REGISTER as string,
                 async (reply: any) => {
-                    console.log(reply)
                     let { replyTo, correlationId } = reply.properties
                     let dataConsume: IParams = JSON.parse(reply.content)///change from  buffer to object
-                    console.log(" [XXXX] The server received data")
+                    Logger.info(`Rabbitmq => [XXXX] The Consumer to ${process.env.QUEUE_NAME_CANCEL_REGISTER} received data.`)
                     let result = await this.Execute(dataConsume) as Promise<{ sucess: boolean, comparatorKey: string, message: string }>
                     //reply the confirmation with data to queue temporary
                     this.connectionQueue.sendToQueue(replyTo, Buffer.from(JSON.stringify(result)), { correlationId })
                     this.connectionQueue.ack(reply)
-                    console.log(" [XXXX] The server sent a data")
+                    Logger.info(`Rabbitmq => [XXXX] The confirmation to  ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} was sent.`)
                 }, { noAck: false }//avisa que a confirmação será feita manualmente(feita na linha acima -- this.connectionQueue.ack(reply))
             ) as any
         }
@@ -109,10 +109,9 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
                 return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "FullName or/and email not found" }
             }
 
-
-        } catch (err: any) {
-            console.log(err)
-            return { sucess: true, comparatorKey: "", message: err }
+        } catch (error: any) {
+            Logger.error(`REPOSITORY => SOMETHING WRONG HAPPENED HERE -- ${error}`)
+            return { sucess: true, comparatorKey: "", message: error }
         }
     }
 }

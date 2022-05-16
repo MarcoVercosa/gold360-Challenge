@@ -1,5 +1,7 @@
 import { Channel, connect } from "amqplib"
 import { config } from "dotenv"
+import { Logger } from "../createLogs/createLogs"
+
 
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
     config()
@@ -9,12 +11,13 @@ async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connecti
             const connection = await connect(nameServer)
             const channelOpen = await connection.createChannel()
             //channelOpen.prefetch(1);
-            console.log("Connected to habbitMQ." + nameServer)
+            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD}`)
             resolve({ channelOpen, connection })
 
         }
-        catch (err: any) {
-            reject({ channelOpen: false, connection: err })
+        catch (error: any) {
+            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- ${error}`)
+            reject({ channelOpen: false, connection: error })
         }
 
     })

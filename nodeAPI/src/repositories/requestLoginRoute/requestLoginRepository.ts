@@ -10,6 +10,7 @@ export class RequestLoginRepository implements IRequestLoginRepository {
         if (resposta.length > 0) {
             await prisma.$executeRaw`UPDATE Operators SET  lastLogin = NOW() -INTERVAL 3 HOUR WHERE email = ${email}`
         }
+        prisma.$disconnect()
         return resposta
     }
 }

@@ -1,6 +1,7 @@
 import { ConsumerCreateUpdateRegisterUseCase } from "./consumerCreateUpdateRegisterUseCase"
 import { config } from "dotenv"
 import { IConsumerCreateUpdateRegisterController } from "../../entities/CreatRegisterUpdateRequest/IConsumerCreateUpdateRegisterController";
+import { Logger } from "../../services/createLogs/createLogs";
 
 export interface IResult {
     sucess: boolean;
@@ -19,10 +20,8 @@ export class ConsumerCreateUpdateRegisterController implements IConsumerCreateUp
         try {
             await this.consumeQueueCreatRegisterUpdateRequestUseCase.ConnectAndConsume()
         }
-        catch (err: any) {
-
-            console.log({ result: err, codeResult: 500 })
+        catch (error: any) {
+            Logger.error(`System => - erro: ${JSON.stringify(error)}`)
         }
     }
-
 }

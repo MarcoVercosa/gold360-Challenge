@@ -1,5 +1,6 @@
 import { Channel, connect } from "amqplib"
 import { config } from "dotenv"
+import { Logger } from "../createLogs/createLogs"
 
 
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
@@ -9,11 +10,12 @@ async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connecti
             const connection = await connect(nameServer)
             const channelOpen = await connection.createChannel()
             //channelOpen.prefetch(1);
-            console.log("Connected to habbitMQ." + nameServer)
+            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CANCEL_REGISTER}`)
             resolve({ channelOpen, connection })
         }
-        catch (err: any) {
-            reject({ channelOpen: false, connection: err })
+        catch (error: any) {
+            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CANCEL_REGISTER} -- ${error}`)
+            reject({ channelOpen: false, connection: error })
         }
     })
 }
@@ -25,7 +27,7 @@ async function ConnectCancelDeadQueue() {
     try {
         const connection = await connect(nameServer)
         connection.once("close", () => {
-            console.log("conexão encerrada")
+            Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${queueName}`)
         })
         const channel = await connection.createChannel()
 
@@ -34,15 +36,15 @@ async function ConnectCancelDeadQueue() {
                 connection.close()
                 //close conection after 20 seconds
             }
-            catch (err) {
-                console.log("Unable to close a connection. Maybe due to some failure the connection is already closed")
+            catch (error) {
+                Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`)
             }
         }, 20000);
 
-        console.log("Connected to habbitMQ. checked if Queue is created:" + queueName)
+        Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`)
         return channel
-    } catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs")
+    } catch (error) {
+        Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`)
         setTimeout(() => {
             ConnectCancelDeadQueue()
         }, 5000)
