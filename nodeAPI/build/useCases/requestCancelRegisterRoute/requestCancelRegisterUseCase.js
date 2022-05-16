@@ -4,6 +4,7 @@ exports.RequestCancelRegisterUseCase = void 0;
 const dotenv_1 = require("dotenv");
 const uuid_1 = require("uuid");
 const validateToken_1 = require("../../http/midwares/validateToken");
+const createLogs_1 = require("../../services/createLogs/createLogs");
 const createQueuesChannels_1 = require("../../services/queues/createQueuesChannels");
 const RequestCancelValidationInpunt_1 = require("./RequestCancelValidationInpunt");
 class RequestCancelRegisterUseCase {
@@ -45,21 +46,20 @@ class RequestCancelRegisterUseCase {
             }
             //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS. WHEN THE DATA CONFIRMATION IS RECEIVED, THE CONNECTION IS CLOSE E THE QUEUE TEMPORARY IS DELETED
             let rpc = await connectionQueueCancelRegisterBD.assertQueue('', { exclusive: true, durable: false });
-            console.log("Create queue RPC temporary -- queue of return confirmation--  with the name ", rpc);
+            //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE (replyTo => It is the queue temporary above created than response will be send) 
             connectionQueueCancelRegisterBD.sendToQueue(process.env.QUEUE_NAME_CANCEL_REGISTER, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue });
-            //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE
             //AFTER THE DATA IS SENT TO THE QUEUE. IN THE RETURN OF THE FUNCTION WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
             //WHERE IT WILL BE VALIDATED THROUGH THE COMPARISON KEY IF IT IS THE RESPONSE OF THE CURRENT REQUEST
             async function Return() {
                 return new Promise((resolve, reject) => {
                     connectionQueueCancelRegisterBD.consume(rpc.queue, (data) => {
-                        console.log("confirmação recebida da fila ", rpc.queue);
                         if (data.properties.correlationId == dataJSON.comparatorKey) {
-                            console.log("recebido confirmação ", JSON.parse(data.content));
+                            createLogs_1.Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- from queue name temporary: ${rpc.queue} `);
                             resolve(JSON.parse(data.content));
                         }
                     });
                 }).catch((err) => {
+                    createLogs_1.Logger.error(`RABBITMQ => error on consume queue temporary: ${rpc.queue} -- queue request:${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- error: ${err}`);
                     return err;
                 });
             }

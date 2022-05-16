@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectCancelDeadQueue = exports.ConnectAMQPQueueServe = void 0;
 const amqplib_1 = require("amqplib");
 const dotenv_1 = require("dotenv");
+const createLogs_1 = require("../createLogs/createLogs");
 async function ConnectAMQPQueueServe() {
     let nameServer = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
     return new Promise(async (resolve, reject) => {
@@ -10,11 +11,12 @@ async function ConnectAMQPQueueServe() {
             const connection = await (0, amqplib_1.connect)(nameServer);
             const channelOpen = await connection.createChannel();
             //channelOpen.prefetch(1);
-            console.log("Connected to habbitMQ." + nameServer);
+            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CANCEL_REGISTER}`);
             resolve({ channelOpen, connection });
         }
-        catch (err) {
-            reject({ channelOpen: false, connection: err });
+        catch (error) {
+            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CANCEL_REGISTER} -- ${error}`);
+            reject({ channelOpen: false, connection: error });
         }
     });
 }
@@ -26,7 +28,7 @@ async function ConnectCancelDeadQueue() {
     try {
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
-            console.log("conexão encerrada");
+            createLogs_1.Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${queueName}`);
         });
         const channel = await connection.createChannel();
         setTimeout(function () {
@@ -34,15 +36,15 @@ async function ConnectCancelDeadQueue() {
                 connection.close();
                 //close conection after 20 seconds
             }
-            catch (err) {
-                console.log("Unable to close a connection. Maybe due to some failure the connection is already closed");
+            catch (error) {
+                createLogs_1.Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`);
             }
         }, 20000);
-        console.log("Connected to habbitMQ. checked if Queue is created:" + queueName);
+        createLogs_1.Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`);
         return channel;
     }
-    catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs");
+    catch (error) {
+        createLogs_1.Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`);
         setTimeout(() => {
             ConnectCancelDeadQueue();
         }, 5000);

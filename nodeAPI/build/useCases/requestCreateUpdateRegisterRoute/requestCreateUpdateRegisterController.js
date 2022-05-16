@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestCreateUpdateRegisterController = void 0;
+const createLogs_1 = require("../../services/createLogs/createLogs");
 class RequestCreateUpdateRegisterController {
     constructor(requestRegisterUseCase) {
         this.requestRegisterUseCase = requestRegisterUseCase;
     }
-    async Handle(request, response) {
+    async Handle(request) {
         const { fullName, email, password } = request.body;
         let result;
         try {
             const token = request.headers['x-access-token'];
             result = await this.requestRegisterUseCase.Execute({ token, fullName, email, password });
             if (result?.sucess) {
-                console.log("Enviado reply para cliente");
                 return { result, codeResult: 200 };
             }
             else {
@@ -20,6 +20,7 @@ class RequestCreateUpdateRegisterController {
             }
         }
         catch (err) {
+            createLogs_1.Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`);
             return { result: err, codeResult: 500 };
         }
     }

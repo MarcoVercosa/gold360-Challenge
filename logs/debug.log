@@ -1,5 +1,0 @@
-{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- create_update_register_bd","Date":"2022-05-16 14:39:33:3933","originServer":"marco-pc-linux"}
-{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to create_update_register_bd received data.","Date":"2022-05-16 14:41:16:4116","originServer":"marco-pc-linux"}
-{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-05-16 14:41:16:4116","originServer":"marco-pc-linux"}
-{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to create_update_register_bd received data.","Date":"2022-05-16 14:43:38:4338","originServer":"marco-pc-linux"}
-{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-05-16 14:43:38:4338","originServer":"marco-pc-linux"}

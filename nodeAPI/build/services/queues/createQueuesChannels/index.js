@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateQueue = void 0;
 const dotenv_1 = require("dotenv");
 const amqplib_1 = require("amqplib");
+const createLogs_1 = require("../../createLogs/createLogs");
 async function CreateQueue(user, password, queueName) {
     (0, dotenv_1.config)();
     try {
-        console.log(user, password);
         let nameServer = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
-            console.log("conexão encerrada");
+            createLogs_1.Logger.info(`Rabbitmq => Connection closed after 20 secs -- ${queueName}`);
         });
         const channel = await connection.createChannel();
         await channel.assertQueue(queueName, { durable: true, exclusive: false, autoDelete: false });
@@ -19,54 +19,20 @@ async function CreateQueue(user, password, queueName) {
         setTimeout(function () {
             try {
                 connection.close();
-                //close conection after 20 seconds
             }
-            catch (err) {
-                console.log("Unable to close a connection. Maybe due to some failure the connection is already closed");
+            catch (error) {
+                createLogs_1.Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`);
             }
         }, 20000);
-        console.log("Connected to habbitMQ. checked if Queue is created:" + queueName);
+        createLogs_1.Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`);
         return channel;
     }
-    catch (err) {
-        console.log("Erro to connect to RabbitMQ. Queue failed: " + queueName + " " + err + " New try in 5 secs");
+    catch (error) {
+        createLogs_1.Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`);
         setTimeout(() => {
             CreateQueue(user, password, queueName);
         }, 5000);
     }
 }
 exports.CreateQueue = CreateQueue;
-// export async function CreateQueueConfirmRegisterUpdate(): Promise<Channel | null> {
-//     config()
-//     try {
-//         const connection = await connect(process.env.AMQP_QUEUE_SERVER as string)
-//         const channel = await connection.createChannel()
-//         await channel.assertQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string) //somente criada se a fila não existir
-//         //setTimeout(function () { connection.close(); }, 10000);//close conection after 10 seconds
-//         console.log("Connected to habbitMQ. Queue created: confirm_create_update_register_bd")
-//         return channel
-//     } catch (err) {
-//         console.log("Erro to connect to RabbitMQ. Queue failed: confirm_create_update_register_bd." + err)
-//         return null
-//     }
-// }
-// export async function ConsumeQueueConfirmCreateUpdateRegisterBD(comparatorKey: string) {
-//     return new Promise(async (resolve) => {
-//         let openConectionQueue = await CreateQueue(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string)
-//         if (!openConectionQueue) {
-//             return null
-//         }
-//         //openConectionQueue.prefetch(1, false)
-//         openConectionQueue.consume(process.env.QUEUE_NAME_CONFIRM_CREATE_UPDATE_REGISTER_BD as string, async (data: any) => {
-//             console.log("Data receveid")
-//             let result = await JSON.parse(data.content)///change from  buffer to object       
-//             if (result.comparatorKey == comparatorKey) {
-//                 console.log("caiu no if")
-//                 openConectionQueue?.ack(data)
-//                 openConectionQueue?.close()
-//                 resolve(result)
-//             }
-//         }, { noAck: false })
-//     })
-// }
 //# sourceMappingURL=index.js.map

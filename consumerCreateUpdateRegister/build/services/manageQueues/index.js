@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectAMQPQueueServe = void 0;
 const amqplib_1 = require("amqplib");
 const dotenv_1 = require("dotenv");
+const createLogs_1 = require("../createLogs/createLogs");
 async function ConnectAMQPQueueServe() {
     (0, dotenv_1.config)();
     return new Promise(async (resolve, reject) => {
@@ -11,11 +12,12 @@ async function ConnectAMQPQueueServe() {
             const connection = await (0, amqplib_1.connect)(nameServer);
             const channelOpen = await connection.createChannel();
             //channelOpen.prefetch(1);
-            console.log("Connected to habbitMQ." + nameServer);
+            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD}`);
             resolve({ channelOpen, connection });
         }
-        catch (err) {
-            reject({ channelOpen: false, connection: err });
+        catch (error) {
+            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- ${error}`);
+            reject({ channelOpen: false, connection: error });
         }
     });
 }

@@ -1,0 +1,3 @@
+{"level":"warn","message": "Server NODEAPI  is starting on mode production","Date":"2022-05-16 19:24:29","originServer":"a77d602c412a"}
+{"level":"warn","message": "Server consumerCreateUpdateRegister is starting on mode production","Date":"2022-05-16 19:24:31","originServer":"42217a62696b"}
+{"level":"warn","message": "Server consumerCancelRegister is starting on mode production","Date":"2022-05-16 19:24:31","originServer":"1edd429315d6"}

@@ -6,7 +6,7 @@ import { CheckIfAllQueuesIsCreated } from '../services/queues/checkIfAllQueuesIs
 import { Logger } from '../services/createLogs/createLogs'
 import OS from "os"
 
-Logger.info(`Server is starting on mode ${process.env.NODE_ENV}`);
+Logger.warn(`Server NODEAPI  is starting on mode ${process.env.NODE_ENV}`);
 
 async function CheckQueues() {
     await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues
@@ -18,14 +18,12 @@ const fastifyServer = Fastify({
 })
 
 
-
-
 fastifyServer.register(RequestLogin) //login user
 fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
 fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled
 
 
-fastifyServer.listen(3000, '0.0.0.0')
+fastifyServer.listen(3000, '0.0.0.0') //0.0.0.0 is the best conf to docker
     .then((address) => Logger.http(`HTTP => Server started and listening on ${address}`))
     .catch(err => {
         console.log(`Origin log: ${OS.hostname()} => Error starting server:`, err)

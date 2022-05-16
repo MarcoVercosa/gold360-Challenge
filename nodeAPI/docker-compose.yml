@@ -43,7 +43,7 @@ services:
     container_name: 'nodeAPI'
     working_dir: /home/node/app
     environment:
-      - NODE_env=production
+      - NODE_ENV=production
     ports:
       - 80:3000
     restart: unless-stopped
@@ -53,6 +53,7 @@ services:
       - rabbitmq-mysql-nodejs-network
     volumes:
       - ../nodeAPI:/home/node/app
+      - ../logs:/home/node/app/logs
     command: "npm run prod"
     stdin_open: true
     tty: true
@@ -62,7 +63,7 @@ services:
     container_name: 'nodeConsumerCreateUpdateRegister'
     working_dir: /home/node/app
     environment:
-      - NODE_env=production
+      - NODE_ENV=production
     restart: unless-stopped
     depends_on:
       - rabbitmq
@@ -70,6 +71,7 @@ services:
       - rabbitmq-mysql-nodejs-network
     volumes:
       - ../consumerCreateUpdateRegister:/home/node/app
+      - ../logs:/home/node/app/logs
     command: "npm run prod"
     stdin_open: true
     tty: true
@@ -79,7 +81,7 @@ services:
     container_name: 'nodeConsumerCancelRegister'
     working_dir: /home/node/app
     environment:
-      - NODE_env=production
+      - NODE_ENV=production
     restart: unless-stopped
     depends_on:
       - rabbitmq
@@ -87,6 +89,7 @@ services:
       - rabbitmq-mysql-nodejs-network
     volumes:
       - ../consumerCancelRegister:/home/node/app
+      - ../logs:/home/node/app/logs
     command: "npm run prod"
     stdin_open: true
     tty: true

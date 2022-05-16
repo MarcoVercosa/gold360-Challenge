@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const ConsumerCancelRegisterController_1 = require("./useCase/ConsumerCancelRegisterController");
 const consumerCancelRegisterUseCase_1 = require("./useCase/consumerCancelRegisterUseCase");
 const consumerCancelRegisterRepository_1 = require("./repository/consumerCancelRegisterRepository");
+const createLogs_1 = require("./services/createLogs/createLogs");
+createLogs_1.Logger.warn(`Server consumerCancelRegister is starting on mode ${process.env.NODE_ENV}`);
 let consumerCancelActiveRegisterRepository = new consumerCancelRegisterRepository_1.ConsumerCancelRegisterRepository();
 let consumerCancelActiveRegisterUseCase = new consumerCancelRegisterUseCase_1.ConsumerCancelRegisterUseCase(consumerCancelActiveRegisterRepository);
 let consumerCancelActiveRegisterController = new ConsumerCancelRegisterController_1.ConsumerCancelRegisterController(consumerCancelActiveRegisterUseCase);

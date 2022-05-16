@@ -78,19 +78,12 @@ const verboseFilter = winston.format((info, opts) => {
     return info.level === 'verbose' ? info : false;
 });
 
+let transports
 
-const Logger = winston.createLogger({
-    level: process.env.LOG_LEVEL || 'info',
-    format: combine(
-        timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-        json(),
-        printf(
-            (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${OS.hostname()}"}`
-        ),
-    ),
-    transports: [
+process.env.NODE_ENV == 'production' ?
+    transports = [
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/error.log`,
+            filename: `${__dirname}/../../../logs/error.log`,
             level: 'error',
             format: combine(errorFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -101,7 +94,7 @@ const Logger = winston.createLogger({
             ),
         }),
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/warn.log`,
+            filename: `${__dirname}/../../../logs/warn.log`,
             level: 'warn',
             format: combine(warnFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -112,7 +105,7 @@ const Logger = winston.createLogger({
             ),
         }),
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/info.log`,
+            filename: `${__dirname}/../../../logs/info.log`,
             level: 'info',
             format: combine(infoFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -123,7 +116,7 @@ const Logger = winston.createLogger({
             ),
         }),
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/http.log`,
+            filename: `${__dirname}/../../../logs/http.log`,
             level: 'http',
             format: combine(httpFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -134,7 +127,7 @@ const Logger = winston.createLogger({
             ),
         }),
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/alert.log`,
+            filename: `${__dirname}/../../../logs/alert.log`,
             level: 'alert',
             format: combine(alertFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -145,7 +138,7 @@ const Logger = winston.createLogger({
             ),
         }),
         new winston.transports.File({
-            filename: `${__dirname}/../../../../logs/verbose.log`,
+            filename: `${__dirname}/../../../logs/verbose.log`,
             level: 'verbose',
             format: combine(verboseFilter(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -155,12 +148,21 @@ const Logger = winston.createLogger({
                 ),
             ),
         }),
-    ],
+    ] : transports = [new winston.transports.Console({ format: winston.format.simple() })]
+
+
+
+const Logger = winston.createLogger({
+    level: process.env.LOG_LEVEL || 'info',
+    format: combine(
+        timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+        json(),
+        printf(
+            (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${OS.hostname()}"}`
+        ),
+    ),
+    transports
 });
-if (process.env.NODE_ENV !== 'production') {
-    Logger.add(new winston.transports.Console({
-        //format: winston.format.simple()
-    }));
-}
+
 export { Logger }
 

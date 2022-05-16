@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConsumerCancelRegisterUseCase = void 0;
+const createLogs_1 = require("../services/createLogs/createLogs");
 const index_1 = require("../services/manageQueues/index");
 class ConsumerCancelRegisterUseCase {
     constructor(consumerCancelRegisterRepository) {
@@ -15,26 +16,26 @@ class ConsumerCancelRegisterUseCase {
             .then((data) => {
             let { channelOpen, connection } = data;
             connection.once("error", (error) => {
-                console.log("ERROR detected on connection.We try again in 2 secs", error);
+                createLogs_1.Logger.error(`Rabbitmq => ERROR DETECTED TO CREATE CONNECTION and consumed queue -- ${error} -- New try in 5 secs`);
                 setTimeout(() => {
                     connection.close();
                     channelOpen.close();
                     this.ConnectAndConsume();
-                }, 2000);
+                }, 5000);
             });
             connection.once("close", (error) => {
-                console.log("CLOSE detected on connection.We try again in 2 secs", error);
+                createLogs_1.Logger.error(`Rabbitmq => CLOSE DETECTED IN CONNECTION ALREADY CREATED -- ${error} -- New try in 5 secs`);
                 setTimeout(() => {
                     connection.close();
                     channelOpen.close();
                     this.ConnectAndConsume();
-                }, 2000);
+                }, 5000);
             });
             this.connectionQueue = channelOpen;
             this.Consume(); // ====>  Call Consumer
-        }).catch((err) => {
+        }).catch((error) => {
             this.connectionQueue;
-            console.log("Something wrong happened here. We try again in 2 secssssss", err.connection.cause);
+            createLogs_1.Logger.error(`SOMETHING WRONG HAPPENED HERE TO CONNECT RABBITMQ -- ${error} New try in 5 secs`);
             setTimeout(() => {
                 this.ConnectAndConsume();
             }, 2000);
@@ -43,15 +44,14 @@ class ConsumerCancelRegisterUseCase {
     async Consume() {
         if (this.connectionQueue) {
             this.connectionQueue.consume(process.env.QUEUE_NAME_CANCEL_REGISTER, async (reply) => {
-                console.log(reply);
                 let { replyTo, correlationId } = reply.properties;
                 let dataConsume = JSON.parse(reply.content); ///change from  buffer to object
-                console.log(" [XXXX] The server received data");
+                createLogs_1.Logger.info(`Rabbitmq => [XXXX] The Consumer to ${process.env.QUEUE_NAME_CANCEL_REGISTER} received data.`);
                 let result = await this.Execute(dataConsume);
                 //reply the confirmation with data to queue temporary
                 this.connectionQueue.sendToQueue(replyTo, Buffer.from(JSON.stringify(result)), { correlationId });
                 this.connectionQueue.ack(reply);
-                console.log(" [XXXX] The server sent a data");
+                createLogs_1.Logger.info(`Rabbitmq => [XXXX] The confirmation to  ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} was sent.`);
             }, { noAck: false } //avisa que a confirmação será feita manualmente(feita na linha acima -- this.connectionQueue.ack(reply))
             );
         }
@@ -99,9 +99,9 @@ class ConsumerCancelRegisterUseCase {
                 return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "FullName or/and email not found" };
             }
         }
-        catch (err) {
-            console.log(err);
-            return { sucess: true, comparatorKey: "", message: err };
+        catch (error) {
+            createLogs_1.Logger.error(`REPOSITORY => SOMETHING WRONG HAPPENED HERE -- ${error}`);
+            return { sucess: true, comparatorKey: "", message: error };
         }
     }
 }

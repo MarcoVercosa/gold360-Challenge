@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestLoginController = void 0;
+const createLogs_1 = require("../../services/createLogs/createLogs");
 class RequestLoginController {
     constructor(requestLoginUseCase) {
         this.requestLoginUseCase = requestLoginUseCase;
     }
-    async Handle(request, response) {
+    async Handle(request) {
         const { email, password } = request.body;
         let result = false;
         try {
@@ -18,6 +19,7 @@ class RequestLoginController {
             }
         }
         catch (err) {
+            createLogs_1.Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`);
             return { result: err, codeResult: 500 };
         }
     }

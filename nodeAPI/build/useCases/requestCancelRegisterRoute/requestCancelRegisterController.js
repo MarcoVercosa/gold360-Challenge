@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestCancelRegisterController = void 0;
+const createLogs_1 = require("../../services/createLogs/createLogs");
 class RequestCancelRegisterController {
     constructor(requestCancelRegisterUseCase) {
         this.requestCancelRegisterUseCase = requestCancelRegisterUseCase;
@@ -18,6 +19,7 @@ class RequestCancelRegisterController {
             }
         }
         catch (err) {
+            createLogs_1.Logger.error(`HTTP => url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - erro: ${JSON.stringify(err)}`);
             return { result: err, codeResult: 500 };
         }
     }

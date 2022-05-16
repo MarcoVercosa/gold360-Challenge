@@ -7,18 +7,13 @@ class RequestLoginUseCase {
         this.requestLoginRepository = requestLoginRepository;
     }
     async Execute(email, password) {
-        try {
-            let result = await this.requestLoginRepository.RequestLogin(email, password);
-            if (result.length > 0) {
-                const token = (0, generateToken_1.GenerateToken)(result[0].id, result[0].fullName);
-                return { sucess: true, token, result };
-            }
-            else {
-                return { sucess: false, token: "", result: "User or password is incorrect" };
-            }
+        let result = await this.requestLoginRepository.RequestLogin(email, password);
+        if (result.length > 0) {
+            const token = (0, generateToken_1.GenerateToken)(result[0].id, result[0].fullName);
+            return { sucess: true, token, result };
         }
-        catch (err) {
-            return { sucess: false, token: "", result: err };
+        else {
+            return { sucess: false, token: "", result: "User or password is incorrect" };
         }
     }
 }
