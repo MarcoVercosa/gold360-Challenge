@@ -54,6 +54,7 @@ services:
     volumes:
       - ../nodeAPI:/home/node/app
       - ../logs:/home/node/app/logs
+    user: node
     command: "npm run prod"
     stdin_open: true
     tty: true
@@ -72,6 +73,7 @@ services:
     volumes:
       - ../consumerCreateUpdateRegister:/home/node/app
       - ../logs:/home/node/app/logs
+    user: node
     command: "npm run prod"
     stdin_open: true
     tty: true
@@ -90,6 +92,7 @@ services:
     volumes:
       - ../consumerCancelRegister:/home/node/app
       - ../logs:/home/node/app/logs
+    user: node
     command: "npm run prod"
     stdin_open: true
     tty: true

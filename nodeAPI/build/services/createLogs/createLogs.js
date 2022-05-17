@@ -76,43 +76,38 @@ const verboseFilter = winston_1.default.format((info, opts) => {
     return info.level === 'verbose' ? info : false;
 });
 let transports;
+let Printf = printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`);
 process.env.NODE_ENV == 'production' ?
     transports = [
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/error.log`,
-            level: 'error',
-            format: combine(errorFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/error.log`, level: 'error',
+            format: combine(errorFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/warn.log`,
-            level: 'warn',
-            format: combine(warnFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/warn.log`, level: 'warn',
+            format: combine(warnFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/info.log`,
-            level: 'info',
-            format: combine(infoFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/info.log`, level: 'info',
+            format: combine(infoFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/http.log`,
-            level: 'http',
-            format: combine(httpFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/http.log`, level: 'http',
+            format: combine(httpFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/alert.log`,
-            level: 'alert',
-            format: combine(alertFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/alert.log`, level: 'alert',
+            format: combine(alertFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
         new winston_1.default.transports.File({
-            filename: `${__dirname}/../../../logs/verbose.log`,
-            level: 'verbose',
-            format: combine(verboseFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
+            filename: `${__dirname}/../../../logs/verbose.log`, level: 'verbose',
+            format: combine(verboseFilter(), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), Printf),
         }),
     ] : transports = [new winston_1.default.transports.Console({ format: winston_1.default.format.simple() })];
 const Logger = winston_1.default.createLogger({
     level: process.env.LOG_LEVEL || 'info',
-    format: combine(timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), json(), printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`)),
-    transports
+    format: combine(timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), json(), Printf),
+    transports //the path logs are configure to running in docker
 });
 exports.Logger = Logger;
 //# sourceMappingURL=createLogs.js.map
