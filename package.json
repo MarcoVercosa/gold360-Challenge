@@ -1,0 +1,22 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "description": "root project",
+  "main": "index.js",
+  "scripts": {
+    "createDockerAplicationPROD": "sudo docker-compose up -d && echo 'CREATING USERS AND PASS ON RABBITMQ' && sleep 25 && vols_containers/rabbitmq/createUsersRabbitMQ/scriptUserRabbitMQ.sh && echo 'END OF SCRIPT'",
+    "startDockerAplicationPROD": "sudo docker-compose start",
+    "createDockerAplicationDEV": "sudo docker-compose up -d && echo 'CREATING USERS AND PASS ON RABBITMQ' && sleep 25 && vols_containers/rabbitmq/createUsersRabbitMQ/scriptUserRabbitMQ.sh && echo 'END OF SCRIPT'",
+    "startDockerAplicationDEV": "sudo docker-compose start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoVercosa/gold360-Challenge.git"
+  },
+  "author": "MAVS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcoVercosa/gold360-Challenge/issues"
+  },
+  "homepage": "https://github.com/MarcoVercosa/gold360-Challenge#readme"
+}

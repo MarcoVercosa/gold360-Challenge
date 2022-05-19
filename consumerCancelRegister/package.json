@@ -4,11 +4,13 @@
   "description": "Consumer route Cancel Active register",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prismaConfig": "prisma db pull && prisma generate",
-    "devts": "NODE_ENV=development ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
-    "buildTs": "npx tsc",
-    "prod": "NODE_ENV=production npm install && npm run prismaConfig && npm run buildTs && node build/index.js"
+    "prismaConfigProd": "prisma db pull && prisma generate",
+    "buildts": "npx tsc",
+    "prod": "NODE_ENV=production npm install && npm run prismaConfigProd && npm run buildTs && node build/index.js",
+    "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
+    "prismaConfigDev": "dotenv -e .env.dev -- npx prisma generate",
+    "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --ignore-watch node_modules src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

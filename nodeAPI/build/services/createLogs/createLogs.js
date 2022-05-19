@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
 const winston_1 = __importDefault(require("winston"));
-const os_1 = __importDefault(require("os"));
 const { combine, timestamp, json, printf } = winston_1.default.format;
 // levelFilter
 // const levels = {
@@ -76,7 +75,7 @@ const verboseFilter = winston_1.default.format((info, opts) => {
     return info.level === 'verbose' ? info : false;
 });
 let transports;
-let Printf = printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${os_1.default.hostname()}"}`);
+let Printf = printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"nodeAPI"}`);
 process.env.NODE_ENV == 'production' ?
     transports = [
         new winston_1.default.transports.File({

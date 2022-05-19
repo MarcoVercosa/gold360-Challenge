@@ -1,5 +1,5 @@
 import winston from 'winston'
-import OS from "os"
+import { ConnectionsName } from "../../services/connections"
 const { combine, timestamp, json, printf } = winston.format;
 
 // levelFilter
@@ -58,6 +58,8 @@ const { combine, timestamp, json, printf } = winston.format;
 
 // export { Logger }
 
+let connection = ConnectionsName()
+
 const errorFilter = winston.format((info, opts) => {
     return info.level === 'error' ? info : false;
 });
@@ -81,7 +83,7 @@ const verboseFilter = winston.format((info, opts) => {
 let transports
 
 let Printf = printf(
-    (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${OS.hostname()}"}`
+    (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${connection.nodeAPI}"}`
 )
 
 process.env.NODE_ENV == 'production' ?

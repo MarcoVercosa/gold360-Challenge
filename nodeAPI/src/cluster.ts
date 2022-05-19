@@ -14,7 +14,7 @@ function RunPrimaryProcess() {
     cluster.on("exit", (worker, code, signal) => {
         if (code !== 0 && !worker.exitedAfterDisconnect) {
             //se o processo finalizou com err e não foi o S.O que o desconectou, gere uma nova copia
-            Logger.error(`ERROR => Worker ${worker.process.pid} - code ${code} Signal ${signal} died. Scheduling another one`)
+            Logger.error(`ERROR => Worker ${worker.process.pid} - code ${code} Signal ${signal} died. Scheduling another process`)
             cluster.fork()
         }
     })

@@ -1,11 +1,13 @@
 import { config } from "dotenv"
 import { Channel, connect } from "amqplib"
 import { Logger } from "../../createLogs/createLogs"
+import { ConnectionsName } from "../../connections"
 
 export async function CreateQueue(user: string, password: string, queueName: string): Promise<Channel | void> {
     config()
+    let connecitons = ConnectionsName()
     try {
-        let nameServer: string = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
+        let nameServer: string = `amqp://${user}:${password}@${connecitons.serverRabbitMQ}`
         const connection = await connect(nameServer)
         connection.once("close", () => {
             Logger.info(`Rabbitmq => Connection closed after 20 secs -- ${queueName}`)
