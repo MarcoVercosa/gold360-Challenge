@@ -1,33 +1,33 @@
 import { Channel, connect } from "amqplib"
-import { config } from "dotenv"
+import { ConnectionsName } from "../connections"
 import { Logger } from "../createLogs/createLogs"
 
-
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
-    let nameServer: string = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
+    let connections = ConnectionsName()
+    let nameServer: string = `amqp://${connections.credentialsCancelUserConsumer}:${connections.credentialsCancelPassConsumer}@${connections.serverRabbitMQ}`
     return new Promise(async (resolve, reject) => {
         try {
             const connection = await connect(nameServer)
             const channelOpen = await connection.createChannel()
             //channelOpen.prefetch(1);
-            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CANCEL_REGISTER}`)
+            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${connections.queueNameCancelRegister}`)
             resolve({ channelOpen, connection })
         }
         catch (error: any) {
-            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CANCEL_REGISTER} -- ${error}`)
+            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${connections.queueNameCancelRegister} -- ${error}`)
             reject({ channelOpen: false, connection: error })
         }
     })
 }
 
+
 async function ConnectCancelDeadQueue() {
-    config()
-    let queueName: string = process.env.QUEUE_NAME_DEAD_CANCEL as string
-    let nameServer: string = `amqp://${process.env.CREDENTIALS_DEAD_QUEUE_USER}:${process.env.CREDENTIALS_DEAD_QUEUE_PASS}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
+    let connections = ConnectionsName()
+    let nameServer: string = `amqp://${connections.credentialsDeadQueueUser}:${connections.credentialsDeadQueuePass}@${connections.serverRabbitMQ}`
     try {
         const connection = await connect(nameServer)
         connection.once("close", () => {
-            Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${queueName}`)
+            Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${connections.queueNameDeadCancel}`)
         })
         const channel = await connection.createChannel()
 
@@ -37,14 +37,14 @@ async function ConnectCancelDeadQueue() {
                 //close conection after 20 seconds
             }
             catch (error) {
-                Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`)
+                Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${connections.queueNameDeadCancel} error: ${error}`)
             }
         }, 20000);
 
-        Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`)
+        Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${connections.queueNameDeadCancel}`)
         return channel
     } catch (error) {
-        Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`)
+        Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${connections.queueNameDeadCancel} -- ${error} -- New try in 5 secs`)
         setTimeout(() => {
             ConnectCancelDeadQueue()
         }, 5000)

@@ -1,10 +1,11 @@
 import jwt from 'jsonwebtoken';
-//require('dotenv').config()
+import { ConnectionsName } from "../../services/connections"
 import { config } from "dotenv"
 
 function ValidadeToken(token: string) {
+    let connections = ConnectionsName()
     config()
-    let result = jwt.verify(token, process.env.SECRET as string, (err, decode: any) => {
+    let result = jwt.verify(token, connections.secretJSONWebToken as string, (err, decode: any) => {
         if (err) {
             return { auth: false, result: "Error token" }
         }

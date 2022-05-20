@@ -1,5 +1,5 @@
 import { Channel } from "amqplib";
-import { config } from "dotenv"
+import { ConnectionsName } from "../../services/connections";
 import { v4 as uuidV4 } from 'uuid';
 //import { IRequestCancelActiveRegisterRepository } from "../../entities/requestCancelActiveRoute/IRequestCancelActiveRegisterRepository";
 import { IRequestCancelRegisterUseCase, IParams, IInputsValidates, IReturn } from "../../entities/requestCancelRegisterRoute/IRequestCancelRegisterUseCase";
@@ -15,25 +15,26 @@ export class RequestCancelRegisterUseCase implements IRequestCancelRegisterUseCa
 
 
     async CheckFirstQueueCancelRegisterBD(): Promise<Channel | any> {
-        config()
+        let connections = ConnectionsName()
         //create queue (if not exists), conection and channel 
         const connectionQueueCancelRegisterBD = await CreateQueue
             (
-                process.env.CREDENTIALS_CANCEL_USER as string,
-                process.env.CREDENTIALS_CANCEL_PASS as string,
-                process.env.QUEUE_NAME_CANCEL_REGISTER as string
+                connections.credentialsCancelUser,
+                connections.credentialsCancelPass,
+                connections.queueNameCancelRegister
             )
         const connectionQueueCancelDead = await CreateQueue
             (
-                process.env.CREDENTIALS_DEAD_QUEUE_USER as string,
-                process.env.CREDENTIALS_DEAD_QUEUE_PASS as string,
-                process.env.QUEUE_NAME_DEAD_CANCEL as string
+                connections.credentialsDeadQueueUser,
+                connections.credentialsDeadQueuePass,
+                connections.queueNameDeadCancel
             )
         return { connectionQueueCancelRegisterBD, connectionQueueCancelDead }
     }
 
     async Execute({ token, fullName, email }: IParams): Promise<{ sucess: boolean, token: string, result: IReturn }> {
-        config()
+        let connections = ConnectionsName()
+
         //check validate token
         let validateToken: any = ValidadeToken(token)
 
@@ -64,7 +65,7 @@ export class RequestCancelRegisterUseCase implements IRequestCancelRegisterUseCa
             //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS. WHEN THE DATA CONFIRMATION IS RECEIVED, THE CONNECTION IS CLOSE E THE QUEUE TEMPORARY IS DELETED
             let rpc = await connectionQueueCancelRegisterBD.assertQueue('', { exclusive: true, durable: false })
             //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE (replyTo => It is the queue temporary above created than response will be send) 
-            connectionQueueCancelRegisterBD.sendToQueue(process.env.QUEUE_NAME_CANCEL_REGISTER as string, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
+            connectionQueueCancelRegisterBD.sendToQueue(connections.queueNameCancelRegister as string, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
 
 
             //AFTER THE DATA IS SENT TO THE QUEUE. IN THE RETURN OF THE FUNCTION WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
@@ -73,12 +74,12 @@ export class RequestCancelRegisterUseCase implements IRequestCancelRegisterUseCa
                 return new Promise((resolve, reject) => {
                     connectionQueueCancelRegisterBD.consume(rpc.queue, (data: any) => {
                         if (data.properties.correlationId == dataJSON.comparatorKey) {
-                            Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- from queue name temporary: ${rpc.queue} `)
+                            Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${connections.queueNameCreateUpdateRegisterBD} -- from queue name temporary: ${rpc.queue} `)
                             resolve(JSON.parse(data.content))
                         }
                     })
                 }).catch((err) => {
-                    Logger.error(`RABBITMQ => error on consume queue temporary: ${rpc.queue} -- queue request:${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- error: ${err}`)
+                    Logger.error(`RABBITMQ => error on consume queue temporary: ${rpc.queue} -- queue request:${connections.queueNameCreateUpdateRegisterBD} -- error: ${err}`)
                     return err
                 })
             }

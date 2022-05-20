@@ -1,22 +1,23 @@
 import { Channel, connect } from "amqplib"
-import { config } from "dotenv"
 import { Logger } from "../createLogs/createLogs"
+import { ConnectionsName } from "../connections/index"
 
 
 async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
-    config()
+    let connections = ConnectionsName()
     return new Promise(async (resolve, reject) => {
-        let nameServer: string = `amqp://${process.env.CREDENTIALS_REGISTER_USER_CONSUMER}:${process.env.CREDENTIALS_REGISTER_PASS_CONSUMER}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`
+
+        let nameServer: string = `amqp://${connections.credentialsRegisterUserConsumer}:${connections.credentialsRegisterPassConsumer}@${connections.serverRabbitMQ}`
         try {
             const connection = await connect(nameServer)
             const channelOpen = await connection.createChannel()
             //channelOpen.prefetch(1);
-            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD}`)
+            Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${connections.queueNameCreateUpdateRegisterBD}`)
             resolve({ channelOpen, connection })
 
         }
         catch (error: any) {
-            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- ${error}`)
+            Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${connections.queueNameCreateUpdateRegisterBD} -- ${error}`)
             reject({ channelOpen: false, connection: error })
         }
 

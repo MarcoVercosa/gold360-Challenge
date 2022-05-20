@@ -1,5 +1,5 @@
 import { Channel } from "amqplib";
-import { config } from "dotenv"
+import { ConnectionsName } from "../../services/connections";
 import { v4 as uuidV4 } from 'uuid';
 import { IRequestCreateUpdateRegisterUseCase, IParams, IInputsValidates, IReturn } from '../../entities/requestCreateUpdateRegisterRoute/IRequestRegisterUseCase';
 import { ValidadeToken } from '../../http/midwares/validateToken';
@@ -13,15 +13,17 @@ export class RequestCreateUpdateRegisterUseCase implements IRequestCreateUpdateR
     constructor() { }
 
     async CheckFirstQueueCreateUpdateRegisterBD(): Promise<Channel | any> { //create queue (if not exists) and return channel
-        config()
+        let connections = ConnectionsName()
         const isCreateQueue = await CreateQueue(
-            process.env.CREDENTIALS_REGISTER_USER as string,
-            process.env.CREDENTIALS_REGISTER_PASS as string,
-            process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string)
+            connections.credentialsRegisterUser,
+            connections.credentialsRegisterPass,
+            connections.queueNameCreateUpdateRegisterBD
+        )
         return isCreateQueue
     }
 
     async Execute({ token, fullName, email, password }: IParams): Promise<{ sucess: boolean, token: string, result: IReturn }> {
+        let connections = ConnectionsName()
 
         //VALIDATE TOKEN
         let validateToken: any = ValidadeToken(token)
@@ -51,7 +53,7 @@ export class RequestCreateUpdateRegisterUseCase implements IRequestCreateUpdateR
             //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS. WHEN THE DATA CONFIRMATION IS RECEIVED, THE CONNECTION IS CLOSE E THE QUEUE TEMPORARY IS DELETED
             let rpc = await connectionQueueCreateUpdateRegisterBD.assertQueue('', { exclusive: true, durable: false })
             //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE (replyTo => It is the queue temporary above created than response will be send)
-            connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
+            connectionQueueCreateUpdateRegisterBD.sendToQueue(connections.queueNameCreateUpdateRegisterBD, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue })
 
 
             //AFTER THE DATA IS SENT TO THE QUEUE. WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
@@ -61,7 +63,7 @@ export class RequestCreateUpdateRegisterUseCase implements IRequestCreateUpdateR
                 return new Promise((resolve, reject) => {
                     connectionQueueCreateUpdateRegisterBD.consume(rpc.queue, (data: any) => {
                         if (data.properties.correlationId == dataJSON.comparatorKey) {
-                            Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- from queue name temporary: ${rpc.queue} `)
+                            Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${connections.queueNameCreateUpdateRegisterBD} -- from queue name temporary: ${rpc.queue} `)
                             resolve(JSON.parse(data.content))
                         }
                     })

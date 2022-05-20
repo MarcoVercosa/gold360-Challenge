@@ -8,7 +8,7 @@
     "prod": "NODE_ENV=production npm install && npm run buildTs && node build/cluster.js",
     "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
     "prismaConfigDev": "dotenv -e .env.dev -- npx prisma migrate dev --name init-dev",
-    "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --ignore-watch node_modules src/cluster.ts",
+    "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --exit-child --ignore-watch node_modules src/cluster.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

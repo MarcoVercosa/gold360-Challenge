@@ -3,12 +3,12 @@ import { IConsumerCancelRegisterUseCase, IParams } from "../entities/IConsumerCa
 import { ConsumerCancelRegisterRepository } from "../repository/consumerCancelRegisterRepository"
 import { Logger } from "../services/createLogs/createLogs";
 import { ConnectAMQPQueueServe, ConnectCancelDeadQueue } from "../services/manageQueues/index"
+import { ConnectionsName } from "../services/connections/index"
 
 export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUseCase {
     connectionQueue: any;
     constructor(
         private consumerCancelRegisterRepository: ConsumerCancelRegisterRepository, //repository bd
-
     ) {
         this.connectionQueue = null
         //store the conection use by consume register queue bd and  by send confirm queue. 
@@ -48,17 +48,18 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
             })
     }
     async Consume() {
+        let connections = ConnectionsName()
         if (this.connectionQueue) {
-            this.connectionQueue.consume(process.env.QUEUE_NAME_CANCEL_REGISTER as string,
+            this.connectionQueue.consume(connections.queueNameCancelRegister,
                 async (reply: any) => {
                     let { replyTo, correlationId } = reply.properties
                     let dataConsume: IParams = JSON.parse(reply.content)///change from  buffer to object
-                    Logger.info(`Rabbitmq => [XXXX] The Consumer to ${process.env.QUEUE_NAME_CANCEL_REGISTER} received data.`)
+                    Logger.info(`Rabbitmq => [XXXX] The Consumer to ${connections.queueNameCancelRegister} received data.`)
                     let result = await this.Execute(dataConsume) as Promise<{ sucess: boolean, comparatorKey: string, message: string }>
                     //reply the confirmation with data to queue temporary
                     this.connectionQueue.sendToQueue(replyTo, Buffer.from(JSON.stringify(result)), { correlationId })
                     this.connectionQueue.ack(reply)
-                    Logger.info(`Rabbitmq => [XXXX] The confirmation to  ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} was sent.`)
+                    Logger.info(`Rabbitmq => [XXXX] The confirmation to  ${connections.queueNameCreateUpdateRegisterBD} was sent.`)
                 }, { noAck: false }//avisa que a confirmação será feita manualmente(feita na linha acima -- this.connectionQueue.ack(reply))
             ) as any
         }
@@ -66,7 +67,7 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
 
 
     async Execute(dataQueueConsumed: IParams): Promise<any> {
-        console.log(dataQueueConsumed)
+        let connections = ConnectionsName()
         try {
             let isAdmin: boolean = await this.consumerCancelRegisterRepository.UserIsAdminConfirm({ idToken: dataQueueConsumed.validateToken.result.id, fullNameToken: dataQueueConsumed.validateToken.result.fullName })
             if (!isAdmin) { return { sucess: true, comparatorKey: "", message: "Permission denied" } }
@@ -102,7 +103,7 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
                         result: "Register is already disabled. There was no change in DataBase. Sent to queue dead."
                     }
                     let channel = await ConnectCancelDeadQueue() as Channel
-                    channel.sendToQueue(process.env.QUEUE_NAME_DEAD_CANCEL as string, Buffer.from(JSON.stringify(result)))
+                    channel.sendToQueue(connections.queueNameDeadCancel as string, Buffer.from(JSON.stringify(result)))
                     return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "Register is already disabled. There was no change in DataBase. Sent to Queue Dead" }
                 }
             } else {

@@ -1,27 +1,27 @@
 import { CreateQueue } from "../createQueuesChannels";
-import { config } from "dotenv"
 import { Channel } from "amqplib";
 import { Logger } from "../../createLogs/createLogs";
+import { ConnectionsName } from "../../connections/index"
 
 
 async function CheckIfAllQueuesIsCreated() {
-    config()
+    let connections = ConnectionsName()
     Logger.info("Checking if all queue are created. Case not, will be created. This action is showing when the server is started")
     try {
         await CreateQueue(
-            process.env.CREDENTIALS_REGISTER_USER as string,
-            process.env.CREDENTIALS_REGISTER_PASS as string,
-            process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD as string
+            connections.credentialsRegisterUser,
+            connections.credentialsRegisterPass,
+            connections.queueNameCreateUpdateRegisterBD
         ) as Channel
         await CreateQueue(
-            process.env.CREDENTIALS_CANCEL_USER as string,
-            process.env.CREDENTIALS_CANCEL_PASS as string,
-            process.env.QUEUE_NAME_CANCEL_REGISTER as string
+            connections.credentialsCancelUser,
+            connections.credentialsCancelPass,
+            connections.queueNameCancelRegister
         ) as Channel
         await CreateQueue(
-            process.env.CREDENTIALS_DEAD_QUEUE_USER as string,
-            process.env.CREDENTIALS_DEAD_QUEUE_PASS as string,
-            process.env.QUEUE_NAME_DEAD_CANCEL as string
+            connections.credentialsDeadQueueUser,
+            connections.credentialsDeadQueuePass,
+            connections.queueNameDeadCancel,
         ) as Channel
     } catch (err) {
         setTimeout(() => {

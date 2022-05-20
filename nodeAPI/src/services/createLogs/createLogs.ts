@@ -83,7 +83,7 @@ const verboseFilter = winston.format((info, opts) => {
 let transports
 
 let Printf = printf(
-    (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${connection.nodeAPI}"}`
+    (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${connection.serverNodeAPI}"}`
 )
 
 process.env.NODE_ENV == 'production' ?
