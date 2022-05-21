@@ -5,7 +5,7 @@ import { Logger } from "./services/createLogs/createLogs";
 
 function StartConsumer() {
 
-    Logger.warn(`Server consumerCancelRegister is starting on mode ${process.env.NODE_ENV} on process ${process.pid}`);
+    Logger.warn(`Server consumerCancelRegister is starting on mode "" ${process.env.NODE_ENV} "" on process ${process.pid} ""`);
 
     let consumerCancelActiveRegisterRepository = new ConsumerCancelRegisterRepository()
     let consumerCancelActiveRegisterUseCase = new ConsumerCancelRegisterUseCase(consumerCancelActiveRegisterRepository)

@@ -7,8 +7,8 @@ import { Logger } from '../services/createLogs/createLogs'
 
 async function StartServer() {
 
-    console.log(`Server NODEAPI  is starting on mode ${process.env.NODE_ENV}`)
-    Logger.warn(`Server NODEAPI  is starting on mode ${process.env.NODE_ENV}`);
+    console.log(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} " `)
+    Logger.warn(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} ""`);
 
     async function CheckQueues() {
         await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues

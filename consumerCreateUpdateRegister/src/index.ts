@@ -5,7 +5,7 @@ import { Logger } from "./services/createLogs/createLogs";
 
 function StartConsumer() {
 
-    Logger.warn(`Server consumerCreateUpdateRegister is starting on mode ${process.env.NODE_ENV} on process ${process.pid}`);
+    Logger.warn(`Server consumerCreateUpdateRegister is starting on mode "" ${process.env.NODE_ENV} "" on process ${process.pid}`);
 
     let createRegisterUpdateRequestRepository = new ConsumerCreateUpdateRegisterRepository()
     let consumeQueueCreatRegisterUpdateRequestUseCase = new ConsumerCreateUpdateRegisterUseCase(createRegisterUpdateRequestRepository)
