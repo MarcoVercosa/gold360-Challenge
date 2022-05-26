@@ -11,7 +11,7 @@ interface IResult {
 async function RequestLogin(fastify: FastifyInstance): Promise<void> {
     fastify.post('/login', async (request: FastifyRequest, response: FastifyReply) => {
         let { result, codeResult }: IResult = await requestLoginController.Handle(request)
-        Logger.http(`HTTP =>  url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - result: ${JSON.stringify(result)}, ${codeResult}`)
+        Logger.warn(`HTTP =>  url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - result: ${JSON.stringify(result)}, ${codeResult}`)
         Logger.verbose(`ACCESS =>  url request: ${request.url} - ip: ${request.ip} - hostname: ${request.hostname} - result: ${JSON.stringify(result)}, ${codeResult}`)
         response.code(codeResult).header('Content-Type', 'application/json; charset=utf-8').send(result)
     })

@@ -1,0 +1,273 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "System for authenticity logins, registration creation and cancellation",
+        "version": "1.0.0",
+        "title": "API REGISTER",
+        "contact": {
+            "email": "marco2011sky@gmail.com"
+        }
+    },
+    "host": "http://localhost:3001/documentation/",
+    "tags": [
+        {
+            "name": "Login",
+            "description": "Receive token with permission or not",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://localhost:3001/documentation/"
+            }
+        },
+        {
+            "name": "Create / Update Register",
+            "description": "Allow to create or change data register",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://localhost:3001/documentation/"
+            }
+        },
+        {
+            "name": "Cancel register",
+            "description": "Allow cancel register data (if register is enabled)",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://localhost:3001/documentation/"
+            }
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "Generate token with permission",
+                "description": "This route receive: email and password",
+                "operationId": "Login / Password",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "body",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "body",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCESS - token generate and sent",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    },
+                    "401": {
+                        "description": " UNAUTHORIZED - User or password is incorrect"
+                    },
+                    "500": {
+                        "description": " UNEXPECTED ERROR - Internal server error"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "register"
+                ],
+                "summary": "Returns message informing the result of the operation",
+                "description": "This route receive: fullName, email, password to create a new register or update it and Token on header for authentication  ",
+                "operationId": "Create / Update Register",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fullName",
+                        "in": "body",
+                        "description": "Full name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "body",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "body",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "x-access-token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCESS - Message result",
+                        "schema": {
+                            "$ref": "#/definitions/register"
+                        }
+                    },
+                    "401": {
+                        "description": " UNAUTHORIZED - invalid credentials / token"
+                    },
+                    "500": {
+                        "description": " UNEXPECTED ERROR - Internal server error"
+                    }
+                }
+            }
+        },
+        "/cancel": {
+            "post": {
+                "tags": [
+                    "cancel"
+                ],
+                "summary": "Cancel register if enable",
+                "description": "This route receive: full name, email and Token on header for authentication",
+                "operationId": "Cancel register ",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fullName",
+                        "in": "body",
+                        "description": "numero do cântico selecionado",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "body",
+                        "description": "numero do cântico selecionado",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "x-access-token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCESS - Message result",
+                        "schema": {
+                            "$ref": "#/definitions/cancel"
+                        }
+                    },
+                    "401": {
+                        "description": " UNAUTHORIZED - invalid credentials / token"
+                    },
+                    "500": {
+                        "description": " UNEXPECTED ERROR - Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "login": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "fullName": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "lastLogin": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "register": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "sucess": {
+                            "type": "boolean"
+                        },
+                        "message": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "application/json": {
+                "name": "register"
+            }
+        },
+        "cancel": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "sucess": {
+                            "type": "boolean"
+                        },
+                        "message": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "application/json": {
+                "name": "retornanumeroshinoharpa"
+            }
+        }
+    }
+}

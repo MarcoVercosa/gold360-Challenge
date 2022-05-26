@@ -4,16 +4,16 @@ import { RequestCancelRegister } from './routes/requestCancelRegister'
 import { RequestLogin } from "./routes/requestLogin"
 import { CheckIfAllQueuesIsCreated } from '../services/queues/checkIfAllQueuesIsCreated/checkIfAllQueuesIsCreated'
 import { Logger } from '../services/createLogs/createLogs'
+import { StartDocumentation } from "../doc/documentation"
 
 async function StartServer() {
 
     console.log(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} " `)
     Logger.warn(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} ""`);
 
-    async function CheckQueues() {
-        await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues
-    }
-    CheckQueues()
+    await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues
+    StartDocumentation() //start documentation IF NOT PRODUCTION (SWAGGER) on port 3001 
+
 
     const fastifyServer = Fastify({
         logger: false
@@ -25,7 +25,7 @@ async function StartServer() {
 
     fastifyServer.listen(3000, '0.0.0.0') //'0.0.0.0' is the best conf to docker
         .then((address) =>
-            Logger.http(`HTTP => SERVER started and listening on ${address} o process ${process.pid}`)
+            Logger.info(`HTTP => SERVER started and listening on ${address} o process ${process.pid}`)
         )
         .catch(error => {
             Logger.error(`HTTP => ERROR starting server: ${error}`)
@@ -54,6 +54,7 @@ async function StartServer() {
             Logger.error(`ERROR => SIGTERM - Attempt to terminate fastify executed with error ! --  Error: ${error}`)
         })
     })
-}
 
+    return fastifyServer
+}
 export { StartServer }

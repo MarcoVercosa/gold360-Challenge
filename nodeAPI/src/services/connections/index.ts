@@ -1,4 +1,5 @@
 interface IReturnConnectionsName {
+    environment: string;
     secretJSONWebToken: string;
     serverRabbitMQ: string;
     serverMySQL: string;
@@ -29,6 +30,7 @@ function ConnectionsName(): IReturnConnectionsName {
         require('dotenv').config({ path: '../../../.env.test' })
     }
     return {
+        environment: process.env.NODE_ENV as string,
         secretJSONWebToken: process.env.SECRET as string,
         serverRabbitMQ: process.env.AMQP_QUEUE_SERVER_ADDRESS as string,
         serverMySQL: process.env.DATABASE_URL as string,
