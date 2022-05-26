@@ -8,14 +8,14 @@
             "email": "marco2011sky@gmail.com"
         }
     },
-    "host": "http://localhost:3001/documentation/",
+    "host": "localhost",
     "tags": [
         {
             "name": "Login",
             "description": "Receive token with permission or not",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "http://localhost:3001/documentation/"
+                "url": "/login"
             }
         },
         {
@@ -23,7 +23,7 @@
             "description": "Allow to create or change data register",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "http://localhost:3001/documentation/"
+                "url": "/register"
             }
         },
         {
@@ -31,7 +31,7 @@
             "description": "Allow cancel register data (if register is enabled)",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "http://localhost:3001/documentation/"
+                "url": "/cancel"
             }
         }
     ],
@@ -52,32 +52,43 @@
                 ],
                 "parameters": [
                     {
-                        "name": "email",
                         "in": "body",
-                        "description": "Email",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "password",
-                        "in": "body",
-                        "description": "Password",
-                        "required": true,
-                        "type": "string"
+                        "name": "Credentials",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "email": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "register@gmail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "Register@123456"
+                                }
+                            }
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "SUCESS - token generate and sent",
                         "schema": {
-                            "$ref": "#/definitions/login"
+                            "$ref": "#/definitions/login_200"
                         }
                     },
                     "401": {
-                        "description": " UNAUTHORIZED - User or password is incorrect"
+                        "description": " UNAUTHORIZED - User or password is incorrect",
+                        "schema": {
+                            "$ref": "#/definitions/login_401"
+                        }
                     },
                     "500": {
-                        "description": " UNEXPECTED ERROR - Internal server error"
+                        "description": " UNEXPECTED ERROR - Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/login_500"
+                        }
                     }
                 }
             }
@@ -95,48 +106,66 @@
                 ],
                 "parameters": [
                     {
-                        "name": "fullName",
                         "in": "body",
-                        "description": "Full name",
+                        "name": "New register",
                         "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "email",
-                        "in": "body",
-                        "description": "Email",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "password",
-                        "in": "body",
-                        "description": "Password",
-                        "required": true,
-                        "type": "string"
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "fullName": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "Registro Teste Registro da Silva"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "registroForever@registro.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "RegistroTeste@654321"
+                                }
+                            }
+                        }
                     },
                     {
                         "name": "token",
                         "in": "header",
                         "description": "x-access-token",
-                        "required": true,
-                        "type": "string"
+                        "required": false,
+                        "type": "string",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "SUCESS - Message result",
                         "schema": {
-                            "$ref": "#/definitions/register"
+                            "$ref": "#/definitions/register_200"
                         }
                     },
                     "401": {
-                        "description": " UNAUTHORIZED - invalid credentials / token"
+                        "description": " UNAUTHORIZED - invalid credentials / token",
+                        "schema": {
+                            "$ref": "#/definitions/register_401"
+                        }
                     },
                     "500": {
-                        "description": " UNEXPECTED ERROR - Internal server error"
+                        "description": " UNEXPECTED ERROR - Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/register_500"
+                        }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ]
             }
         },
         "/cancel": {
@@ -154,14 +183,14 @@
                     {
                         "name": "fullName",
                         "in": "body",
-                        "description": "numero do cântico selecionado",
+                        "description": "Full name",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "email",
                         "in": "body",
-                        "description": "numero do cântico selecionado",
+                        "description": "email",
                         "required": true,
                         "type": "string"
                     },
@@ -177,21 +206,39 @@
                     "200": {
                         "description": "SUCESS - Message result",
                         "schema": {
-                            "$ref": "#/definitions/cancel"
+                            "$ref": "#/definitions/cancel_200"
                         }
                     },
                     "401": {
-                        "description": " UNAUTHORIZED - invalid credentials / token"
+                        "description": " UNAUTHORIZED - invalid credentials / token",
+                        "schema": {
+                            "$ref": "#/definitions/cancel_401"
+                        }
                     },
                     "500": {
-                        "description": " UNEXPECTED ERROR - Internal server error"
+                        "description": " UNEXPECTED ERROR - Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/cancel_500"
+                        }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "tokenAuth": []
+                    }
+                ]
             }
         }
     },
+    "securityDefinitions": {
+        "tokenAuth": {
+            "type": "apiKey",
+            "name": "x-access-token",
+            "in": "header"
+        }
+    },
     "definitions": {
-        "login": {
+        "login_200": {
             "type": "object",
             "properties": {
                 "sucess": {
@@ -217,9 +264,49 @@
                         }
                     }
                 }
+            },
+            "application/json": {
+                "name": "register"
             }
         },
-        "register": {
+        "login_401": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "register"
+            }
+        },
+        "login_500": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "integer",
+                    "default": "500"
+                },
+                "error": {
+                    "type": "string",
+                    "default": "Internal server error"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "register"
+            }
+        },
+        "register_200": {
             "type": "object",
             "properties": {
                 "sucess": {
@@ -244,7 +331,44 @@
                 "name": "register"
             }
         },
-        "cancel": {
+        "register_401": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "register"
+            }
+        },
+        "register_500": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "integer",
+                    "default": "500"
+                },
+                "error": {
+                    "type": "string",
+                    "default": "Internal server error"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "register"
+            }
+        },
+        "cancel_200": {
             "type": "object",
             "properties": {
                 "sucess": {
@@ -263,6 +387,43 @@
                             "type": "string"
                         }
                     }
+                }
+            },
+            "application/json": {
+                "name": "retornanumeroshinoharpa"
+            }
+        },
+        "cancel_401": {
+            "type": "object",
+            "properties": {
+                "sucess": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornanumeroshinoharpa"
+            }
+        },
+        "cancel_500": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "integer",
+                    "default": "500"
+                },
+                "error": {
+                    "type": "string",
+                    "default": "Internal server error"
+                },
+                "message": {
+                    "type": "string"
                 }
             },
             "application/json": {

@@ -12,13 +12,16 @@ async function StartServer() {
     Logger.warn(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} ""`);
 
     await CheckIfAllQueuesIsCreated()//Check if queue is already created, if not, create the queues
-    StartDocumentation() //start documentation IF NOT PRODUCTION (SWAGGER) on port 3001 
-
+    StartDocumentation() //start documentation IF NOT PRODUCTION (SWAGGER) on port 3001
 
     const fastifyServer = Fastify({
-        logger: false
+        logger: true
     })
 
+    fastifyServer.register(require('@fastify/cors'), {
+        origin: "*",
+        method: ["GET", "POST"]
+    })
     fastifyServer.register(RequestLogin) //login user
     fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
     fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled

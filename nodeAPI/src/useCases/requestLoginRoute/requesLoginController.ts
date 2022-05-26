@@ -12,6 +12,10 @@ export class RequestLoginController implements IRequestLoginController {
 
     async Handle(request: FastifyRequest): Promise<{ result: IReturn, codeResult: number }> {
         const { email, password }: any = request.body
+        console.log(email, password)
+        console.log("email, password")
+        console.log("email, password")
+        console.log("email, password")
         let result: boolean | IReturn = false
         try {
             result = await this.requestLoginUseCase.Execute(email, password) as IReturn

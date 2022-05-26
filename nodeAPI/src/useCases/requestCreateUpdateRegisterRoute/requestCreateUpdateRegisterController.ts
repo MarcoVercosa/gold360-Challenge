@@ -13,6 +13,12 @@ export class RequestCreateUpdateRegisterController implements IRequestCreateUpda
     async Handle(request: FastifyRequest): Promise<{ result: IResult, codeResult: number }> {
 
         const { fullName, email, password } = request.body as { fullName: string; email: string; password: string }
+        console.log("request.headers")
+        console.log("request.headers")
+        console.log("request.headers")
+        console.log("request.headers")
+        console.log(request.headers)
+
         let result: IResult
         try {
             const token = request.headers['x-access-token'] as string;
