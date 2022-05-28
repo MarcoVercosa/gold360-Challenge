@@ -9,7 +9,7 @@
     "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
     "prismaConfigDev": "dotenv -e .env.dev -- npx prisma migrate dev --name init-dev",
     "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --exit-child --ignore-watch node_modules src/cluster.ts",
-    "test": "NODE_ENV=test && jest --watchAll"
+    "test": "NODE_ENV=test && jest --watchAll --verbose"
   },
   "author": "",
   "license": "ISC",

@@ -7,7 +7,6 @@ import { Logger } from '../services/createLogs/createLogs'
 import { StartDocumentation } from "../doc/documentation"
 
 async function StartServer() {
-
     console.log(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} " `)
     Logger.warn(`Server NODEAPI  is starting on mode "" ${process.env.NODE_ENV} ""`);
 
@@ -15,13 +14,13 @@ async function StartServer() {
     StartDocumentation() //start documentation IF NOT PRODUCTION (SWAGGER) on port 3001
 
     const fastifyServer = Fastify({
-        logger: true
+        logger: false
     })
 
     fastifyServer.register(require('@fastify/cors'), {
-        origin: "*",
-        method: ["GET", "POST"]
-    })
+        origin: "*", method: ["GET", "POST"]
+    }
+    )
     fastifyServer.register(RequestLogin) //login user
     fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
     fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled

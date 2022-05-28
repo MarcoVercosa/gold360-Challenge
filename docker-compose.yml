@@ -55,7 +55,7 @@ services:
       - ./nodeAPI:/home/node/app
       - ./vols_containers/logs:/home/node/app/logs
     user: node
-    command: ${NODE_DEV_ENV}
+    command: ${NODE_TEST_ENV}
     stdin_open: true
     tty: true
 

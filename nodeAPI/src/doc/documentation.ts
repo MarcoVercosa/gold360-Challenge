@@ -5,10 +5,12 @@ const expressServer = express()
 
 
 function StartDocumentation() {
-    if (process.env.NODE_ENV != "production") {
+    if (process.env.NODE_ENV != "production"
+        && process.env.NODE_ENV != "test"
+    ) {
         expressServer.use("/documentation", swaggerUi.serve, swaggerUi.setup(SwaggerDocs))
-        expressServer.listen(3001, () => {
-            console.log("Swagger executing on port 3001")
+        expressServer.listen(3030, () => {
+            console.log("Swagger executing on port 3030")
         })
     }
 }
