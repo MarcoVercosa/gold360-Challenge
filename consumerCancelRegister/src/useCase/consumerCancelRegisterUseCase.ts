@@ -79,35 +79,35 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
                 email: dataQueueConsumed.email,
             })
 
-            if (checkIfIsActiveRegisteBD.length > 0) {
+            //if email or passowrd not match in BD
+            if (checkIfIsActiveRegisteBD.length < 1) {
+                return { sucess: false, comparatorKey: dataQueueConsumed.comparatorKey, message: "FullName or/and email not found" }
+            }
 
-                //If Register is  enabled so change to disable
-                if (checkIfIsActiveRegisteBD[0]?.active) {
-                    let result = await this.consumerCancelRegisterRepository.CancelRegisterRepository({
+            //If Register is  enabled so change to disable
+            if (checkIfIsActiveRegisteBD[0]?.active) {
+                let result = await this.consumerCancelRegisterRepository.CancelRegisterRepository({
+                    fullName: dataQueueConsumed.fullName,
+                    email: dataQueueConsumed.email,
+                })
+                if (result > 0) {
+                    return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "Register changed to Disabled" }
+                }
+            }
+
+            //If Register is already disable in the bd. Don't do anything in BD and send to queue dead
+            if (!checkIfIsActiveRegisteBD[0]?.active) {
+                let result = {
+                    sucess: false,
+                    data: {
                         fullName: dataQueueConsumed.fullName,
-                        email: dataQueueConsumed.email,
-                    })
-                    if (result > 0) {
-                        return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "Register changed to Disabled" }
-                    }
+                        email: dataQueueConsumed.email
+                    },
+                    result: "Register is already disabled. There was no change in DataBase. Sent to queue dead."
                 }
-
-                //If Register is already disable in the bd. Don't do anything in BD and send to queue dead
-                if (!checkIfIsActiveRegisteBD[0].active) {
-                    let result = {
-                        sucess: true,
-                        data: {
-                            fullName: dataQueueConsumed.fullName,
-                            email: dataQueueConsumed.email
-                        },
-                        result: "Register is already disabled. There was no change in DataBase. Sent to queue dead."
-                    }
-                    let channel = await ConnectCancelDeadQueue() as Channel
-                    channel.sendToQueue(connections.queueNameDeadCancel as string, Buffer.from(JSON.stringify(result)))
-                    return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "Register is already disabled. There was no change in DataBase. Sent to Queue Dead" }
-                }
-            } else {
-                return { sucess: true, comparatorKey: dataQueueConsumed.comparatorKey, message: "FullName or/and email not found" }
+                let channel = await ConnectCancelDeadQueue() as Channel
+                channel.sendToQueue(connections.queueNameDeadCancel as string, Buffer.from(JSON.stringify(result)))
+                return { sucess: false, comparatorKey: dataQueueConsumed.comparatorKey, message: "Register is already disabled. There was no change in DataBase. Sent to Queue Dead" }
             }
 
         } catch (error: any) {

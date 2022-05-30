@@ -13,6 +13,7 @@ export class ConsumerCancelRegisterRepository implements IConsumerCancelRegister
 
     async CheckIfIsActiveRepository({ fullName, email }: { fullName: string, email: string }) {
         let checkIsActive = await prisma.$queryRaw`SELECT active FROM Registers WHERE email = ${email} AND fullName = ${fullName}` as Array<{ active: boolean }>
+        console.log(checkIsActive)
         return checkIsActive
     }
 
