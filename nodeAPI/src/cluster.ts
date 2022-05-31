@@ -1,6 +1,6 @@
 import OS from "os"
 import cluster from "cluster"
-import { StartServer } from "./http/index"
+import { StartServerClass } from "./http/index"
 import { Logger } from "./services/createLogs/createLogs"
 import { ConnectionsName } from "./services/connections"
 
@@ -24,7 +24,8 @@ function RunPrimaryProcess() {
     })
 }
 async function RunWorkerProcess() {
-    StartServer()
+    const startServer = new StartServerClass()
+    startServer.Execute()
     // for each cluster.fork() above, a new server instance will be created calling the function StartServer()
 }
 cluster.isPrimary ? RunPrimaryProcess() : RunWorkerProcess()

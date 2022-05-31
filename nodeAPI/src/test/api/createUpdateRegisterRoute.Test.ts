@@ -8,7 +8,7 @@ import request from "supertest"
 ////////////////////////////////////////////////////////////////////////////////////
 
 async function CreatepdateRegisterRouteTest() {
-    describe(">>>>>> API END-TO-END CREATE / UPDATE REGISTER ROUTE <<<<<<<", () => {
+    describe(" ##############  API END-TO-END CREATE / UPDATE REGISTER ROUTE ############## ", () => {
         let tokenGlobal: string = ""
         beforeAll(async () => {
             //server = await StartServer()

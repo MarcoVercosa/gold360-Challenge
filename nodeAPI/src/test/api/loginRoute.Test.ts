@@ -9,7 +9,7 @@ import request from "supertest"
 
 
 async function LoginRouteTest() {
-    describe(" >>>>>> API END-TO-END LOGIN ROUTE <<<<<<< ", () => {
+    describe(" ##############  API END-TO-END LOGIN ROUTE ############## ", () => {
 
         it("EMAIL AND PASSWORD CORRECTS => should return STATUS 200, SUCESS:TRUE and TOKEN WITH STRING", async () => {
             // jest.setTimeout(30000);

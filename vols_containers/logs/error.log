@@ -1,5 +1,0 @@
-{"level":"error","message": "HTTP => ERROR starting server: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"error","message": "HTTP => ERROR starting server: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"error","message": "HTTP => ERROR starting server: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"error","message": "HTTP => ERROR starting server: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"error","message": "HTTP => ERROR starting server: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000","Date":"2022-05-30 18:04:40","originServer":"undefined"}

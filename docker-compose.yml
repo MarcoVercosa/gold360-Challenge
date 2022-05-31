@@ -45,7 +45,7 @@ services:
       - NODE_ENV=production
     ports:
       - 80:3000
-      - 3001:3001
+      - 3030:3030
     restart: unless-stopped
     depends_on:
       - rabbitmq
@@ -55,7 +55,7 @@ services:
       - ./nodeAPI:/home/node/app
       - ./vols_containers/logs:/home/node/app/logs
     user: node
-    command: ${NODE_TEST_ENV}
+    command: ${NODE_DEV_ENV}
     stdin_open: true
     tty: true
 

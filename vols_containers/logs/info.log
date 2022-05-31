@@ -1,740 +1,111 @@
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 344","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 344","Date":"2022-05-30 17:38:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:38:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-GDXGQ4iSMwWw06WypaeO5Q ","Date":"2022-05-30 17:38:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:38:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-RSGYOeSEHIJDjCuklzwrpw ","Date":"2022-05-30 17:38:52","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 344","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:38:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:39:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:39:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:39:05","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:39:05","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:39:11","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:39:11","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:39:11","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:42:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:42:37","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:42:49","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:42:49","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:42:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:00","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:43:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:10","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:43:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:22","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:43:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:34","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:43:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:45","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:43:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:43:57","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:44:08","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:44:08","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:44:19","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:44:20","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:44:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:44:31","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:44:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:44:42","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:44:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:44:53","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:05","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:16","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:16","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:27","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:27","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:38","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:48","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:45:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:45:59","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:46:12","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:12","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:46:24","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:24","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:24","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:24","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 17:46:24","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-QZwDUS8-U7aG3UON31CUIQ ","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-1ACXXfblHbwsV-SYYB9SFw ","Date":"2022-05-30 17:46:25","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:46:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:46:38","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:46:44","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:44","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:44","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:46:45","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:45","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:45","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:46:45","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:46:45","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:46:48","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:48","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:48","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:48","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:48","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:53","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:53","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:46:58","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:46:58","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 196","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 196","Date":"2022-05-30 17:48:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:48:07","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-tTsum6uZiBBsMJdLlagKFQ ","Date":"2022-05-30 17:48:07","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:48:07","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-yf1xytGEkQ-dyfwKRa-g-A ","Date":"2022-05-30 17:48:07","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 196","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:48:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:48:20","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:48:26","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:48:26","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:48:26","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:52:43","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:52:43","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:43","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:43","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 365","Date":"2022-05-30 17:52:43","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 365","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-k00ZG7he7IAQP3ypp7YY-g ","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-9UlLN14O9i_KBMl0gGQVUA ","Date":"2022-05-30 17:52:44","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 365","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:52:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:52:58","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:53:03","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:53:03","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:53:03","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:17","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:17","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:17","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:17","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 534","Date":"2022-05-30 17:53:17","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 534","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-vp36cJrw-sPzfm87inedzg ","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-8raz91rm0eSUv0R-DtuxMA ","Date":"2022-05-30 17:53:18","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 534","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:26","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:26","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:31","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:53:37","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:53:37","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:53:37","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:50","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 703","Date":"2022-05-30 17:53:50","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 703","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-q1QxxZVPPJxjKjX_0P8gDQ ","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-1HejKuQjHh_tK725ZoKtOg ","Date":"2022-05-30 17:53:51","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:53:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:53:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:54","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 703","Date":"2022-05-30 17:53:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:53:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:53:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:54:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:54:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:54:05","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:54:05","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:54:10","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:54:10","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:54:10","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:55:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:55:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:22","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 872","Date":"2022-05-30 17:55:22","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 872","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:33","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 872","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-v0VLcKuOrss-EjWrjKSaRQ ","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-nkAdT9pmKfB_aXCtheoEUA ","Date":"2022-05-30 17:55:38","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:55:42","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:55:42","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:55:42","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:58:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:58:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:14","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1042","Date":"2022-05-30 17:58:14","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1042","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:25","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1042","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-Gu0g6TkLwkZwfQ1vlqCGGg ","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-6SJgGCsMSz3vm_BWatf7kw ","Date":"2022-05-30 17:58:30","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:58:34","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:58:34","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:58:34","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:59:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:59:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:10","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1212","Date":"2022-05-30 17:59:10","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1212","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-6bSdSs_tltl7vyO0xFU6ag ","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-zuSItrocSdYKRDAApQeqjQ ","Date":"2022-05-30 17:59:11","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1212","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 17:59:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 17:59:25","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 17:59:30","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 17:59:30","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 17:59:30","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:09","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1381","Date":"2022-05-30 18:00:09","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1381","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-w4oJVrqr5n1eLscN3BJ5DA ","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-DYUvh-pnHN-TLFT7nqE6Pg ","Date":"2022-05-30 18:00:10","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1381","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:23","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:00:29","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:00:29","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:00:29","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1550","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1550","Date":"2022-05-30 18:00:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-MZ6rMxQw42BYzGByWEFNGw ","Date":"2022-05-30 18:00:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-9LB7CCbCrMAtTTiTccz_Nw ","Date":"2022-05-30 18:00:42","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1550","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:00:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:00:55","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:01:01","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:01:01","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:01:01","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:01:26","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:01:26","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:02:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:02:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:02:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:02:47","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:02:47","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-L-biAIJdcw0p7QTF9b5T0A ","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-F1dBb2BcbBXJ849n-s1QpQ ","Date":"2022-05-30 18:02:48","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:02:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:02:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:02:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:02","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:02","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:03:07","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:07","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:03:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:03:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:17","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:17","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:03:22","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:03:22","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1878","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:28","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1945","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:37","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1963","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:46","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1981","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:03:55","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:04:40","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:04:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:04:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:04:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:04:52","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:04:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:04:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-8qJNlKmSNEBKMvwU8SPymw ","Date":"2022-05-30 18:04:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:04:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-I7DAJKK0m_R2TXdpmWa40A ","Date":"2022-05-30 18:04:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:04:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:04:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:05:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:05:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:05:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:05:06","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:05:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:05:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:05:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:05:13","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:05:13","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:05:16","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:05:16","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:05:21","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:05:21","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:05:26","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:05:26","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:07:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:07:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:07:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:07:42","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-05-30 18:07:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:07:43","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:07:43","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:07:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:07:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:07:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:07:53","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:08:02","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:08:02","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:08:02","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:08:03","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:08:03","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:08:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:08:08","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:08:13","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:08:13","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:08:39","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:08:39","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:08:39","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:08:39","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 196","Date":"2022-05-30 18:08:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:08:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-wSVlNeIUuQ5wyfzFhtmPzg ","Date":"2022-05-30 18:08:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:08:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-qIMwEluN9iGO6iPcgX9-2Q ","Date":"2022-05-30 18:08:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:08:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:08:44","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:08:49","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:08:49","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:08:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:08:54","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:08:59","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:08:59","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:08:59","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:09:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:09:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:09:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:09:41","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 365","Date":"2022-05-30 18:09:41","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:09:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-GU35uVP-FHWuQ8QHKL2gaA ","Date":"2022-05-30 18:09:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:09:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-ielz3nkEZnPwBDeZNswTdg ","Date":"2022-05-30 18:09:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:09:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:09:45","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:09:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:09:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:09:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:09:55","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:10:01","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:10:01","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:10:01","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 534","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-jLZOwTlXQl_WfI6SPECGcQ ","Date":"2022-05-30 18:14:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:14:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-X-lQ6QVgIty5z4q4Jel3Ag ","Date":"2022-05-30 18:14:58","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:15:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:15:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:15:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:15:59","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 703","Date":"2022-05-30 18:15:59","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:16:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-HK0DZP0wc3ZduG8WaKMFDw ","Date":"2022-05-30 18:16:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:16:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-HmIVbXht9aDMZNYoJ4xfMQ ","Date":"2022-05-30 18:16:00","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:16:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:16:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:16:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:16:37","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 872","Date":"2022-05-30 18:16:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:16:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-JBhYU1HP3GsgdhfFPFU6lg ","Date":"2022-05-30 18:16:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:16:38","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-eXGk_Csmvz3KzfXKiGT21Q ","Date":"2022-05-30 18:16:38","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:17:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:14","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1041","Date":"2022-05-30 18:17:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-KD4DbF4p7dQH62Lm2JhkoA ","Date":"2022-05-30 18:17:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-SUBZSMIETdZk3sdUVCP-xQ ","Date":"2022-05-30 18:17:15","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:23","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:28","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:28","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:17:34","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:17:34","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:17:34","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:17:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:52","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1210","Date":"2022-05-30 18:17:52","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-ceDGOr2dB6sAudcV1_uAkA ","Date":"2022-05-30 18:17:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:17:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-tpyIUGBj4wuUGbInQfbB2A ","Date":"2022-05-30 18:17:53","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:17:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:17:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:18:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:18:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:18:06","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:18:06","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:18:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:18:12","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:18:12","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1379","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:20:04","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-C6V6Xpe9eeKfZ9NdoTpxMQ ","Date":"2022-05-30 18:20:05","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:20:05","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-iNvqCENocCcBnGiKLfigIA ","Date":"2022-05-30 18:20:05","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:20:08","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:20:08","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:20:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:20:13","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:20:18","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:20:18","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:20:24","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:20:24","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:20:24","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:24:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:24:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:24:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:24:21","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1548","Date":"2022-05-30 18:24:21","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:24:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-PXla5LOYcak_nBvy5zjDdA ","Date":"2022-05-30 18:24:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:24:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-_T93EUvWkJVwmmMp7YoueA ","Date":"2022-05-30 18:24:22","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:24:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:24:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:24:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:24:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:24:35","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:24:35","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:24:41","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:24:41","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:24:41","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:26:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:26:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:26:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:26:33","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1717","Date":"2022-05-30 18:26:33","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:26:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-rKuX1d4vsvYjD3EXqZaw2w ","Date":"2022-05-30 18:26:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:26:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-Tmtu8QSzJrIxY3_FH-R7Aw ","Date":"2022-05-30 18:26:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:26:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:26:37","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:26:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:26:42","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:26:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:26:47","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-30 18:26:53","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-30 18:26:53","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-30 18:26:53","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:28:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:28:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:28:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:28:30","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 94","Date":"2022-05-30 18:28:30","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:28:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-YpquL1eaeAsRjIzeRoC3fA ","Date":"2022-05-30 18:28:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:28:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-UX8_hsrV1MKq4Nn13JRuQA ","Date":"2022-05-30 18:28:31","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-EsBFHOjWnOdNBAY4wSbt2g ","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-WeRHVGKT2xCz7D1teEMhIg ","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-j0IoYfPuxe4lcJvfIzrTNg ","Date":"2022-05-30 18:28:34","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:29:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:29:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:29:09","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:29:09","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 263","Date":"2022-05-30 18:29:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:29:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-VV26xOHK9QEtE2MaFndL7A ","Date":"2022-05-30 18:29:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:29:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-0nGL_3So2SrGgQbGb2U1jw ","Date":"2022-05-30 18:29:10","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-PdRIB_3Yl-5p_nyAtGXt-Q ","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-k7vWLzyMGB3Nw195iolXhg ","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-stFzmfTvSre1oFZR5FMVeg ","Date":"2022-05-30 18:29:14","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:30:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:30:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:30:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:30:56","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 432","Date":"2022-05-30 18:30:56","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:30:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-yLEHuV7vl6vvSF5_Zh69VQ ","Date":"2022-05-30 18:30:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:30:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-sE-p6B7WbZ9f5Ho_57tX9w ","Date":"2022-05-30 18:30:57","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-zGuRWQMtjloIufIgvDYEdw ","Date":"2022-05-30 18:31:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:00","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-4UeUS9RO8PV8ebbHRIklog ","Date":"2022-05-30 18:31:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:01","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-6RqSacpKjmJZBYw3g5Jujg ","Date":"2022-05-30 18:31:01","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:31:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:31:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:46","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 601","Date":"2022-05-30 18:31:46","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:31:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-Fdmue041bLJmB5fWGEWv9Q ","Date":"2022-05-30 18:31:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:31:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-NnR3j2kWieeAzrfk8oSwXA ","Date":"2022-05-30 18:31:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-AhYEiWWewVMQ9Yu1EE-dwg ","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-jqeAwX5nmxvgS7fQL72E8Q ","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-NHKnKlX-l_pWwX5bYXek0Q ","Date":"2022-05-30 18:31:50","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-30 18:32:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:32:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:32:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:32:54","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 770","Date":"2022-05-30 18:32:54","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:32:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-VcMrUisgqcu1CBewS7HxHQ ","Date":"2022-05-30 18:32:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-30 18:32:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-8oVfuPlXLdINN6978cay9Q ","Date":"2022-05-30 18:32:55","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-j5guj8vFEGlJw4qS-mn4Lw ","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-n-xj0MGMz3f1WP1M5nqVzg ","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-30 18:32:58","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-SjPS-SUv3B3BNLJMAmPEwA ","Date":"2022-05-30 18:32:58","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:29:41","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:29:42","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:34:38","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:34:38","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:34:39","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:34:40","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 832","Date":"2022-05-31 21:34:40","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:34:41","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-ypazAC4EV5yOq6QiEjRe3A ","Date":"2022-05-31 21:34:41","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:34:42","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:34:53","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:34:53","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:34:57","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:34:58","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:34:59","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-31 21:34:59","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-31 21:35:00","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:35:01","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:35:02","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:35:02","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:35:03","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:37:01","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:37:01","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:37:01","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:37:01","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 1002","Date":"2022-05-31 21:37:01","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:37:02","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:37:07","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:37:15","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:37:15","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:37:20","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:37:20","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:37:21","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-05-31 21:37:21","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-05-31 21:37:21","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:37:22","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:37:25","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:37:25","originServer":"undefined"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-05-31 21:37:27","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 94","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:13","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-l1X_CH7g-M2Jz8Z61HfTiw ","Date":"2022-05-31 21:38:14","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:14","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-S0cdncZoMeg9JIyVCwKjpg ","Date":"2022-05-31 21:38:14","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-gq8MY2yF71jkCo1HDRFFRA ","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-0OSqow3XOwDT457F-TF2gA ","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-BLcmfKFtBdypEBi-3WFCBg ","Date":"2022-05-31 21:38:17","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:38:42","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:42","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:42","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 263","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-xHfNsOFstx9p3_j0yKCtqQ ","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-Smen-g-a_SrUZ0FMKp1MEQ ","Date":"2022-05-31 21:38:43","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-oDpFKy5XbJeDczuIqx3-Kg ","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-1rlRjqNX3pYbpQ5OYFfvZA ","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-9823n-YJpryRYn2JcLaWhw ","Date":"2022-05-31 21:38:47","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:39:26","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:26","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:26","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:26","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 432","Date":"2022-05-31 21:39:26","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:27","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-tnBj6Hh1_JdNkijgKKsEVw ","Date":"2022-05-31 21:39:27","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:27","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-5yOyvJpDvEmJTzU-tTsE4w ","Date":"2022-05-31 21:39:27","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-tFRYksGRc2j2qGvbbrprYg ","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-iJfWJUI1My_oL1FF_e1oyA ","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-INnUrDX9ZGDOnutG1mtMtg ","Date":"2022-05-31 21:39:30","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-05-31 21:39:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:47","originServer":"undefined"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 601","Date":"2022-05-31 21:39:47","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:48","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-R7i45qjOxCLW8tvw_vL7GQ ","Date":"2022-05-31 21:39:48","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-05-31 21:39:48","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-e3VYfMyTKuqPE2B3ojBvnA ","Date":"2022-05-31 21:39:48","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-15IjSj49RKzSi9h619LqjA ","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-3XtshabZvio78hCbTFI0Fw ","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-05-31 21:39:51","originServer":"undefined"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-rYulY2ZRiQdNNijxO9HSHg ","Date":"2022-05-31 21:39:51","originServer":"undefined"}

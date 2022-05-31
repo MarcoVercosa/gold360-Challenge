@@ -1,18 +1,20 @@
 import { jest, expect, describe, it } from "@jest/globals"
 import request from "supertest"
-import { StartServer } from "../../http/index"
+import { StartServerClass } from "../../http/index"
 import { LoginRouteTest } from "./loginRoute.Test"
 import { CreatepdateRegisterRouteTest } from "./createUpdateRegisterRoute.Test"
 import { CancelRegisterRouteTest } from "./cancelRegister.Test"
 
-describe(" >>>>>> START TEST <<<<<<<", () => {
+describe(" ############## START TEST ############## ", () => {
 
-    let server: any
+    let classServer = new StartServerClass()
+    let closeServer: any
     beforeAll(async () => {
-        server = await StartServer()
+        closeServer = await classServer.Execute()
+
     })
     afterAll(async () => {
-        server.close()
+        closeServer.close()
     })
 
     LoginRouteTest()

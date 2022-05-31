@@ -8,7 +8,7 @@ import request from "supertest"
 
 
 async function CancelRegisterRouteTest() {
-    describe(" >>>>>> API END-TO-END CANCEL REGISTER <<<<<<<", () => {
+    describe(" ############## API END-TO-END CANCEL REGISTER ############## ", () => {
         let tokenGlobal: string = ""
         beforeAll(async () => {
             //server = await StartServer()
