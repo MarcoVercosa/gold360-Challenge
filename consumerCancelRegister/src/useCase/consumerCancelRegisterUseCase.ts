@@ -2,7 +2,7 @@ import { Channel } from "amqplib"
 import { IConsumerCancelRegisterUseCase, IParams } from "../entities/IConsumerCancelRegisterUseCase"
 import { ConsumerCancelRegisterRepository } from "../repository/consumerCancelRegisterRepository"
 import { Logger } from "../services/createLogs/createLogs";
-import { ConnectAMQPQueueServe, ConnectCancelDeadQueue } from "../services/manageQueues/index"
+import { ConnectAMQPQueueServer, ConnectCancelDeadQueue } from "../services/manageQueues/index"
 import { ConnectionsName } from "../services/connections/index"
 
 export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUseCase {
@@ -18,11 +18,11 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
 
 
     async ConnectAndConsume() {
-        ConnectAMQPQueueServe()
+        ConnectAMQPQueueServer()
             .then((data: any) => {
                 let { channelOpen, connection } = data as { channelOpen: Channel, connection: any }
                 connection.once("error", (error: any) => {
-                    Logger.error(`Rabbitmq => ERROR DETECTED TO CREATE CONNECTION and consumed queue -- ${error} -- New try in 5 secs`)
+                    Logger.error(`Rabbitmq => ERROR DETECTED TO CREATE CONNECTION and consume queue -- ${error} -- New try in 5 secs`)
                     setTimeout(() => {
                         connection.close()
                         channelOpen.close()

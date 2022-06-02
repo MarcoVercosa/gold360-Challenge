@@ -2,7 +2,7 @@ import { Channel, connect } from "amqplib"
 import { ConnectionsName } from "../connections"
 import { Logger } from "../createLogs/createLogs"
 
-async function ConnectAMQPQueueServe(): Promise<{ channelOpen: Channel, connection: any } | any> {
+async function ConnectAMQPQueueServer(): Promise<{ channelOpen: Channel, connection: any } | any> {
     let connections = ConnectionsName()
     let nameServer: string = `amqp://${connections.credentialsCancelUserConsumer}:${connections.credentialsCancelPassConsumer}@${connections.serverRabbitMQ}`
     return new Promise(async (resolve, reject) => {
@@ -51,4 +51,4 @@ async function ConnectCancelDeadQueue() {
     }
 }
 
-export { ConnectAMQPQueueServe, ConnectCancelDeadQueue }
+export { ConnectAMQPQueueServer, ConnectCancelDeadQueue }
