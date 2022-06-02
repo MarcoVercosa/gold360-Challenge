@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateQueue = void 0;
-const dotenv_1 = require("dotenv");
 const amqplib_1 = require("amqplib");
 const createLogs_1 = require("../../createLogs/createLogs");
+const connections_1 = require("../../connections");
 async function CreateQueue(user, password, queueName) {
-    (0, dotenv_1.config)();
+    let connecitons = (0, connections_1.ConnectionsName)();
     try {
-        let nameServer = `amqp://${user}:${password}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
+        let nameServer = `amqp://${user}:${password}@${connecitons.serverRabbitMQ}`;
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
             createLogs_1.Logger.info(`Rabbitmq => Connection closed after 20 secs -- ${queueName}`);

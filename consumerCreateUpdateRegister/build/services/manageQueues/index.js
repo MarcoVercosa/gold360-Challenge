@@ -2,21 +2,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectAMQPQueueServe = void 0;
 const amqplib_1 = require("amqplib");
-const dotenv_1 = require("dotenv");
 const createLogs_1 = require("../createLogs/createLogs");
+const index_1 = require("../connections/index");
 async function ConnectAMQPQueueServe() {
-    (0, dotenv_1.config)();
+    let connections = (0, index_1.ConnectionsName)();
     return new Promise(async (resolve, reject) => {
-        let nameServer = `amqp://${process.env.CREDENTIALS_REGISTER_USER_CONSUMER}:${process.env.CREDENTIALS_REGISTER_PASS_CONSUMER}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
+        let nameServer = `amqp://${connections.credentialsRegisterUserConsumer}:${connections.credentialsRegisterPassConsumer}@${connections.serverRabbitMQ}`;
         try {
             const connection = await (0, amqplib_1.connect)(nameServer);
             const channelOpen = await connection.createChannel();
             //channelOpen.prefetch(1);
-            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD}`);
+            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${connections.queueNameCreateUpdateRegisterBD}`);
             resolve({ channelOpen, connection });
         }
         catch (error) {
-            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- ${error}`);
+            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${connections.queueNameCreateUpdateRegisterBD} -- ${error}`);
             reject({ channelOpen: false, connection: error });
         }
     });

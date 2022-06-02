@@ -1,34 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectCancelDeadQueue = exports.ConnectAMQPQueueServe = void 0;
+exports.ConnectCancelDeadQueue = exports.ConnectAMQPQueueServer = void 0;
 const amqplib_1 = require("amqplib");
-const dotenv_1 = require("dotenv");
+const connections_1 = require("../connections");
 const createLogs_1 = require("../createLogs/createLogs");
-async function ConnectAMQPQueueServe() {
-    let nameServer = `amqp://${process.env.CREDENTIALS_CANCEL_USER_CONSUMER}:${process.env.CREDENTIALS_CANCEL_PASS_CONSUMER}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
+async function ConnectAMQPQueueServer() {
+    let connections = (0, connections_1.ConnectionsName)();
+    let nameServer = `amqp://${connections.credentialsCancelUserConsumer}:${connections.credentialsCancelPassConsumer}@${connections.serverRabbitMQ}`;
     return new Promise(async (resolve, reject) => {
         try {
             const connection = await (0, amqplib_1.connect)(nameServer);
             const channelOpen = await connection.createChannel();
             //channelOpen.prefetch(1);
-            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${process.env.QUEUE_NAME_CANCEL_REGISTER}`);
+            createLogs_1.Logger.info(`RABBITMQ => CONNECTED to habbitMQ to consumed queue -- ${connections.queueNameCancelRegister}`);
             resolve({ channelOpen, connection });
         }
         catch (error) {
-            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${process.env.QUEUE_NAME_CANCEL_REGISTER} -- ${error}`);
+            createLogs_1.Logger.error(`RABBITMQ => ERROR to connect RabbitMQ to consumed queue: ${connections.queueNameCancelRegister} -- ${error}`);
             reject({ channelOpen: false, connection: error });
         }
     });
 }
-exports.ConnectAMQPQueueServe = ConnectAMQPQueueServe;
+exports.ConnectAMQPQueueServer = ConnectAMQPQueueServer;
 async function ConnectCancelDeadQueue() {
-    (0, dotenv_1.config)();
-    let queueName = process.env.QUEUE_NAME_DEAD_CANCEL;
-    let nameServer = `amqp://${process.env.CREDENTIALS_DEAD_QUEUE_USER}:${process.env.CREDENTIALS_DEAD_QUEUE_PASS}@${process.env.AMQP_QUEUE_SERVER_ADDRESS}`;
+    let connections = (0, connections_1.ConnectionsName)();
+    let nameServer = `amqp://${connections.credentialsDeadQueueUser}:${connections.credentialsDeadQueuePass}@${connections.serverRabbitMQ}`;
     try {
         const connection = await (0, amqplib_1.connect)(nameServer);
         connection.once("close", () => {
-            createLogs_1.Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${queueName}`);
+            createLogs_1.Logger.info(`RABBITMQ => Connection closed after 20 secs -- ${connections.queueNameDeadCancel}`);
         });
         const channel = await connection.createChannel();
         setTimeout(function () {
@@ -37,14 +37,14 @@ async function ConnectCancelDeadQueue() {
                 //close conection after 20 seconds
             }
             catch (error) {
-                createLogs_1.Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${queueName} error: ${error}`);
+                createLogs_1.Logger.error(`RABBITMQ => UNABLE to close a connection. Maybe due to some failure the connection is already closed -- ${connections.queueNameDeadCancel} error: ${error}`);
             }
         }, 20000);
-        createLogs_1.Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${queueName}`);
+        createLogs_1.Logger.info(`RABBITMQ => Connected to habbitMQ. Checked if Queue was created: ${connections.queueNameDeadCancel}`);
         return channel;
     }
     catch (error) {
-        createLogs_1.Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${queueName} -- ${error} -- New try in 5 secs`);
+        createLogs_1.Logger.error(`RABBITMQ => ERROR to connect to RabbitMQ. Queue failed: ${connections.queueNameDeadCancel} -- ${error} -- New try in 5 secs`);
         setTimeout(() => {
             ConnectCancelDeadQueue();
         }, 5000);

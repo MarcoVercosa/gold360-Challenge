@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
 const winston_1 = __importDefault(require("winston"));
+const connections_1 = require("../../services/connections");
 const { combine, timestamp, json, printf } = winston_1.default.format;
 // levelFilter
 // const levels = {
@@ -56,6 +57,7 @@ const { combine, timestamp, json, printf } = winston_1.default.format;
 //     }));
 // }
 // export { Logger }
+let connection = (0, connections_1.ConnectionsName)();
 const errorFilter = winston_1.default.format((info, opts) => {
     return info.level === 'error' ? info : false;
 });
@@ -75,7 +77,7 @@ const verboseFilter = winston_1.default.format((info, opts) => {
     return info.level === 'verbose' ? info : false;
 });
 let transports;
-let Printf = printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"consumerCancelRegister"}`);
+let Printf = printf((info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${connection.serverNodeConsumerCancelRegister}"}`);
 process.env.NODE_ENV == 'production' ?
     transports = [
         new winston_1.default.transports.File({

@@ -1,43 +1,221 @@
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-01 23:59:32","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-06-01 23:59:32","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-01 23:59:50","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 38","Date":"2022-06-01 23:59:50","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 00:05:58","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 19","Date":"2022-06-02 00:05:58","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 00:06:19","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:06:19","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:06:19","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 38","Date":"2022-06-02 00:06:19","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:06:20","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:06:25","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen--yLI40nPasrhcR8dzzLkhA ","Date":"2022-06-02 00:06:26","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-B_wsiL0Oy99mNnYSgNQszw ","Date":"2022-06-02 00:06:26","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-bac595LAJCMMGLx-LyOdcQ ","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:06:29","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:06:34","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:06:34","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 00:06:39","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 00:06:39","originServer":"undefined"}
-{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 00:06:40","originServer":"undefined"}
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 38","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:07:47","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-udN_MzvJjWp4SAemmC7wzA ","Date":"2022-06-02 00:07:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 00:07:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-ZMqMqaIjRxgqErtI_rqPrA ","Date":"2022-06-02 00:07:48","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-ht1h14urAq9AUURhhCofAA ","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-Z8bk49-2AvHyFGCioC-DDg ","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 00:07:51","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-69YsF7Eiz2PzeInUXh78fw ","Date":"2022-06-02 00:07:51","originServer":"undefined"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 72","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 85","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 79","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 97","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 110","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 103","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 73","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 91","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 138","Date":"2022-06-02 22:36:24","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 116","Date":"2022-06-02 22:36:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 131","Date":"2022-06-02 22:36:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 125","Date":"2022-06-02 22:36:25","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:44","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:36:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- cancel_register_bd","Date":"2022-06-02 22:36:45","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:36:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:54","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:36:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- create_update_register_bd","Date":"2022-06-02 22:36:55","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:04","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:37:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:37:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:37:15","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:39:14","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to create_update_register_bd received data.","Date":"2022-06-02 22:39:14","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-06-02 22:39:14","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-GF-pgTD4N34LivdV7flmMA ","Date":"2022-06-02 22:39:14","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:39:16","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:39:16","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to cancel_register_bd received data.","Date":"2022-06-02 22:39:16","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-06-02 22:39:16","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-PE-cFqy0o7hCgNf1-A031A ","Date":"2022-06-02 22:39:16","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:39:34","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:39:36","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:39:36","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 72","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 91","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 123","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 117","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 73","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 85","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 84","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 109","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 103","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 97","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 131","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 138","Date":"2022-06-02 22:43:25","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:43:45","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- cancel_register_bd","Date":"2022-06-02 22:43:50","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:43:50","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => CONNECTED to habbitMQ to consumed queue -- create_update_register_bd","Date":"2022-06-02 22:43:55","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:43:55","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:44:05","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:44:10","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:44:15","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-02 22:44:46","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to create_update_register_bd received data.","Date":"2022-06-02 22:44:46","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-06-02 22:44:46","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-l2AT6Z7Xsp2JK4ij9GI5Rw ","Date":"2022-06-02 22:44:46","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-02 22:44:49","originServer":"nodeAPI"}
+{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-02 22:44:49","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => [XXXX] The Consumer to cancel_register_bd received data.","Date":"2022-06-02 22:44:49","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "Rabbitmq => [XXXX] The confirmation to  create_update_register_bd was sent.","Date":"2022-06-02 22:44:49","originServer":"NodeConsumerCancelRegister"}
+{"level":"info","message": "RABBITMQ => Data received e confirmed -- queue name: create_update_register_bd -- from queue name temporary: amq.gen-PchHCRtIqbgDV97peWRKmw ","Date":"2022-06-02 22:44:49","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- create_update_register_bd","Date":"2022-06-02 22:45:06","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- cancel_register_bd","Date":"2022-06-02 22:45:09","originServer":"nodeAPI"}
+{"level":"info","message": "Rabbitmq => Connection closed after 20 secs -- dead_cancel_queue","Date":"2022-06-02 22:45:09","originServer":"nodeAPI"}

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestCreateUpdateRegisterUseCase = void 0;
-const dotenv_1 = require("dotenv");
+const connections_1 = require("../../services/connections");
 const uuid_1 = require("uuid");
 const validateToken_1 = require("../../http/midwares/validateToken");
 const createLogs_1 = require("../../services/createLogs/createLogs");
@@ -10,11 +10,12 @@ const requestCreateUpdateRegisterValidationInpunt_1 = require("./requestCreateUp
 class RequestCreateUpdateRegisterUseCase {
     constructor() { }
     async CheckFirstQueueCreateUpdateRegisterBD() {
-        (0, dotenv_1.config)();
-        const isCreateQueue = await (0, createQueuesChannels_1.CreateQueue)(process.env.CREDENTIALS_REGISTER_USER, process.env.CREDENTIALS_REGISTER_PASS, process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD);
+        let connections = (0, connections_1.ConnectionsName)();
+        const isCreateQueue = await (0, createQueuesChannels_1.CreateQueue)(connections.credentialsRegisterUser, connections.credentialsRegisterPass, connections.queueNameCreateUpdateRegisterBD);
         return isCreateQueue;
     }
     async Execute({ token, fullName, email, password }) {
+        let connections = (0, connections_1.ConnectionsName)();
         //VALIDATE TOKEN
         let validateToken = (0, validateToken_1.ValidadeToken)(token);
         if (validateToken.auth) {
@@ -39,14 +40,14 @@ class RequestCreateUpdateRegisterUseCase {
             //CREATE THE QUEUE TEMPORARY TO RECEIVE DE CONFIRMATION WITH DATAS. WHEN THE DATA CONFIRMATION IS RECEIVED, THE CONNECTION IS CLOSE E THE QUEUE TEMPORARY IS DELETED
             let rpc = await connectionQueueCreateUpdateRegisterBD.assertQueue('', { exclusive: true, durable: false });
             //SEND REQUEST UPDATE/CREATE REGISTER TO QUEUE (replyTo => It is the queue temporary above created than response will be send)
-            connectionQueueCreateUpdateRegisterBD.sendToQueue(process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue });
+            connectionQueueCreateUpdateRegisterBD.sendToQueue(connections.queueNameCreateUpdateRegisterBD, Buffer.from(JSON.stringify(dataJSON)), { correlationId: dataJSON.comparatorKey, replyTo: rpc.queue });
             //AFTER THE DATA IS SENT TO THE QUEUE. WE WILL REQUEST CONSUMPTION OF THE CONFIRMATION QUEUE (QUEUE TEMPORARY CREATE). 
             //WHERE IT WILL BE VALIDATED THROUGH THE COMPARISON KEY IF IT IS THE RESPONSE OF THE CURRENT REQUEST
             async function Return() {
                 return new Promise((resolve, reject) => {
                     connectionQueueCreateUpdateRegisterBD.consume(rpc.queue, (data) => {
                         if (data.properties.correlationId == dataJSON.comparatorKey) {
-                            createLogs_1.Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${process.env.QUEUE_NAME_CREATE_UPDATE_REGISTER_BD} -- from queue name temporary: ${rpc.queue} `);
+                            createLogs_1.Logger.info(`RABBITMQ => Data received e confirmed -- queue name: ${connections.queueNameCreateUpdateRegisterBD} -- from queue name temporary: ${rpc.queue} `);
                             resolve(JSON.parse(data.content));
                         }
                     });

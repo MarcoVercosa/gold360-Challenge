@@ -7,9 +7,9 @@ class RequestCreateUpdateRegisterController {
         this.requestRegisterUseCase = requestRegisterUseCase;
     }
     async Handle(request) {
-        const { fullName, email, password } = request.body;
-        let result;
         try {
+            const { fullName, email, password } = request.body;
+            let result;
             const token = request.headers['x-access-token'];
             result = await this.requestRegisterUseCase.Execute({ token, fullName, email, password });
             if (result?.sucess) {

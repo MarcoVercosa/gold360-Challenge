@@ -30,5 +30,3 @@ async function RunWorkerProcess() {
 }
 cluster.isPrimary ? RunPrimaryProcess() : RunWorkerProcess()
 //cluster.isPrimary: boolean -> quem gerencia/balanceia as requisições. Cria instâncias worker e gerencia para cada worker executar a aplicação
-
-

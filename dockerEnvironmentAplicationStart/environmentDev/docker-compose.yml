@@ -13,7 +13,8 @@ services:
       - "3308:3306"
     restart: unless-stopped
     networks:
-      - rabbitmq-mysql-nodejs-network
+      rabbitmq-mysql-nodejs-network:
+        ipv4_address: "172.21.0.2"
 
   rabbitmq:
     # build:
@@ -33,7 +34,8 @@ services:
       - ~/docker-conf/rabbitmq/log/:/var/rabbitmq
 
     networks:
-      - rabbitmq-mysql-nodejs-network
+      rabbitmq-mysql-nodejs-network:
+        ipv4_address: "172.21.0.3"
     depends_on:
       - mysql
 
@@ -50,7 +52,8 @@ services:
     depends_on:
       - rabbitmq
     networks:
-      - rabbitmq-mysql-nodejs-network
+      rabbitmq-mysql-nodejs-network:
+        ipv4_address: "172.21.0.4"
     volumes:
       - ${NODE_API_VOL_APP}
       - ${NODE_API_VOL_LOGS}
@@ -69,7 +72,8 @@ services:
     depends_on:
       - rabbitmq
     networks:
-      - rabbitmq-mysql-nodejs-network
+      rabbitmq-mysql-nodejs-network:
+        ipv4_address: "172.21.0.5"
     volumes:
       - ${NODE_CONSUMER_CREATE_UPDATE_REGISTER_VOL_APP}
       - ${NODE_CONSUMER_CREATE_UPDATE_REGISTER_VOL_LOGS}
@@ -88,7 +92,8 @@ services:
     depends_on:
       - rabbitmq
     networks:
-      - rabbitmq-mysql-nodejs-network
+      rabbitmq-mysql-nodejs-network:
+        ipv4_address: "172.21.0.6"
     volumes:
       - ${NODE_CONSUMER_CANCEL_REGISTER_VOL_APP}
       - ${NODE_CONSUMER_CANCEL_REGISTER_VOL_LOGS}
@@ -102,4 +107,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.20.0.0/16
+        - subnet: "172.21.0.0/16"

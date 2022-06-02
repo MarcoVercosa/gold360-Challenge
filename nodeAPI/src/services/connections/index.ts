@@ -27,7 +27,7 @@ function ConnectionsName(): IReturnConnectionsName {
     if (process.env.NODE_ENV == "production") {
         require('dotenv').config({ path: '../../../.env' })
     } else {
-        require('dotenv').config({ path: '../../../.env.test' })
+        require('dotenv').config({ path: '../../../.env.dev' })
     }
     return {
         environment: process.env.NODE_ENV as string,

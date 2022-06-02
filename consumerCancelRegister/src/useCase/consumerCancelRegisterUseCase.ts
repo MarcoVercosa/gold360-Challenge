@@ -24,19 +24,25 @@ export class ConsumerCancelRegisterUseCase implements IConsumerCancelRegisterUse
                 connection.once("error", (error: any) => {
                     Logger.error(`Rabbitmq => ERROR DETECTED TO CREATE CONNECTION and consume queue -- ${error} -- New try in 5 secs`)
                     setTimeout(() => {
-                        connection.close()
-                        channelOpen.close()
-                        this.ConnectAndConsume()
+                        try {
+                            connection.close()
+                            channelOpen.close()
+                            Logger.warn((`Rabbitmq => WARN  Due to the event, identified as an 'ERROR' were terminated and we will try again`))
+                            this.ConnectAndConsume()
+                        } catch (err) {
+                            Logger.error(`We tried to close the connections due to the ERROR event, but the failure occurred: ${err} - we try again another conection`)
+                            this.ConnectAndConsume()
+                        }
                     }, 5000)
                 })
-                connection.once("close", (error: any) => {
-                    Logger.error(`Rabbitmq => CLOSE DETECTED IN CONNECTION ALREADY CREATED -- ${error} -- New try in 5 secs`)
-                    setTimeout(() => {
-                        connection.close()
-                        channelOpen.close()
-                        this.ConnectAndConsume()
-                    }, 5000)
-                })
+                // connection.once("close", (error: any) => {
+                //     Logger.error(`Rabbitmq => CLOSE DETECTED IN CONNECTION ALREADY CREATED -- ${error} -- New try in 5 secs`)
+                //     setTimeout(() => {
+                //         connection.close()
+                //         channelOpen.close()
+                //         this.ConnectAndConsume()
+                //     }, 5000)
+                // })
                 this.connectionQueue = channelOpen
                 this.Consume() // ====>  Call Consumer
             }).catch((error: any) => {

@@ -11,6 +11,7 @@ class ConsumerCancelRegisterRepository {
     }
     async CheckIfIsActiveRepository({ fullName, email }) {
         let checkIsActive = await prisma.$queryRaw `SELECT active FROM Registers WHERE email = ${email} AND fullName = ${fullName}`;
+        console.log(checkIsActive);
         return checkIsActive;
     }
     async CancelRegisterRepository({ fullName, email }) {

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prismaConfigProd": "prisma db pull && prisma generate",
-    "buildts": "npx tsc",
-    "prod": "NODE_ENV=production npm install && npm run prismaConfigProd && npm run buildTs && node build/index.js",
+    "buildTs": "npx tsc",
+    "prod": "NODE_ENV=production npm install && npm run prismaConfigProd && npm run buildTs && node build/cluster.js",
     "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
     "prismaConfigDev": "dotenv -e .env.dev -- npx prisma generate",
     "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --exit-child --ignore-watch node_modules src/cluster.ts",

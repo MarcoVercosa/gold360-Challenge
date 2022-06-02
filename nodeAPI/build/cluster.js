@@ -7,8 +7,11 @@ const os_1 = __importDefault(require("os"));
 const cluster_1 = __importDefault(require("cluster"));
 const index_1 = require("./http/index");
 const createLogs_1 = require("./services/createLogs/createLogs");
+const connections_1 = require("./services/connections");
 function RunPrimaryProcess() {
-    let cpus = os_1.default.cpus().length;
+    let connections = (0, connections_1.ConnectionsName)();
+    let cpus = connections.environment == "production" ? os_1.default.cpus().length - 4 : 1;
+    //if environment is a not production, use only 1 core of CPU 
     createLogs_1.Logger.warn(`ALERT - Primary ${process.pid} is started `);
     for (let index = 0; index < cpus; index++) {
         cluster_1.default.fork();
@@ -22,7 +25,8 @@ function RunPrimaryProcess() {
     });
 }
 async function RunWorkerProcess() {
-    (0, index_1.StartServer)();
+    const startServer = new index_1.StartServerClass();
+    startServer.Execute();
     // for each cluster.fork() above, a new server instance will be created calling the function StartServer()
 }
 cluster_1.default.isPrimary ? RunPrimaryProcess() : RunWorkerProcess();

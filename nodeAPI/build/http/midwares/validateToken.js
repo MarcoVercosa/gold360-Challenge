@@ -5,11 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidadeToken = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-//require('dotenv').config()
+const connections_1 = require("../../services/connections");
 const dotenv_1 = require("dotenv");
 function ValidadeToken(token) {
+    let connections = (0, connections_1.ConnectionsName)();
     (0, dotenv_1.config)();
-    let result = jsonwebtoken_1.default.verify(token, process.env.SECRET, (err, decode) => {
+    let result = jsonwebtoken_1.default.verify(token, connections.secretJSONWebToken, (err, decode) => {
         if (err) {
             return { auth: false, result: "Error token" };
         }
