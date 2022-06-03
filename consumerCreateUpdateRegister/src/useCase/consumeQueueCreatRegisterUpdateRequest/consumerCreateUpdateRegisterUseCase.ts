@@ -4,7 +4,6 @@ import { ConsumerCreateUpdateRegisterRepository } from "../../repository/CreatRe
 import { Logger } from "../../services/createLogs/createLogs";
 import { ConnectAMQPQueueServe } from "../../services/manageQueues";
 import { ConnectionsName } from "../../services/connections";
-import { loggers } from "winston";
 
 export class ConsumerCreateUpdateRegisterUseCase implements IConsumerCreateUpdateRegisterUseCase {
     connectionQueue: any;
