@@ -74,3 +74,37 @@
 {"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-03 21:31:23","originServer":"nodeAPI"}
 {"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-03 21:31:23","originServer":"nodeAPI"}
 {"level":"warn","message": "HTTP =>  url request: /login - ip: 172.20.0.1 - hostname: localhost - result: {\"sucess\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbE5hbWUiOiJSZWdpc3RlciBSZWdpc3RlciBSZWdpc3RlciIsImlhdCI6MTY1NDI5MTk0NSwiZXhwIjoxNjU0Mzc4MzQ1fQ.KMppWauekwommFtOTD3Bm3h53wISZrAs2qCggfRbN0s\",\"result\":[{\"id\":1,\"fullName\":\"Register Register Register\",\"email\":\"register@gmail.com\",\"lastLogin\":\"2022-06-02T19:44:43+00:00\"}]}, 200","Date":"2022-06-03 21:32:25","originServer":"nodeAPI"}
+{"level":"warn","message": "ALERT - Primary 61 is started ","Date":"2022-06-04 17:58:13","originServer":"undefined"}
+{"level":"warn","message": "Server consumerCancelRegister is starting on mode \"\" production \"\" on process 86 \"\"","Date":"2022-06-04 17:58:13","originServer":"NodeConsumerCancelRegister"}
+{"level":"warn","message": "ALERT - Primary 61 is started ","Date":"2022-06-04 17:58:16","originServer":"undefined"}
+{"level":"warn","message": "ALERT - Primary 486 is started ","Date":"2022-06-04 17:58:17","originServer":"undefined"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server consumerCreateUpdateRegister is starting on mode \"\" production \"\" on process 511","Date":"2022-06-04 17:58:18","originServer":"nodeConsumerCreateUpdateRegister"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-04 17:58:18","originServer":"nodeAPI"}
+{"level":"warn","message": "ALERT - Primary 61 is started ","Date":"2022-06-06 01:36:31","originServer":"undefined"}
+{"level":"warn","message": "Server consumerCancelRegister is starting on mode \"\" production \"\" on process 86 \"\"","Date":"2022-06-06 01:36:32","originServer":"NodeConsumerCancelRegister"}
+{"level":"warn","message": "ALERT - Primary 61 is started ","Date":"2022-06-06 01:36:34","originServer":"undefined"}
+{"level":"warn","message": "ALERT - Primary 486 is started ","Date":"2022-06-06 01:36:35","originServer":"undefined"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server NODEAPI  is starting on mode \"\" production \"\"","Date":"2022-06-06 01:36:36","originServer":"nodeAPI"}
+{"level":"warn","message": "Server consumerCreateUpdateRegister is starting on mode \"\" production \"\" on process 511","Date":"2022-06-06 01:36:36","originServer":"nodeConsumerCreateUpdateRegister"}
