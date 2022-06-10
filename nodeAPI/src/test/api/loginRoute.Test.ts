@@ -16,8 +16,8 @@ async function LoginRouteTest() {
             let response = await request("http://localhost:3000")
                 .post("/login")
                 .send({
-                    email: "register@gmail.com",
-                    password: "Register@123456"
+                    email: "registerdefaultuser@register.com",
+                    password: "Register@jU0OTU4Nzc1fQ"
                 })
             const token = response.body?.token.length > 0 ? "received token" : "not received token"
             expect(response.status).toBe(200);
@@ -44,8 +44,8 @@ async function LoginRouteTest() {
             let response = await request("http://localhost:3000")
                 .post("/login")
                 .send({
-                    //email: "wrongemail@gmail.com",
-                    password: "Register@123456"
+                    //email: "registerdefaultuser@register.com",
+                    password: "Register@jU0OTU4Nzc1fQ"
                 })
             const token: string = response.body?.token.length > 0 ? "received token" : "not received token"
             expect(response.status).toBe(401);
@@ -58,7 +58,7 @@ async function LoginRouteTest() {
             let response = await request("http://localhost:3000")
                 .post("/login")
                 .send({
-                    email: "register@gmail.com",
+                    email: "registerdefaultuser@register.com",
                     //password: "wrongpass@123456"
                 })
             const token: string = response.body?.token.length > 0 ? "received token" : "not received token"
