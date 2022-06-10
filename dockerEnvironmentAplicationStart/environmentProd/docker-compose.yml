@@ -23,15 +23,15 @@ services:
     image: rabbitmq:3-management-alpine
     container_name: ${RABBITMQ_PROD_ENV}
     environment:
-      - RABBITMQ_DEFAULT_USER=register
-      - RABBITMQ_DEFAULT_PASS=register
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER_MANAGER_ENV}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS_MANAGER_ENV}
     ports:
       - 5672:5672
       - 15672-15672
     restart: unless-stopped
     volumes:
-      - ~/docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-      - ~/docker-conf/rabbitmq/log/:/var/rabbitmq
+      - ${RABBITMQ_VOLUME_DATA_PROD_ENV}:/var/lib/rabbitmq/
+      - ${RABBITMQ_VOLUME_LOG_PROD_ENV}:/var/rabbitmq
 
     networks:
       rabbitmq-mysql-nodejs-network:
