@@ -60,12 +60,12 @@
                                 "email": {
                                     "type": "string",
                                     "required": true,
-                                    "default": "register@gmail.com"
+                                    "default": "registerdefaultuser@register.com"
                                 },
                                 "password": {
                                     "type": "string",
                                     "required": true,
-                                    "default": "Register@123456"
+                                    "default": "Register@jU0OTU4Nzc1fQ"
                                 }
                             }
                         }

@@ -12,13 +12,13 @@ export class ConsumerCancelRegisterRepository implements IConsumerCancelRegister
     }
 
     async CheckIfIsActiveRepository({ fullName, email }: { fullName: string, email: string }) {
-        let checkIsActive = await prisma.$queryRaw`SELECT active FROM Registers WHERE email = ${email} AND fullName = ${fullName}` as Array<{ active: boolean }>
+        let checkIsActive = await prisma.$queryRaw`SELECT active FROM register_prisma_mysql.Registers WHERE email = ${email} AND fullName = ${fullName}` as Array<{ active: boolean }>
         console.log(checkIsActive)
         return checkIsActive
     }
 
     async CancelRegisterRepository({ fullName, email }: IParams) {
-        let activeregister = await prisma.$executeRaw`UPDATE Registers SET  active= ${false} WHERE email = ${email} AND fullName = ${fullName}`
+        let activeregister = await prisma.$executeRaw`UPDATE register_prisma_mysql.Registers SET  active= ${false} WHERE email = ${email} AND fullName = ${fullName}`
         return activeregister
     }
 }

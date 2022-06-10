@@ -18,9 +18,9 @@ model Register {
   password       String   @db.VarChar(100)
   active         Boolean
   //canceled       Boolean
-  created_at     DateTime @default(now()) //será do tipo data hora e o prisma fara automaticamente
+  created_at     DateTime @default(now()) //será do tipo data hora e o prisma irá preencher automaticamente
   lastUpDateBy   String
-  lastUpDateDate DateTime @default(now())
+  lastUpDateDate DateTime @default(now()) //será do tipo data hora e o prisma irá preencher automaticamente
 
   //informa qual o nome que será dado a tabela no BD
   @@map("Registers")
@@ -35,7 +35,7 @@ model Operator {
   active     Boolean
   isAdmin    Boolean
   created_at DateTime @default(now()) //será do tipo data hora e o prisma fara automaticamente
-  lastLogin  DateTime @default(now())
+  lastLogin  DateTime @default(now()) //será do tipo data hora e o prisma irá preencher automaticamente
 
   //informa qual o nome que será dado a tabela no BD
   @@map("Operators")

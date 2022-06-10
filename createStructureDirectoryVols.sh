@@ -10,3 +10,5 @@ mkdir -p ./vols_containers/logs
 mkdir -p ./vols_containers/rabbitmq
 mkdir -p ./vols_containers/rabbitmq/data
 mkdir -p ./vols_containers/rabbitmq/log
+
+echo "DIRECTORY STRUCTURE CREATION COMPLETED SUCCESSFULLY."

@@ -8,7 +8,7 @@
     "startDockerAplicationPROD": "cd dockerEnvironmentAplicationStart/environmentProd && sudo docker-compose start",
     "stopDockerAplicationPROD": "cd dockerEnvironmentAplicationStart/environmentProd && sudo docker-compose stop",
     "downDockerAplicationPROD": "cd dockerEnvironmentAplicationStart/environmentProd && sudo docker-compose down",
-    "createDockerAplicationDEV": "sudo ./createStructureDirectoryVols.sh && cd dockerEnvironmentAplicationStart/environmentDev && sudo docker-compose up -d && echo 'CREATING USERS AND PASS ON RABBITMQ' && sleep 25 && ../../scriptUserRabbitMQ.sh && echo 'END OF SCRIPT'",
+    "createDockerAplicationDEV": "sudo ./createStructureDirectoryVols.sh && cd dockerEnvironmentAplicationStart/environmentDev && sudo docker-compose up -d && echo 'CREATING USERS AND PASS ON RABBITMQ' && sleep 25 && ../../scriptUserRabbitMQ.sh && echo 'END OF SCRIPT' ",
     "startDockerAplicationDEV": "cd dockerEnvironmentAplicationStart/environmentDev && sudo docker-compose start",
     "stopDockerAplicationDEV": "cd dockerEnvironmentAplicationStart/environmentDev && sudo docker-compose stop",
     "downDockerAplicationDEV": "cd dockerEnvironmentAplicationStart/environmentDev && sudo docker-compose down",
