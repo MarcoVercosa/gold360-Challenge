@@ -1,4 +1,4 @@
-import { jest, expect, describe, it } from "@jest/globals"
+import { jest, expect, describe, it, beforeAll, afterAll } from "@jest/globals"
 import request from "supertest"
 //import { StartServer } from "../../http/index"
 
@@ -15,8 +15,8 @@ async function CancelRegisterRouteTest() {
             let response = await request("http://localhost:3000")
                 .post("/login")
                 .send({
-                    email: "register@gmail.com",
-                    password: "Register@123456"
+                    email: "registerdefaultuser@register.com",
+                    password: "Register@jU0OTU4Nzc1fQ"
                 })
             tokenGlobal = await response.body?.token
         })
