@@ -1,0 +1,13 @@
+# Ignore database Files
+node_modules
+.env
+
+# Ignore database Files DEV
+**/dataBaseDEV
+
+# Ignore database Files PROD
+**/dataBaseProd
+
+# Ignore logs Files
+**/logs/*.log
+
