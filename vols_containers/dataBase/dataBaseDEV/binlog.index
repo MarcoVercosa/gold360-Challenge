@@ -3,6 +3,7 @@
 ./binlog.000003
 ./binlog.000004
 ./binlog.000005
+<<<<<<< HEAD
 ./binlog.000006
 ./binlog.000007
 ./binlog.000008
@@ -95,3 +96,5 @@
 ./binlog.000095
 ./binlog.000096
 ./binlog.000097
+=======
+>>>>>>> developer

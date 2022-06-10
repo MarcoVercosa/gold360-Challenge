@@ -5,6 +5,7 @@ import { RequestLogin } from "./routes/requestLogin"
 import { CheckIfAllQueuesIsCreated } from '../services/queues/checkIfAllQueuesIsCreated/checkIfAllQueuesIsCreated'
 import { Logger } from '../services/createLogs/createLogs'
 import { StartDocumentationSwagger } from "../doc/documentation"
+<<<<<<< HEAD
 
 interface IStartServerClass {
     CheckQueues: () => Promise<boolean | void>
@@ -14,6 +15,10 @@ interface IStartServerClass {
     Execute: () => Promise<FastifyInstance | boolean>
 }
 
+=======
+import { IStartServerClass } from "../entities/configAndStartServer/IStartServerClass"
+import { FindUserDefaultAlreadyExists } from '../repositories/createDefaultUserBD/createDefaultUserBD'
+>>>>>>> developer
 
 
 class StartServerClass implements IStartServerClass {
@@ -38,7 +43,14 @@ class StartServerClass implements IStartServerClass {
         this.fastifyServer.register(RequestCreateUpdateRegister) //create/update user account
         this.fastifyServer.register(RequestCancelRegister) // request if account is enabled or disabled
         return true
+<<<<<<< HEAD
 
+=======
+    }
+    async CreateUserDefaultOperatorBD(): Promise<void> {
+        const check = new FindUserDefaultAlreadyExists()
+        await check.findUserDefaultAlreadyExists()
+>>>>>>> developer
     }
     async StartHTTP(): Promise<void> {
         this.fastifyServer.listen(3000, '0.0.0.0') //'0.0.0.0' is the best conf to docker
@@ -81,6 +93,10 @@ class StartServerClass implements IStartServerClass {
         await this.CheckQueues()//FIRST - CHECK IF QUEUE IS ALREADY CREATED, IF NOT, CREATE THE QUEUES
         try {
             this.RegisterRoutesAndConfig()//REGISTER ROUTES
+<<<<<<< HEAD
+=======
+            await this.CreateUserDefaultOperatorBD() //Create default user operator in BD if nos exists.
+>>>>>>> developer
             await this.StartHTTP()//START HTTP SERVER WITH ROUTES REGISTERS
             StartDocumentationSwagger() //START DOCUMENTATION IF NOT PRODUCTION (SWAGGER) ON PORT 3030
             this.ShutdownNegociation()//If one process crashes, Node will try to start another one. Keeping the server UP as much as possible
@@ -92,4 +108,8 @@ class StartServerClass implements IStartServerClass {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> developer
 export { StartServerClass }

@@ -17,7 +17,7 @@ export class ConsumerCreateUpdateRegisterRepository implements IConsumerCreateUp
     //and 0 if an existing row is set to its current values.
 
     async RequestRegisterCreateUpdateRepository({ firstName, fullName, email, password, lastUpDateBy }: IParams) {
-        let result = await prisma.$executeRaw`INSERT INTO Registers SET fullName = ${fullName}, 
+        let result = await prisma.$executeRaw`INSERT INTO register_prisma_mysql.Registers SET fullName = ${fullName}, 
             firstName = ${firstName},  email = ${email}, password = ${password}, active = ${true}, lastUpDateBy = ${lastUpDateBy}
             ON DUPLICATE KEY UPDATE fullName = ${fullName}, firstName = ${firstName},  email = ${email}, password = ${password}, 
             active = ${true}, lastUpDateBy = ${lastUpDateBy}`
