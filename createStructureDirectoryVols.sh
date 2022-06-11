@@ -11,4 +11,5 @@ mkdir -p ./vols_containers/rabbitmq
 mkdir -p ./vols_containers/rabbitmq/data
 mkdir -p ./vols_containers/rabbitmq/log
 
+chmod 777 -R ./*
 echo "DIRECTORY STRUCTURE CREATION COMPLETED SUCCESSFULLY."
