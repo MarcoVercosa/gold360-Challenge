@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${RABBITMQ_VOLUME_DATA_DEV_ENV}:/var/lib/rabbitmq/
-      - ${RABBITMQ_VOLUME_LOG_DEV_ENV}:/var/rabbitmq
+      - ${RABBITMQ_VOLUME_LOG_DEV_ENV}:/var/log/rabbitmq
 
     networks:
       rabbitmq-mysql-nodejs-network:
