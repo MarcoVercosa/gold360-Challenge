@@ -86,7 +86,8 @@ let Printf = printf(
     (info) => `{"level":"${info.level}","message": ${JSON.stringify(info.message)},"Date":"${info.timestamp}","originServer":"${connection.serverNodeAPI}"}`
 )
 
-process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'test' ?
+//process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'test' ?
+process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'development' ?
     transports = [
         new winston.transports.File({
             filename: `${__dirname}/../../../logs/error.log`, level: 'error',
