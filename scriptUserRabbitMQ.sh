@@ -1,16 +1,16 @@
 #!/bin/bash
 if ping -c 1 -W 3 172.20.0.3; then
   echo "###################################################################"
+  echo "#                     P R O D U C T I O N                         #"
   echo "#                                                                 #"
-  echo "#                                                                 #"
-  echo "#  COMMANDS EXECUTE ON >>>>>>>>> RABBITMQ SERVER <<<<<<<<<<<<<    #"
+  echo "#  COMMANDS EXECUTE ON >>>>> RABBITMQ SERVER  <<<<<<<<<    #"
   echo "#                                                                 #"
   echo "#                                                                 #"
   echo "###################################################################"
   SERVER=rabbitmq    
 elif ping -c 1 -W 3 172.21.0.3; then
   echo "###################################################################"
-  echo "#                                                                 #"
+  echo "#                      D E V E L O P M E N T                      #"
   echo "#                                                                 #"
   echo "#  COMMANDS EXECUTE ON >>>>>>>>> DEV-RABBITMQ SERVER <<<<<<<<<<   #"
   echo "#                                                                 #"
@@ -19,7 +19,7 @@ elif ping -c 1 -W 3 172.21.0.3; then
   SERVER=dev-rabbitmq
 elif ping -c 1 -W 3 172.22.0.3; then
   echo "###################################################################"
-  echo "#                                                                 #"
+  echo "#                           T E S T                               #"
   echo "#                                                                 #"
   echo "#  COMMANDS EXECUTE ON >>>>>>>>> 'TEST' DEV-RABBITMQ SERVER <<<<< #"
   echo "#                                                                 #"
