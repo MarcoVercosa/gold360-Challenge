@@ -1,5 +1,0 @@
-{"level":"info","message": "Checking if all queue are created. Case not, will be created. This action is showing when the server is started","Date":"2022-06-10 17:10:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: create_update_register_bd","Date":"2022-06-10 17:10:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: cancel_register_bd","Date":"2022-06-10 17:10:40","originServer":"undefined"}
-{"level":"info","message": "RABBITMQ => Connected to habbitMQ. Checked if Queue was created: dead_cancel_queue","Date":"2022-06-10 17:10:40","originServer":"undefined"}
-{"level":"info","message": "HTTP => SERVER started and listening on http://0.0.0.0:3000 o process 221","Date":"2022-06-10 17:10:40","originServer":"undefined"}
