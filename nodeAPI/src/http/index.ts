@@ -18,7 +18,6 @@ class StartServerClass implements IStartServerClass {
             logger: false
         })
     }
-
     async CheckQueues(): Promise<boolean | void> {
         let result: boolean | void = await CheckIfAllQueuesIsCreated()
         return result

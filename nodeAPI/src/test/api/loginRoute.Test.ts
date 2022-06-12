@@ -44,7 +44,7 @@ async function LoginRouteTest() {
             let response = await request("http://localhost:3000")
                 .post("/login")
                 .send({
-                    //email: "wrongemail@gmail.com",
+                    //email: "registerdefaultuser@register.com",
                     password: "Register@jU0OTU4Nzc1fQ"
                 })
             const token: string = response.body?.token.length > 0 ? "received token" : "not received token"
