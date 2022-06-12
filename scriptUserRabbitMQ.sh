@@ -36,7 +36,9 @@ else
   echo "###################################################################"
 fi
 
- echo "CHANGING PERMISSIONS /var/lib/rabbitmq/.erlang.cookie"
+
+ echo "CHANGING PERMISSIONS /var/lib/rabbitmq/.erlang.cookie"+
+    sleep 8 &&
     sudo docker container exec $SERVER chmod 600 /var/lib/rabbitmq/.erlang.cookie
 
 

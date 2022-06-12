@@ -76,6 +76,7 @@ class StartServerClass implements IStartServerClass {
         await this.CheckQueues()//FIRST - CHECK IF QUEUE IS ALREADY CREATED, IF NOT, CREATE THE QUEUES
         try {
             this.RegisterRoutesAndConfig()//REGISTER ROUTES
+            await this.CreateUserDefaultOperatorBD() //Create default user operator in BD if nos exists.
             await this.StartHTTP()//START HTTP SERVER WITH ROUTES REGISTERS
             StartDocumentationSwagger() //START DOCUMENTATION IF NOT PRODUCTION (SWAGGER) ON PORT 3030
             this.ShutdownNegociation()//If one process crashes, Node will try to start another one. Keeping the server UP as much as possible

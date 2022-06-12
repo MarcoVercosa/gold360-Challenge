@@ -4,9 +4,9 @@
   "description": "Consumer queue aplication",
   "main": "index.js",
   "scripts": {
-    "prismaConfigProd": "prisma db pull && prisma generate",
+    "prismaConfigProd": "prisma generate && prisma db push",
     "buildTs": "npx tsc",
-    "prod": "NODE_ENV=production npm install && npm run prismaConfigProd && npm run buildTs && node build/cluster.js",
+    "prod": "NODE_ENV=production && npm run prismaConfigProd && npm install && npm run buildTs && node build/cluster.js",
     "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
     "prismaConfigDev": "dotenv -e .env.dev -- npx prisma generate",
     "devts": "NODE_ENV=development && npm run prismaConfigDev && ts-node-dev --transpile-only --exit-child --ignore-watch node_modules src/cluster.ts",
