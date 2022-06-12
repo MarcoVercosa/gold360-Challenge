@@ -4,7 +4,7 @@
   "description": "Consumer route Cancel Active register",
   "main": "index.js",
   "scripts": {
-    "prismaConfigProd": "prisma generate && prisma db push",
+    "prismaConfigProd": "prisma generate",
     "buildTs": "npx tsc",
     "prod": "NODE_ENV=production && npm run prismaConfigProd && npm install && npm run buildTs && node build/cluster.js",
     "scripsforDeveloper": "<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<>><><><><><><><><<<><><><><><><<>><><><><><><><><<>><>>><><><><><><><><",
