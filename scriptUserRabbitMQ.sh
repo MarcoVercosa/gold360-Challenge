@@ -30,41 +30,44 @@ else
   echo "###################################################################"
   echo "#         E R R O R         E R R O R       E R R O R             #"
   echo "#                                                                 #"
-  echo "#  RABBITMQ PROD AND DEV >>>>>>>>> NOT ACESSIBLE <<<<<<<<<<<< #"
+  echo "#  RABBITMQ PROD AND DEV >>>>>>>>> NOT ACESSIBLE <<<<<<<<<<<<     #"
   echo "#                                                                 #"
   echo "#                                                                 #"
   echo "###################################################################"
 fi
 
+sleep 5
 
- echo "CHANGING PERMISSIONS /var/lib/rabbitmq/.erlang.cookie"+
-    sleep 8 &&
-    sudo docker container exec $SERVER chmod 600 /var/lib/rabbitmq/.erlang.cookie
+  for((i = 8; i >= 0; i--))
+    do
+      clear
+      echo "CHANGING PERMISSIONS /var/lib/rabbitmq/.erlang.cookie ===>  $i..."
+      sleep 1
+  done
+  sudo docker container exec $SERVER chmod 600 /var/lib/rabbitmq/.erlang.cookie
 
-
-echo 'WAITING FOR INITIALIZATION RABBITMQ SERVER' 
-sleep 25 &&
+  for((i = 15; i >= 0; i--))
+    do
+      clear
+      echo "WAITING FOR INITIALIZATION RABBITMQ SERVER ====>  $i..."
+      sleep 1
+  done
    
-    echo "CONFIGURING USERS, PASS AND QUEUES"
+  echo "CONFIGURING USERS, PASS AND QUEUES"
+  sudo docker container exec $SERVER rabbitmqctl add_user cancel_register_bd cancel_register_bd
+  sudo docker container exec $SERVER rabbitmqctl set_user_tags cancel_register_bd  administrator
+  sudo docker container exec $SERVER rabbitmqctl set_permissions -p / cancel_register_bd ".*" ".*" ".*"
+  sudo docker container exec $SERVER  rabbitmqctl add_user cancel_register_bd_consumer cancel_register_bd_consumer
+  sudo docker container exec $SERVER  rabbitmqctl set_user_tags cancel_register_bd_consumer  administrator
+  sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / cancel_register_bd_consumer ".*" ".*" ".*"
+  sudo docker container exec $SERVER  rabbitmqctl add_user create_update_register_bd create_update_register_bd
+  sudo docker container exec $SERVER  rabbitmqctl set_user_tags create_update_register_bd administrator
+  sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / create_update_register_bd ".*" ".*" ".*"
+  sudo docker container exec $SERVER  rabbitmqctl add_user create_update_register_bd_consumer create_update_register_bd_consumer
+  sudo docker container exec $SERVER  rabbitmqctl set_user_tags create_update_register_bd_consumer administrator
+  sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / create_update_register_bd_consumer ".*" ".*" ".*"
+  sudo docker container exec $SERVER rabbitmqctl add_user dead_cancel_queue dead_cancel_queue
+  sudo docker container exec $SERVER rabbitmqctl set_user_tags dead_cancel_queue administrator 
+  sudo docker container exec $SERVER rabbitmqctl set_permissions -p / dead_cancel_queue ".*" ".*" ".*"
 
-    sudo docker container exec $SERVER rabbitmqctl add_user cancel_register_bd cancel_register_bd
-    sudo docker container exec $SERVER rabbitmqctl set_user_tags cancel_register_bd  administrator
-    sudo docker container exec $SERVER rabbitmqctl set_permissions -p / cancel_register_bd ".*" ".*" ".*"
-
-    sudo docker container exec $SERVER  rabbitmqctl add_user cancel_register_bd_consumer cancel_register_bd_consumer
-    sudo docker container exec $SERVER  rabbitmqctl set_user_tags cancel_register_bd_consumer  administrator
-    sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / cancel_register_bd_consumer ".*" ".*" ".*"
-
-    sudo docker container exec $SERVER  rabbitmqctl add_user create_update_register_bd create_update_register_bd
-    sudo docker container exec $SERVER  rabbitmqctl set_user_tags create_update_register_bd administrator
-    sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / create_update_register_bd ".*" ".*" ".*"
-
-    sudo docker container exec $SERVER  rabbitmqctl add_user create_update_register_bd_consumer create_update_register_bd_consumer
-    sudo docker container exec $SERVER  rabbitmqctl set_user_tags create_update_register_bd_consumer administrator
-    sudo docker container exec $SERVER  rabbitmqctl set_permissions -p / create_update_register_bd_consumer ".*" ".*" ".*"
-
-    sudo docker container exec $SERVER rabbitmqctl add_user dead_cancel_queue dead_cancel_queue
-    sudo docker container exec $SERVER rabbitmqctl set_user_tags dead_cancel_queue administrator 
-    sudo docker container exec $SERVER rabbitmqctl set_permissions -p / dead_cancel_queue ".*" ".*" ".*"
-
-echo 'END OF SCRIPT'
+  echo 'END OF SCRIPT'
