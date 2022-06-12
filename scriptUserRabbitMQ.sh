@@ -3,7 +3,7 @@ if ping -c 1 -W 3 172.20.0.3; then
   echo "###################################################################"
   echo "#                     P R O D U C T I O N                         #"
   echo "#                                                                 #"
-  echo "#  COMMANDS EXECUTE ON >>>>> RABBITMQ SERVER  <<<<<<<<<    #"
+  echo "#  COMMANDS EXECUTE ON >>>>> RABBITMQ SERVER  <<<<<<<<<           #"
   echo "#                                                                 #"
   echo "#                                                                 #"
   echo "###################################################################"
